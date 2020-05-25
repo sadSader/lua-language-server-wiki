@@ -1,3 +1,4 @@
+## Json Schema
 Here is a [json schema](https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json) file to help you configure setting manually.
 
 You could download a template `setting.json` from https://github.com/sumneko/vscode-lua/blob/master/setting/setting.json.
@@ -6,7 +7,9 @@ If your editor supports `jsonschema`, it would prompt you all the settings and o
 
 ![setting-without-vscode](https://github.com/sumneko/vscode-lua/blob/master/images/setting-without-vscode.gif?raw=true)
 
-Different clients load `setting.json` in different ways:
+(对于中文用户，使用 `https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema-zh-cn.json` 可以看到中文的提示）
+
+## Different clients load `setting.json` in different ways:
 
 ### nvim
 
