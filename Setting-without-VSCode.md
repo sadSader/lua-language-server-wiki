@@ -1,0 +1,34 @@
+Here is a [json schema](https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json) file to help you configure setting manually.
+
+You could download a template `setting.json` from https://github.com/sumneko/vscode-lua/blob/master/setting/setting.json.
+
+If your editor supports `jsonschema`, it would prompt you all the settings and options like this:
+
+![setting-without-vscode](https://github.com/sumneko/vscode-lua/blob/master/images/setting-without-vscode.gif?raw=true)
+
+Different clients load `setting.json` in different ways:
+
+### nvim
+
+- execute :CocConfig; it'll open a json file (this is the the file containing `coc` configuration
+- write the configuration for `lua-language-server` in that json.
+
+For example, mine has the following json:
+```
+{
+    ... many unrelated options here ...
+    "languageserver": {
+        "lua": {
+	    "cwd": "full path of lua-language-server directory", (not sure this one is really necessary)
+	    "command": "full path to lua-language-server executable",
+	    "args": ["-E", "-e", "LANG=en", "[full path of lua-language-server directory]/main.lua"],
+	    "filetypes": ["lua"],
+	    "rootPatterns": [".git/"]
+        }
+    },
+    "Lua.diagnostics.disable" : [
+        "lowercase-global"
+    ]
+}
+```
+(Thanks to [gustavo-hms](https://github.com/sumneko/lua-language-server/issues/154#issuecomment-621203055))
