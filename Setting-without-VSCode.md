@@ -40,7 +40,7 @@ For example, mine has the following json:
 ---
 
 
-## Alternative instructions for coc.nvim
+## Instructions for coc.nvim
 
 I'm posting this in the hope that it'll save someone else from spending an afternoon making (mostly random) changes to their `coc-settings.json` in the struggle to configure `lua-language-server` settings in vim using [coc.nvim](https://github.com/neoclide/coc.nvim).
 
