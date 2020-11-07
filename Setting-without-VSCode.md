@@ -97,18 +97,20 @@ I'm posting this in the hope that it'll save someone else from spending an after
 
 ### Working example
 
-The following works for me using:
+As of 2020-11-07, the following works on the system identified in the comment:
 
 ```
-vim version: NVIM v0.5.0-789-gca7449db4
-node version: v15.0.1
-coc.nvim version: 0.0.79-3e5fbe3a93
-term: xterm-kitty
-platform: darwin
+
 ```
 
 
 ```jsonc
+// vim version: NVIM v0.5.0-789-gca7449db4
+// node version: v15.0.1
+// coc.nvim version: 0.0.79-3e5fbe3a93
+// term: xterm-kitty
+// platform: darwin
+
     // coc-settings.json
     "languageserver": {
         "lua": {
