@@ -99,10 +99,6 @@ I'm posting this in the hope that it'll save someone else from spending an after
 
 As of 2020-11-07, the following works on the system identified in the comment:
 
-```
-
-```
-
 
 ```jsonc
 // vim version: NVIM v0.5.0-789-gca7449db4
