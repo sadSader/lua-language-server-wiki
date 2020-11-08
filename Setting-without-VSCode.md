@@ -130,7 +130,7 @@ As of 2020-11-07, the following works on the system identified in the comment:
                     "diagnostics": {
                         "enable": true,
                         "globals": ["hs", "vim", "it", "describe", "before_each", "after_each"],
-                        "disable": ["lowercase-globals"]
+                        "disable": ["lowercase-global"]
                     },
                     "completion": {
                         "keywordSnippet": "Disable"
