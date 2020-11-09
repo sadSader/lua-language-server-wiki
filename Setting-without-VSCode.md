@@ -125,7 +125,7 @@ As of 2020-11-07, the following works on the system identified in the comment:
                         "preloadFileSize": 1000
                     },
                     "runtime": {
-                        "version": "5.4.0"
+                        "version": "Lua 5.4"
                     },
                     "diagnostics": {
                         "enable": true,
