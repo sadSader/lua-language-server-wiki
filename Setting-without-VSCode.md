@@ -11,7 +11,55 @@ If your editor supports `jsonschema`, it would prompt you all the settings and o
 
 ## Different clients load `setting.json` in different ways:
 
-### nvim
+### Neovim with built-in LSP client
+
+This guide assumes you are already familiar with how to use the built-in client
+(see `:help lsp` for more information). Settings are specified as a Lua table
+which is passed as the `settings` field of your configuration. Here is a
+minimal example
+
+```lua
+require'nvim_lsp'.sumneko_lua.setup {
+  settings = {
+    -- Insert your settings here
+  }
+}
+```
+
+The settings are specified as a nested table. This means that when the JSON
+schema says `"Lua.runtime.version": "5.3"` you have to write `{Lua = {runtime =
+{version = 'Lua 5.3'}}}`. Here is a settings table suitable for writing
+standalone Lua scripts with [Luarocks](https://luarocks.org/) libraries:
+
+```lua
+-- You will have to adjust your values according to your system
+settings = {
+  Lua = {
+    runtime = {
+      version = 'Lua 5.3',
+      path = {
+        '?.lua',
+        '?/init.lua',
+        vim.fn.expand'~/.luarocks/share/lua/5.3/?.lua',
+        vim.fn.expand'~/.luarocks/share/lua/5.3/?/init.lua',
+        '/usr/share/5.3/?.lua',
+        '/usr/share/lua/5.3/?/init.lua'
+      }
+    },
+    workspace = {
+      [vim.fn.expand'~/.luarocks/share/lua/5.3'] = true,
+      ['/usr/share/lua/5.3'] = true
+    }
+  }
+}
+```
+
+Note how we are able to use Lua code such as `vim.fn.expand` in our settings in
+order to dynamically build up the proper value.
+
+
+
+### Neovim with [coc.nvim](https://github.com/neoclide/coc.nvim)
 
 - execute :CocConfig; it'll open a json file (this is the the file containing `coc` configuration
 - write the configuration for `lua-language-server` in that json.
