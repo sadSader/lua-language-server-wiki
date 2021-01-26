@@ -58,4 +58,4 @@ The complete definition is as follows:
 function OnSetText(uri, text) end
 ```
 
-After setting `Lua.develop.enable` to 'true', you can find `diffed.lua` in the log directory, the content of which is the new text after the application differences, for you to debug.
+After setting `Lua.develop.enable` to `true`, you can find `diffed.lua` in the log directory, the content of which is the new text after the application differences, for you to debug.
