@@ -1,3 +1,5 @@
+(This wiki is translated by a translator. You are free to improve the content)
+
 Create `.vscode/lua/plugin.lua` in your workspace.
 The path can be specified by setting `Lua.runtime.plugin`.
 
@@ -7,9 +9,14 @@ The code in your workspace is converted through this function. This function can
 
 ![plugin-diff](https://github.com/sumneko/vscode-lua/blob/master/images/plugin-diff.gif?raw=true)
 
+The code on the right side of the figure above is the code you are entering in the editor, and the code on the left side of the figure above is the code read by the extension.
+
+Whenever you enter content, the extension calls this function and passes in the content of the entire file as a parameter. You need to generate a list of differences, which will be used by the extension to transform the contents of the file.
+
+The effect of the figure above is achieved by the following code:
+
 ```lua
 function OnSetText(uri, text)
-    --do return nil end
     if text:sub(1, 4) ~= '--##' then
         return nil
     end
