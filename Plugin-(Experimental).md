@@ -3,6 +3,10 @@ The path can be specified by setting `Lua.runtime.plugin`.
 
 ## OnSetText
 
+The code in your workspace is converted through this function. This function can be used to parse some custom syntax.
+
+![plugin-diff](https://github.com/sumneko/vscode-lua/blob/master/images/plugin-diff.gif?raw=true)
+
 ```lua
 function OnSetText(uri, text)
     --do return nil end
@@ -32,5 +36,3 @@ function OnSetText(uri, text)
     return diffs
 end
 ```
-
-![plugin-diff](https://github.com/sumneko/vscode-lua/blob/master/images/plugin-diff.gif?raw=true)
