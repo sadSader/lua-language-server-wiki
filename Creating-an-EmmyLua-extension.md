@@ -22,7 +22,7 @@ let path = extension?.extensionPath+"\\SomeEmmyLua"
 
 // add it to the external libraries
 let luaConfig = vscode.workspace.getConfiguration("Lua")
-let library : any = luaConfig.get("workspace.library")
+let library: any = luaConfig.get("workspace.library")
 library[path] = v
 luaConfig.update("workspace.library", library, true)
 ```
