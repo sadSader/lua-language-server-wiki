@@ -23,7 +23,7 @@ let path = extension?.extensionPath+"\\SomeEmmyLua"
 // add it to the external libraries
 let luaConfig = vscode.workspace.getConfiguration("Lua")
 let library: any = luaConfig.get("workspace.library")
-library[path] = v
+library[path] = true
 luaConfig.update("workspace.library", library, true)
 ```
 Note that when your extension is uninstalled this path will still remain in the configuration, including older versions e.g. `ketho.wow-api-0.1.0`, `...-0.0.2`
