@@ -26,7 +26,7 @@ let library: any = luaConfig.get("workspace.library")
 library[path] = true
 luaConfig.update("workspace.library", library, true)
 ```
-Note that when your extension is uninstalled this path will still remain in the configuration, including older versions e.g. `ketho.wow-api-0.1.0`, `...-0.0.2`
+Note that when your extension is uninstalled this path will still remain in the configuration, including older versions e.g. `ketho.wow-api-0.0.1`, `...-0.0.2`
 1. After restarting VS Code, the extension files will be removed from disk. However the EmmyLua files would still be already preloaded.
 2. Only after the second restart will the EmmyLua files not be preloaded since the extension is now gone.
 
