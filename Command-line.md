@@ -2,4 +2,4 @@
 
 * logpath: The write location of the log, default is `LUA_LANGUAGE_SERVER/log`
 * metapath: Generation location of definition file of standard library, default is `LUA_LANGUAGE_SERVER/meta`
-* locale: The localized language used, will override the client's settings.
+* locale: The localized language used, will override the client's settings. Currently supports `en-us` and `zh-cn` .
