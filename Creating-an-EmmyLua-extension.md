@@ -18,7 +18,7 @@ To make this more user friendly, an extension that ships its own EmmyLua folder(
 ```ts
 function setExternalLibrary(enable: boolean) {
 	// get emmylua path
-	let extension = vscode.extensions.getExtension("ketho.wow-api")
+	let extension = vscode.extensions.getExtension("publisher.name")
 	let path = extension?.extensionPath+"\\EmmyLua"
 	// add it to the external libraries
 	let luaConfig = vscode.workspace.getConfiguration("Lua")
