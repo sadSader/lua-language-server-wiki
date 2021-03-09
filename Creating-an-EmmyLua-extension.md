@@ -1,9 +1,9 @@
 _Disclaimer: This article was written by [someone](https://github.com/sumneko/lua-language-server/issues/417) inexperienced with TypeScript and VS Code extensions._
 
-[EmmyLua](https://github.com/EmmyLua) annotations can be manually added as an external library via the `Lua -> Workspace: Library` option or in `settings.json` ([schema.json](https://github.com/sumneko/vscode-lua/blob/v1.18.0/setting/schema.json#L1096-L1103))
+[EmmyLua](https://github.com/EmmyLua) annotations can be manually added as an external library via the `Lua -> Workspace: Library` [option](https://github.com/sumneko/vscode-lua/blob/v1.18.0/setting/schema.json#L1096-L1103) or in `settings.json`
 ```json
     "Lua.workspace.library": [
-        "d:\\SomePath\\EmmyLua"
+        "d:\\SomePath\\EmmyLuaFolder"
     ],
 ```
 To make this more user friendly, an extension that ships its own EmmyLua folder(s) can choose to automatically add this path.
@@ -19,7 +19,7 @@ To make this more user friendly, an extension that ships its own EmmyLua folder(
 function setExternalLibrary(enable: boolean) {
 	// get emmylua path
 	let extension = vscode.extensions.getExtension("publisher.name")
-	let path = extension?.extensionPath+"\\EmmyLua"
+	let path = extension?.extensionPath+"\\EmmyLuaFolder"
 	// add it to the external libraries
 	let luaConfig = vscode.workspace.getConfiguration("Lua")
 	let library: string[] | undefined = luaConfig.get("workspace.library")
