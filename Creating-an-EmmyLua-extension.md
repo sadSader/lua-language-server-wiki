@@ -3,7 +3,7 @@ _Disclaimer: This article was written by [someone](https://github.com/sumneko/lu
 [EmmyLua](https://github.com/EmmyLua) annotations can be manually added as an external library via the `Lua -> Workspace: Library` option or in `settings.json` ([schema.json](https://github.com/sumneko/vscode-lua/blob/v1.18.0/setting/schema.json#L1096-L1103))
 ```json
     "Lua.workspace.library": [
-        "d:\\SomePath\\EmmyLuaFolder"
+        "d:\\SomePath\\EmmyLua"
     ],
 ```
 To make this more user friendly, an extension that ships its own EmmyLua folder(s) can choose to automatically add this path.
