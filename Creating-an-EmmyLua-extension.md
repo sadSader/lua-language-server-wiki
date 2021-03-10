@@ -18,34 +18,34 @@ To make this more user friendly, an extension that ships its own EmmyLua folder(
 * Add the path to your EmmyLua folder in the configuration.
 ```ts
 function setExternalLibrary(enable: boolean) {
-	let name = "publisher.name"
+	let name = "publisher.name" // your extension id
 	// get emmylua path
 	let extension = vscode.extensions.getExtension(name)
 	let path = extension?.extensionPath+"\\EmmyLuaFolder"
 	// get configuration
 	let luaConfig = vscode.workspace.getConfiguration("Lua")
-	let library: string[] | undefined = luaConfig.get("workspace.library")
-	if (library) {
-		// remove any older release versions of our extension path e.g. publisher.name-0.0.1
-		for (let i = library.length-1; i >= 0; i--) {
-			const el = library[i]
+	let config: string[] | undefined = luaConfig.get("workspace.library")
+	if (config) {
+		// remove any older release versions of our extension path e.g. "publisher.name-0.0.1"
+		for (let i = config.length-1; i >= 0; i--) {
+			const el = config[i]
 			if (el.indexOf(name) > -1 && el.indexOf(path) == -1) {
-				library.splice(i, 1)
+				config.splice(i, 1)
 			}
 		}
 		// add or remove path
-		const index = library.indexOf(path)
+		const index = config.indexOf(path)
 		if (enable) {
 			if (index == -1) {
-				library.push(path)
+				config.push(path)
 			}
 		}
 		else {
 			if (index > -1) {
-				library.splice(index, 1)
+				config.splice(index, 1)
 			}
 		}
-		luaConfig.update("workspace.library", library, true)
+		luaConfig.update("workspace.library", config, true)
 	}
 }
 
