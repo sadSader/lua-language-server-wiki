@@ -156,5 +156,6 @@ function GetName() end
 ```
 
 ### References
+* EmmyLua: https://emmylua.github.io/
 * Examples: https://github.com/sumneko/lua-language-server/tree/master/meta
 * Tests: https://github.com/sumneko/lua-language-server/blob/master/test/definition/luadoc.lua
