@@ -1,4 +1,4 @@
-* _Disclaimer: This article was written by a user in an effort to get basic documentation._
+* _Disclaimer: This article was written by a user in an effort to get basic documentation. It has only minimal examples._
 
 [EmmyLua](https://github.com/EmmyLua) annotations are doc comments similar to [LDoc](https://stevedonovan.github.io/ldoc/manual/doc.md.html) tags, but instead of generating documentation they are used to improve features like signature information.  
 Also refer to the [official documentation](https://emmylua.github.io/), although Sumneko's implementation might not necessarily be the same.
@@ -97,7 +97,17 @@ function io.popen(prog, mode) end
 ![](https://user-images.githubusercontent.com/1073877/111887908-7b545e00-89d8-11eb-8e62-c6902d58e292.png)
 
 ### Comments
-Comments support markdown formatting.
+Use `@` for annotation comments.
+```lua
+--this is a valid comment
+---@param msg string @the message to show
+local function greet(msg)
+	print(msg)
+end
+```
+![](https://user-images.githubusercontent.com/1073877/111888658-d25d3180-89de-11eb-9e05-10bc61627f2a.png)
+
+Markdown formatting is supported.
 ```lua
 --- This is **bolded text**
 --- [click me](https://www.google.com/)
@@ -110,17 +120,6 @@ local function greet(msg)
 end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111888172-64af0680-89da-11eb-9c49-26a69642d74b.png)
-
-Use `@` for annotation comments.
-```lua
---this is also a valid comment
----@param msg string @the message to show
-local function greet(msg)
-	print(msg)
-end
-```
-![](https://user-images.githubusercontent.com/1073877/111888415-8f01c380-89dc-11eb-9b51-33e118bc7189.png)
-
 
 ### Types
 #### Nilable Types
