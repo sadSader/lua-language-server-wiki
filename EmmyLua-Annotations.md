@@ -104,7 +104,7 @@ function io.popen(prog, mode) end
 ---@param hook function
 function hooksecurefunc(tbl, name, hook) end
 ```
-![](https://user-images.githubusercontent.com/1073877/111888955-8495f880-89e1-11eb-95e5-cd883374e0cf.png)
+![](https://user-images.githubusercontent.com/1073877/111889021-0128d700-89e2-11eb-9091-01b991b017af.png)
 
 ### Comments
 Annotation comments start with `@`.
