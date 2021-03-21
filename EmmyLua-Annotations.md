@@ -117,7 +117,7 @@ end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111888658-d25d3180-89de-11eb-9e05-10bc61627f2a.png)
 
-Markdown formatting is supported.
+Comments have markdown formatting.
 ```lua
 --- This is **bolded text**
 --- [click me](https://www.google.com/)
@@ -125,9 +125,7 @@ Markdown formatting is supported.
 --- for i, v in ipairs(tbl) do body end
 --- ```
 ---@param msg string
-local function greet(msg)
-	print(msg)
-end
+local function greet(msg) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111888172-64af0680-89da-11eb-9c49-26a69642d74b.png)
 
