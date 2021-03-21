@@ -50,6 +50,21 @@ local dog2 = {}
 ```
 ![](https://user-images.githubusercontent.com/1073877/111887515-d6388600-89d5-11eb-9b16-329b3618e339.png)
 
+Classes can have multiple inheritance
+```lua
+---@class ScriptObject
+local ScriptObject = {}
+function ScriptObject:GetScript() end
+
+---@class UIObject
+local UIObject = {}
+function UIObject:GetName() end
+
+---@class Frame : ScriptObject, UIObject
+local Frame = {}
+```
+![](https://user-images.githubusercontent.com/1073877/111890328-bced0500-89e8-11eb-9129-81e220e8428f.png)
+
 #### `@field`
 Adds a field to a class.
 
