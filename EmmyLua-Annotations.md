@@ -81,7 +81,7 @@ Indicates a function has multiple variable arguments.
 ---@return string
 function strconcat(...) end
 ```
-Note that for returning a vararg you can use `...` as a type.
+For returning a vararg you can use a ellipsis `...` as a type.
 ```lua
 ---@vararg string
 ---@return ...
@@ -99,7 +99,7 @@ function file:close() end
 ---@return exitcode? exitcode
 function io.close(file) end
 ```
-String literals for an alias can be put on multiple lines and commented with `#`.
+String literals for an alias can be put on multiple lines and commented with `#`
 ```lua
 ---@alias popenmode
 ---| '"r"' # Read data from this program by `file`.
@@ -123,7 +123,7 @@ function hooksecurefunc(tbl, name, hook) end
 ![](https://user-images.githubusercontent.com/1073877/111889021-0128d700-89e2-11eb-9091-01b991b017af.png)
 
 ### Comments
-Annotation comments start with `@`.
+Annotation comments start with `@`
 ```lua
 --this is a valid comment
 ---@param msg string @the message to show
@@ -143,8 +143,7 @@ function greet(msg) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111888172-64af0680-89da-11eb-9c49-26a69642d74b.png)
 
-### Types
-#### Nilable Params
+### Nilable Params
 Appending a question mark (after the first word) marks a param optional/nilable.
 ```lua
 ---@param prog  string
@@ -155,26 +154,30 @@ function io.popen(prog, mode) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111886711-139a1500-89d0-11eb-9c90-f3f8007ef750.png)
 
-Alternatively, add `nil` as an extra type.
+### Types
+#### Multiple Types
+Types are separated with a pipe char `|`
 ```lua
----@return string|nil name
-function GetName() end
+---@param nameOrIndex string|number
+---@return table|nil info
+function GetQuestInfo(nameOrIndex) end
 ```
-![](https://user-images.githubusercontent.com/1073877/111888499-5f9f8680-89dd-11eb-8185-5890da3f6abf.png)
+![](https://user-images.githubusercontent.com/1073877/111910355-5526d080-8a61-11eb-9c6e-26a30604258e.png)
 
 #### array
+Arrays are indicated with a `[]`
 ```lua
----@type string[]
+string[]
 ```
 
 #### table
 ```lua
----@type table<string, number>
+table<string, number>
 ```
 
 #### function
 ```lua
----@type fun(x: number): number
+fun(x: number): number
 ```
 
 ### References
