@@ -81,7 +81,7 @@ Indicates a function has multiple variable arguments.
 ---@return string
 function strconcat(...) end
 ```
-For returning a vararg you can use a ellipsis `...` as a type.
+For returning a vararg you can use `...` as a type.
 ```lua
 ---@vararg string
 ---@return ...
@@ -156,7 +156,7 @@ function io.popen(prog, mode) end
 
 ### Types
 #### Multiple Types
-Types are separated with a pipe char `|`
+Types are separated with `|`
 ```lua
 ---@param nameOrIndex string|number
 ---@return table|nil info
