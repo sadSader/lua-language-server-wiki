@@ -144,8 +144,8 @@ function greet(msg) end
 ![](https://user-images.githubusercontent.com/1073877/111888172-64af0680-89da-11eb-9c49-26a69642d74b.png)
 
 ### Types
-#### Nilable Types
-Appending a question mark (after the first word) marks a type optional/nilable.
+#### Nilable Params
+Appending a question mark (after the first word) marks a param optional/nilable.
 ```lua
 ---@param prog  string
 ---@param mode? popenmode
@@ -155,7 +155,7 @@ function io.popen(prog, mode) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111886711-139a1500-89d0-11eb-9c90-f3f8007ef750.png)
 
-Alternatively, use `nil` as an extra type.
+Alternatively, add `nil` as an extra type.
 ```lua
 ---@return string|nil name
 function GetName() end
