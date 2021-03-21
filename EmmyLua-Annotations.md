@@ -97,11 +97,12 @@ function io.popen(prog, mode) end
 ![](https://user-images.githubusercontent.com/1073877/111887908-7b545e00-89d8-11eb-8e62-c6902d58e292.png)
 
 #### `@overload`
+Functions can be overloaded if there are multiple signatures.
 ```lua
 ---@overload fun(name: string, hook: function)
 ---@param tbl table
 ---@param name string
----@param hook function
+---@param hook functiona
 function hooksecurefunc(tbl, name, hook) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111889021-0128d700-89e2-11eb-9091-01b991b017af.png)
