@@ -1,4 +1,4 @@
-* _Disclaimer: This article was written by a user in an effort to get basic documentation. It has only minimal examples._
+* _Disclaimer: This article was written by a user in an effort to get basic documentation._
 
 [EmmyLua](https://github.com/EmmyLua) annotations are doc comments similar to [LDoc](https://stevedonovan.github.io/ldoc/manual/doc.md.html) tags, but instead of generating documentation they are used to improve features like signature information.  
 Also refer to the [official documentation](https://emmylua.github.io/), although Sumneko's implementation might not necessarily be the same.
@@ -50,7 +50,7 @@ local dog2 = {}
 ```
 ![](https://user-images.githubusercontent.com/1073877/111887515-d6388600-89d5-11eb-9b16-329b3618e339.png)
 
-Classes can have multiple inheritance
+Classes can support multiple inheritance.
 ```lua
 ---@class ScriptObject
 local ScriptObject = {}
@@ -75,7 +75,7 @@ Specifies the type of a variable.
 Simulates generics.
 
 #### `@vararg`
-Indicates a function takes multiple variable arguments.
+Indicates a function has multiple variable arguments.
 ```lua
 ---@vararg string
 ---@return string
@@ -89,7 +89,7 @@ function tostringall(...) end
 ```
 
 #### `@alias`
-An alias is useful for reusing types or a function in multiple places.
+Aliases are useful for reusing param types e.g. a function or string literals.
 ```lua
 ---@alias exitcode '"exit"'|'"signal"'
 
@@ -99,7 +99,7 @@ function file:close() end
 ---@return exitcode? exitcode
 function io.close(file) end
 ```
-Types for an alias can span multiple lines and be commented with `#`.
+String literals for an alias can be put on multiple lines and commented with `#`.
 ```lua
 ---@alias popenmode
 ---| '"r"' # Read data from this program by `file`.
@@ -112,7 +112,7 @@ function io.popen(prog, mode) end
 ![](https://user-images.githubusercontent.com/1073877/111887908-7b545e00-89d8-11eb-8e62-c6902d58e292.png)
 
 #### `@overload`
-Functions can be overloaded if there are multiple signatures.
+Specifies multiple signatures.
 ```lua
 ---@overload fun(name: string, hook: function)
 ---@param tbl table
@@ -127,9 +127,7 @@ Annotation comments start with `@`.
 ```lua
 --this is a valid comment
 ---@param msg string @the message to show
-local function greet(msg)
-	print(msg)
-end
+function greet(msg) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111888658-d25d3180-89de-11eb-9e05-10bc61627f2a.png)
 
@@ -141,7 +139,7 @@ Comments have markdown formatting.
 --- for i, v in ipairs(tbl) do body end
 --- ```
 ---@param msg string
-local function greet(msg) end
+function greet(msg) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111888172-64af0680-89da-11eb-9c49-26a69642d74b.png)
 
