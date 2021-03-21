@@ -96,8 +96,18 @@ function io.popen(prog, mode) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111887908-7b545e00-89d8-11eb-8e62-c6902d58e292.png)
 
+#### `@overload`
+```lua
+---@overload fun(name: string, hook: function)
+---@param tbl table
+---@param name string
+---@param hook function
+function hooksecurefunc(tbl, name, hook) end
+```
+![](https://user-images.githubusercontent.com/1073877/111888955-8495f880-89e1-11eb-95e5-cd883374e0cf.png)
+
 ### Comments
-Use `@` for annotation comments.
+Annotation comments start with `@`.
 ```lua
 --this is a valid comment
 ---@param msg string @the message to show
