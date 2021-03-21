@@ -184,3 +184,4 @@ fun(x: number): number
 * EmmyLua: https://emmylua.github.io/
 * Examples: https://github.com/sumneko/lua-language-server/tree/master/meta
 * Tests: https://github.com/sumneko/lua-language-server/blob/master/test/definition/luadoc.lua
+* Issues: https://github.com/sumneko/lua-language-server/issues?q=label%3AEmmyLua
