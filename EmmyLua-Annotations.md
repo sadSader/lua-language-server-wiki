@@ -143,15 +143,15 @@ function io.close(file) end
 
 String literals for an alias can be put on multiple lines and commented with `#`
 ```lua
----@alias popenmode
+---@alias popenmode2
 ---| '"r"' # Read data from this program by `file`.
 ---| '"w"' # Write data to this program by `file`.
 
 ---@param prog string
----@param mode popenmode
-function io.popen(prog, mode) end
+---@param mode popenmode2
+function io.popen2(prog, mode) end
 ```
-![](https://user-images.githubusercontent.com/1073877/111887908-7b545e00-89d8-11eb-8e62-c6902d58e292.png)
+![](https://user-images.githubusercontent.com/1073877/112009178-743b6600-8b26-11eb-95b2-5f127a58b1be.png)
 
 #### `@overload`
 Specifies multiple signatures.
@@ -207,12 +207,12 @@ function greet(msg) end
 Appending a question mark (after the first word) marks a param optional/nilable.
 ```lua
 ---@param prog  string
----@param mode? popenmode
+---@param mode? string
 ---@return file*?
 ---@return string? errmsg
-function io.popen(prog, mode) end
+function io.popen3(prog, mode) end
 ```
-![](https://user-images.githubusercontent.com/1073877/111886711-139a1500-89d0-11eb-9c90-f3f8007ef750.png)
+![](https://user-images.githubusercontent.com/1073877/112008831-21fa4500-8b26-11eb-999b-b7dab2fc8298.png)
 
 ### References
 * EmmyLua: https://emmylua.github.io/annotation.html
