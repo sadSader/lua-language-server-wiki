@@ -87,17 +87,24 @@ local BNetAccountInfo = {}
 #### `@type`
 Specifies the type of a variable.
 
-Known basic types are `nil, boolean, number, string, function, userdata, thread, table`
+Known basic types are: `nil, boolean, number, string, function, userdata, thread, table`
 
-#### array
-Arrays are indicated with a `[]`
+* Multiple types are separated with `|`
+```lua
+---@param nameOrIndex string|number
+---@return table|nil info
+function GetQuestInfo(nameOrIndex) end
+```
+![](https://user-images.githubusercontent.com/1073877/111910355-5526d080-8a61-11eb-9c6e-26a30604258e.png)
+
+* Classes can be [used](EmmyLua-Annotations#class) and [returned](EmmyLua-Annotations#field) as a type.
+* Arrays are indicated with a `[]`
 ```lua
 ---@type string[]
 local msg = {"hello", "world"}
 ```
 
-#### table
-Tables are formatted as `table<KEY_TYPE, VALUE_TYPE>`
+* Tables are formatted as `table<KEY_TYPE, VALUE_TYPE>`
 ```lua
 ---@type table<string, number>
 local CalendarStatus = {
@@ -108,24 +115,10 @@ local CalendarStatus = {
 }
 ```
 
-#### function
-Functions are formatted as `fun(param:MY_TYPE): RETURN_TYPE`
+* Functions are formatted as `fun(param:MY_TYPE): RETURN_TYPE` and can be used in e.g. [@overload](EmmyLua-Annotations#overload)
 ```lua
 fun(x: number): number
 ```
-Function types can be used in e.g. [@overload](EmmyLua-Annotations#overload)
-
-#### class
-Classes can be [used](EmmyLua-Annotations#class) and [returned](EmmyLua-Annotations#field) as a type.
-
-### Multiple Types
-Types are separated with `|`
-```lua
----@param nameOrIndex string|number
----@return table|nil info
-function GetQuestInfo(nameOrIndex) end
-```
-![](https://user-images.githubusercontent.com/1073877/111910355-5526d080-8a61-11eb-9c6e-26a30604258e.png)
 
 #### `@generic`
 Simulates generics.
