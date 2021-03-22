@@ -1,7 +1,6 @@
 * _Disclaimer: This article was written by a user in an effort to get basic documentation._
 
-[EmmyLua](https://github.com/EmmyLua) annotations are doc comments similar to [LDoc](https://stevedonovan.github.io/ldoc/manual/doc.md.html) tags, but instead of generating documentation they are used to improve features like signature information.  
-Also refer to the [official documentation](https://emmylua.github.io/), although Sumneko's implementation might not necessarily be the same.
+[EmmyLua](https://github.com/EmmyLua) annotations are doc comments similar to [LDoc](https://stevedonovan.github.io/ldoc/manual/doc.md.html) tags, but instead of generating documentation they are used to improve features like code completion and signature information. Also refer to the [official documentation](https://emmylua.github.io/annotation.html), although Sumneko's implementation might not necessarily be the same.
 
 ![](https://user-images.githubusercontent.com/1073877/111884243-a337c780-89c0-11eb-856e-b6c3b1042810.gif)
 
@@ -68,8 +67,65 @@ local Frame = {}
 #### `@field`
 Adds a field to a class.
 
+For example a table/structure can be annotated as a class with fields.
+```lua
+---@param id number
+---@return BNetAccountInfo accountInfo
+function GetAccountInfoByID(id) end
+
+---@class BNetAccountInfo
+---@field accountName string
+---@field isFriend boolean
+---@field isFavorite boolean
+---@field note string
+local BNetAccountInfo = {}
+```
+![](https://user-images.githubusercontent.com/1073877/111985625-1fd7bc80-8b0d-11eb-86d7-a0fd809c2ed4.png)
+
+![](https://user-images.githubusercontent.com/1073877/111985500-f585ff00-8b0c-11eb-9987-3a8bc78a7e76.png)
+
 #### `@type`
 Specifies the type of a variable.
+
+Known basic types are `nil, boolean, number, string, function, userdata, thread, table`
+
+#### array
+Arrays are indicated with a `[]`
+```lua
+---@type string[]
+local msg = {"hello", "world"}
+```
+
+#### table
+Tables are formatted as `table<KEY_TYPE, VALUE_TYPE>`
+```lua
+---@type table<string, number>
+local CalendarStatus = {
+	Invited = 0,
+	Available = 1,
+	Declined = 2,
+	Confirmed = 3,
+}
+```
+
+#### function
+Functions are formatted as `fun(param:MY_TYPE): RETURN_TYPE`
+```lua
+fun(x: number): number
+```
+Function types can be used in e.g. [@overload](EmmyLua-Annotations#overload)
+
+#### class
+Classes can be [used](EmmyLua-Annotations#class) and [returned](EmmyLua-Annotations#field) as a type.
+
+### Multiple Types
+Types are separated with `|`
+```lua
+---@param nameOrIndex string|number
+---@return table|nil info
+function GetQuestInfo(nameOrIndex) end
+```
+![](https://user-images.githubusercontent.com/1073877/111910355-5526d080-8a61-11eb-9c6e-26a30604258e.png)
 
 #### `@generic`
 Simulates generics.
@@ -154,34 +210,8 @@ function io.popen(prog, mode) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111886711-139a1500-89d0-11eb-9c90-f3f8007ef750.png)
 
-### Types
-#### Multiple Types
-Types are separated with `|`
-```lua
----@param nameOrIndex string|number
----@return table|nil info
-function GetQuestInfo(nameOrIndex) end
-```
-![](https://user-images.githubusercontent.com/1073877/111910355-5526d080-8a61-11eb-9c6e-26a30604258e.png)
-
-#### array
-Arrays are indicated with a `[]`
-```lua
-string[]
-```
-
-#### table
-```lua
-table<string, number>
-```
-
-#### function
-```lua
-fun(x: number): number
-```
-
 ### References
-* EmmyLua: https://emmylua.github.io/
+* EmmyLua: https://emmylua.github.io/annotation.html
 * Examples: https://github.com/sumneko/lua-language-server/tree/master/meta
 * Tests: https://github.com/sumneko/lua-language-server/blob/master/test/definition/luadoc.lua
 * Issues: https://github.com/sumneko/lua-language-server/issues?q=label%3AEmmyLua
