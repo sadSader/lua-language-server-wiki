@@ -47,7 +47,7 @@ local dog = {}
 ---@type Dog
 local dog2 = {}
 ```
-![](https://user-images.githubusercontent.com/1073877/111887515-d6388600-89d5-11eb-9b16-329b3618e339.png)
+![](https://user-images.githubusercontent.com/1073877/112010965-14de5580-8b28-11eb-8f97-31851ba0cc1d.png)
 
 Classes can support multiple inheritance.
 ```lua
@@ -74,13 +74,20 @@ function GetAccountInfoByID(id) end
 ---@class BNetAccountInfo
 ---@field accountName string
 ---@field isFriend boolean
----@field isFavorite boolean
----@field note string
+---@field gameAccountInfo BNetGameAccountInfo
 local BNetAccountInfo = {}
-```
-![](https://user-images.githubusercontent.com/1073877/111985625-1fd7bc80-8b0d-11eb-86d7-a0fd809c2ed4.png)
 
-![](https://user-images.githubusercontent.com/1073877/111985500-f585ff00-8b0c-11eb-9987-3a8bc78a7e76.png)
+---@class BNetGameAccountInfo
+---@field gameAccountID number
+---@field characterName string
+local BNetGameAccountInfo = {}
+
+local info = GetAccountInfoByID(1)
+print(info.gameAccountInfo.characterName)
+```
+![](https://user-images.githubusercontent.com/1073877/112010872-fe37fe80-8b27-11eb-9180-65f3903b2203.png)
+
+![](https://user-images.githubusercontent.com/1073877/112011546-a77ef480-8b28-11eb-8f98-8fe8f0c09385.png)
 
 #### Types and `@type`
 Specifies the type of a variable. Basic types are supported: `nil, boolean, number, string, function, userdata, thread, table`
