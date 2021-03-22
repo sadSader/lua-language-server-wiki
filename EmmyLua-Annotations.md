@@ -65,9 +65,7 @@ local Frame = {}
 ![](https://user-images.githubusercontent.com/1073877/111890328-bced0500-89e8-11eb-9129-81e220e8428f.png)
 
 #### `@field`
-Adds a field to a class.
-
-For example a table/structure can be annotated as a class with fields.
+Adds a field to a class. For example a table/structure can be annotated as a class with fields.
 ```lua
 ---@param id number
 ---@return BNetAccountInfo accountInfo
@@ -84,11 +82,8 @@ local BNetAccountInfo = {}
 
 ![](https://user-images.githubusercontent.com/1073877/111985500-f585ff00-8b0c-11eb-9987-3a8bc78a7e76.png)
 
-#### `@type`
-Specifies the type of a variable.
-
-Known basic types are: `nil, boolean, number, string, function, userdata, thread, table`
-
+#### Types and `@type`
+Specifies the type of a variable. Basic types are supported: `nil, boolean, number, string, function, userdata, thread, table`
 * Multiple types are separated with `|`
 ```lua
 ---@param nameOrIndex string|number
@@ -115,13 +110,10 @@ local CalendarStatus = {
 }
 ```
 
-* Functions are formatted as `fun(param:MY_TYPE): RETURN_TYPE` and can be used in e.g. [@overload](EmmyLua-Annotations#overload)
+* Functions are formatted as `fun(param: VALUE_TYPE): RETURN_TYPE` and can be used in e.g. [@overload](EmmyLua-Annotations#overload)
 ```lua
 fun(x: number): number
 ```
-
-#### `@generic`
-Simulates generics.
 
 #### `@vararg`
 Indicates a function has multiple variable arguments.
@@ -171,6 +163,24 @@ Specifies multiple signatures.
 function hooksecurefunc(tbl, name, hook) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111889021-0128d700-89e2-11eb-9091-01b991b017af.png)
+
+#### `@generic`
+Simulates generics.
+```lua
+---@class Foo
+local Foo = {}
+
+function Foo:bar1() end
+
+---@generic T
+---@param arg1 `T`
+---@return T
+function Generic(arg1) print(arg1) end
+
+local v1 = Generic("Foo") -- v1 is an object of the Foo class
+print(v1.bar1) -- function
+```
+![](https://user-images.githubusercontent.com/1073877/112006145-bc0cbe00-8b23-11eb-8b59-ffe4cc4c6904.png)
 
 ### Comments
 Annotation comments start with `@`
