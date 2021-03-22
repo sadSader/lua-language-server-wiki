@@ -142,12 +142,13 @@ Aliases are useful for reusing param types e.g. a function or string literals.
 ```lua
 ---@alias exitcode '"exit"'|'"signal"'
 
----@return exitcode? exitcode
+---@return exitcode exitcode
 function file:close() end
 
----@return exitcode? exitcode
+---@return exitcode exitcode
 function io.close(file) end
 ```
+
 String literals for an alias can be put on multiple lines and commented with `#`
 ```lua
 ---@alias popenmode
