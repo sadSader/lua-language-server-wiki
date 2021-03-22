@@ -4,7 +4,19 @@
 
 ![](https://user-images.githubusercontent.com/1073877/111884243-a337c780-89c0-11eb-856e-b6c3b1042810.gif)
 
-### Annotations
+## Annotations
+* [@param](#param)
+* [@return](#return)
+* [@class](#class)
+* [@field](#field)
+* [Types and @type](#types-and-type)
+* [@vararg](#vararg)
+* [@alias](#alias)
+* [@overload](#overload)
+* [@generic](#generic)
+* [Comments](#Comments)
+* [Nilable Params](#nilable-params)
+
 #### `@param`
 Specifies the type of function params.
 ```lua
@@ -65,7 +77,7 @@ local Frame = {}
 ![](https://user-images.githubusercontent.com/1073877/111890328-bced0500-89e8-11eb-9129-81e220e8428f.png)
 
 #### `@field`
-Adds a field to a class. For example a table/structure can be annotated as a class with fields.
+Declares a field on a class. For example a table/structure can be annotated as a class with fields.
 ```lua
 ---@param id number
 ---@return BNetAccountInfo accountInfo
