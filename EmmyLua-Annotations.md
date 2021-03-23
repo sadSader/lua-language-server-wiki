@@ -102,7 +102,8 @@ print(info.gameAccountInfo.characterName)
 ![](https://user-images.githubusercontent.com/1073877/112011546-a77ef480-8b28-11eb-8f98-8fe8f0c09385.png)
 
 #### Types and `@type`
-Specifies the type of a variable. Basic types are supported: `nil, boolean, number, string, function, userdata, thread, table`
+Known types are: `nil, boolean, number, string, function, userdata, thread, table, ..., any`
+* Classes can be [used](EmmyLua-Annotations#class) and passed or [returned](EmmyLua-Annotations#field) as a type.
 * Multiple types are separated with `|`
 ```lua
 ---@param nameOrIndex string|number
@@ -110,8 +111,7 @@ Specifies the type of a variable. Basic types are supported: `nil, boolean, numb
 function GetQuestInfo(nameOrIndex) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111910355-5526d080-8a61-11eb-9c6e-26a30604258e.png)
-
-* Classes can be [used](EmmyLua-Annotations#class) and [returned](EmmyLua-Annotations#field) as a type.
+* `@type` specifies the type of a variable. 
 * Arrays are indicated with a `[]`
 ```lua
 ---@type string[]
