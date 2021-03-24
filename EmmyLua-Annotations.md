@@ -250,8 +250,8 @@ function hello() end
 ```
 
 #### `@diagnostic`
-Controls diagnostics for errors, warnings, information and hints ([script/proto/define.lua](https://github.com/sumneko/lua-language-server/blob/1.19.0/script/proto/define.lua)).
-* `disable-next-line` - Disables diagnostics for the below variable.
+Controls diagnostics for errors, warnings, information and hints ([script/proto/define.lua](https://github.com/sumneko/lua-language-server/blob/1.19.0/script/proto/define.lua))
+* `disable-next-line` - Disables diagnostics for the below line.
 * `disable-line`
 * `disable` - Disables diagnostics for the file.
 * `enable` - Enables diagnostics for the file.
