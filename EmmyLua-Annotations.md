@@ -10,12 +10,17 @@
 * [@class](#class)
 * [@field](#field)
 * [Types and @type](#types-and-type)
+* [Comments](#Comments)
+* [Nilable Params](#nilable-params)
 * [@vararg](#vararg)
 * [@alias](#alias)
 * [@overload](#overload)
 * [@generic](#generic)
-* [Comments](#Comments)
-* [Nilable Params](#nilable-params)
+* [@version](#version)
+* [@diagnostic](#diagnostic)
+* [@deprecated](#deprecated)
+* [@meta](#meta)
+* [@see](#see)
 
 #### `@param`
 Specifies the type of function params.
@@ -134,6 +139,38 @@ local CalendarStatus = {
 fun(x: number): number
 ```
 
+### Comments
+Annotation comments start with `@`
+```lua
+--this is a valid comment
+---@param msg string @the message to show
+function greet(msg) end
+```
+![](https://user-images.githubusercontent.com/1073877/111888658-d25d3180-89de-11eb-9e05-10bc61627f2a.png)
+
+Comments have markdown formatting.
+```lua
+--- This is **bolded text**
+--- [click me](https://www.google.com/)
+--- ```
+--- for i, v in ipairs(tbl) do body end
+--- ```
+---@param msg string
+function greet(msg) end
+```
+![](https://user-images.githubusercontent.com/1073877/111888172-64af0680-89da-11eb-9c49-26a69642d74b.png)
+
+### Nilable Params
+Appending a question mark (after the first word) marks a param optional/nilable.
+```lua
+---@param prog  string
+---@param mode? string
+---@return file*?
+---@return string? errmsg
+function io.popen3(prog, mode) end
+```
+![](https://user-images.githubusercontent.com/1073877/112008831-21fa4500-8b26-11eb-999b-b7dab2fc8298.png)
+
 #### `@vararg`
 Indicates a function has multiple variable arguments.
 ```lua
@@ -201,37 +238,34 @@ print(v1.bar1) -- function
 ```
 ![](https://user-images.githubusercontent.com/1073877/112006145-bc0cbe00-8b23-11eb-8b59-ffe4cc4c6904.png)
 
-### Comments
-Annotation comments start with `@`
+#### `@version`
+Marks if function or class is exclusive to specific Lua versions: `5.1, 5.2, 5.3, 5.4, JIT`
 ```lua
---this is a valid comment
----@param msg string @the message to show
-function greet(msg) end
+---@version 5.1
+function hello() end
 ```
-![](https://user-images.githubusercontent.com/1073877/111888658-d25d3180-89de-11eb-9e05-10bc61627f2a.png)
+```lua
+---@version >5.2,JIT
+function hello() end
+```
 
-Comments have markdown formatting.
+#### `@diagnostic`
+Controls diagnostics for errors, warnings, information and hints ([script/proto/define.lua](https://github.com/sumneko/lua-language-server/blob/1.19.0/script/proto/define.lua)).
+* `disable-next-line` - Disables diagnostics for the below variable.
+* `disable-line`
+* `disable` - Disables diagnostics for the file.
+* `enable` - Enables diagnostics for the file.
 ```lua
---- This is **bolded text**
---- [click me](https://www.google.com/)
---- ```
---- for i, v in ipairs(tbl) do body end
---- ```
----@param msg string
-function greet(msg) end
+---@diagnostic disable-next-line: unused-local
+function hello(test) end
 ```
-![](https://user-images.githubusercontent.com/1073877/111888172-64af0680-89da-11eb-9c49-26a69642d74b.png)
+![](https://user-images.githubusercontent.com/1073877/112365313-cc659a00-8cd7-11eb-99be-722fa32d4491.gif)
 
-### Nilable Params
-Appending a question mark (after the first word) marks a param optional/nilable.
-```lua
----@param prog  string
----@param mode? string
----@return file*?
----@return string? errmsg
-function io.popen3(prog, mode) end
-```
-![](https://user-images.githubusercontent.com/1073877/112008831-21fa4500-8b26-11eb-999b-b7dab2fc8298.png)
+![](https://user-images.githubusercontent.com/1073877/112364413-c4f1c100-8cd6-11eb-88a0-e45a56953e76.gif)
+
+#### `@deprecated`
+#### `@meta`
+#### `@see`
 
 ### References
 * EmmyLua: https://emmylua.github.io/annotation.html
