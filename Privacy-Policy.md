@@ -24,6 +24,8 @@ To not send any usage data or error reports to the development team, set the ``L
 
 By default ``Lua.telemetry.enable`` is set to ``null``. With that setting, no data is sent to the development team, but UI will appear asking users to agree to enabling these settings. Only when a user explicitly opts-in will any data ever be sent.
 
+If you choose to enable telemetry, I would be very grateful. In addition to improving the quality of the extension through error reports, more importantly, this will be reflected in the number of users, which will motivate me to continue developing this extension.
+
 # Use of the collected data
 
 The collected data is used to improve the `Lua-language-server`. The collected data is public, you can find it at http://119.45.194.183/
