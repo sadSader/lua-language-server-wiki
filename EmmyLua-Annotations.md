@@ -107,7 +107,7 @@ print(info.gameAccountInfo.characterName)
 ![](https://user-images.githubusercontent.com/1073877/112011546-a77ef480-8b28-11eb-8f98-8fe8f0c09385.png)
 
 #### Types and `@type`
-Known types are: `nil, boolean, number, string, function, userdata, thread, table, ..., any`
+Known types are: `nil, boolean, number, integer, string, function, userdata, lightuserdata, thread, table, ..., any, file*`
 * Classes can be [used](EmmyLua-Annotations#class) and passed or [returned](EmmyLua-Annotations#field) as a type.
 * Multiple types are separated with `|`
 ```lua
@@ -239,7 +239,7 @@ print(v1.bar1) -- function
 ![](https://user-images.githubusercontent.com/1073877/112006145-bc0cbe00-8b23-11eb-8b59-ffe4cc4c6904.png)
 
 #### `@version`
-Marks if function or class is exclusive to specific Lua versions: `5.1, 5.2, 5.3, 5.4, JIT`
+Marks if a function or class is exclusive to specific Lua versions: `5.1, 5.2, 5.3, 5.4, JIT`
 ```lua
 ---@version 5.1
 function hello() end
