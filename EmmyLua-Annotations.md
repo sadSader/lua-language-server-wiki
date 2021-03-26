@@ -272,3 +272,4 @@ function hello(test) end
 * Examples: https://github.com/sumneko/lua-language-server/tree/master/meta
 * Tests: https://github.com/sumneko/lua-language-server/blob/master/test/definition/luadoc.lua
 * Issues: https://github.com/sumneko/lua-language-server/issues?q=label%3AEmmyLua
+* Discussion: https://github.com/sumneko/lua-language-server/discussions/470
