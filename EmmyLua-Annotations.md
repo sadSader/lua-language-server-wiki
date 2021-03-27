@@ -264,6 +264,8 @@ function hello(test) end
 ![](https://user-images.githubusercontent.com/1073877/112364413-c4f1c100-8cd6-11eb-88a0-e45a56953e76.gif)
 
 #### `@deprecated`
+![](https://user-images.githubusercontent.com/75196080/112711806-35b5fa80-8edc-11eb-9a06-41a41545c686.gif)
+
 #### `@meta`
 #### `@see`
 
