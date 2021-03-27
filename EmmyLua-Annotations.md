@@ -47,6 +47,18 @@ function GetName() end
 ---@return string firstName, string middleName, string lastName
 function GetName() end
 ```
+```lua
+--- with return name
+---@return string newmsg comment
+function Foo1(msg) end
+```
+![](https://user-images.githubusercontent.com/75196080/112711892-ecb27600-8edc-11eb-9215-9d2f6761d086.png)
+```lua
+--- without return name
+---@return string # newmsg comment
+function Foo2(msg) end
+```
+![](https://user-images.githubusercontent.com/75196080/112711894-f045fd00-8edc-11eb-9652-563c52dbaa6e.png)
 
 #### `@class`
 Simulates classes, supporting OOP inheritance.
@@ -140,7 +152,9 @@ fun(x: number): number
 ```
 
 ### Comments
-Annotation comments start with `@`
+Annotation comments start with `@` or `#`
+
+In line `---@param` symbol `@` or `#` can be omitted
 ```lua
 --this is a valid comment
 ---@param msg string @the message to show
@@ -159,6 +173,18 @@ Comments have markdown formatting.
 function greet(msg) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111888172-64af0680-89da-11eb-9c49-26a69642d74b.png)
+```lua
+--- ordered and unordered list:
+---@param tbl table comments for param *tbl*
+-- - *unordered list*
+--   - item Level 2
+--     - item level 3
+--* *ordered list*
+-- 1. item 1
+-- 8. item 2
+function Greet(tbl) end
+```
+![](https://user-images.githubusercontent.com/75196080/112712043-d9ec7100-8edd-11eb-9f4d-09bb9433ae05.png)
 
 ### Nilable Params
 Appending a question mark (after the first word) marks a param optional/nilable.
