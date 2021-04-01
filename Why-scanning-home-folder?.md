@@ -1,6 +1,8 @@
 # Why scanning?
 When you open a workspace, the extension needs to scan and load lua files in the workspace for features such as searching definitions across files.
+
 According to the provisions of the [LSP](https://microsoft.github.io/language-server-protocol/specifications/specification-3-17/#initialize), the client will provide the server with the uri of the folder to be scanned (field `rootUri`). If you only opened a single file, then the uri should be null.
+
 A common situation is that some clients or users misunderstand the meaning of `rootUri` and set this field to the uri of home, the root directory of the client, the root directory of this extension, etc. In this case, the extension will faithfully scan the file according to the provided uri.
 
 # How to check `rootUri` at server side?
