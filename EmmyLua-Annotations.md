@@ -279,8 +279,8 @@ function hello() end
 Controls diagnostics for errors, warnings, information and hints ([script/proto/define.lua](https://github.com/sumneko/lua-language-server/blob/1.19.0/script/proto/define.lua))
 * `disable-next-line` - Disables diagnostics for the below line.
 * `disable-line`
-* `disable` - Disables diagnostics for the file.
-* `enable` - Enables diagnostics for the file.
+* `disable` - Toggles diagnostics off for the rest of the file.
+* `enable` - Toggles diagnostics on for the rest of the file.
 ```lua
 ---@diagnostic disable-next-line: unused-local
 function hello(test) end
@@ -288,6 +288,8 @@ function hello(test) end
 ![](https://user-images.githubusercontent.com/1073877/112365313-cc659a00-8cd7-11eb-99be-722fa32d4491.gif)
 
 ![](https://user-images.githubusercontent.com/1073877/112364413-c4f1c100-8cd6-11eb-88a0-e45a56953e76.gif)
+
+![](https://user-images.githubusercontent.com/75196080/112667560-6fe8b300-8e6e-11eb-80b5-991827306f49.png)
 
 #### `@deprecated`
 ![](https://user-images.githubusercontent.com/75196080/112711806-35b5fa80-8edc-11eb-9a06-41a41545c686.gif)
