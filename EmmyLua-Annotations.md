@@ -277,7 +277,7 @@ function hello() end
 
 #### `@diagnostic`
 Controls diagnostics for errors, warnings, information and hints ([script/proto/define.lua](https://github.com/sumneko/lua-language-server/blob/1.19.0/script/proto/define.lua))
-* `disable-next-line` - Disables diagnostics for the below line.
+* `disable-next-line` - Disables diagnostics for the next line.
 * `disable-line`
 * `disable` - Toggles diagnostics off for the rest of the file.
 * `enable` - Toggles diagnostics on for the rest of the file.
@@ -295,7 +295,10 @@ function hello(test) end
 ![](https://user-images.githubusercontent.com/75196080/112711806-35b5fa80-8edc-11eb-9a06-41a41545c686.gif)
 
 #### `@meta`
+This is for internal use by Sumneko. Files marked with this will be ignored ([#370](https://github.com/sumneko/lua-language-server/issues/370#issuecomment-770678133)).
+
 #### `@see`
+Functionally the same as an annotation comment.
 
 ### References
 * EmmyLua: https://emmylua.github.io/annotation.html
