@@ -279,8 +279,8 @@ function hello() end
 Controls diagnostics for errors, warnings, information and hints ([script/proto/define.lua](https://github.com/sumneko/lua-language-server/blob/1.19.0/script/proto/define.lua))
 * `disable-next-line` - Disables diagnostics for the next line.
 * `disable-line`
-* `disable` - Toggles diagnostics off for the rest of the file.
-* `enable` - Toggles diagnostics on for the rest of the file.
+* `disable` - Disables diagnostics for the file (acts as a toggle).
+* `enable` - Enables diagnostics for the file (acts as a toggle).
 ```lua
 ---@diagnostic disable-next-line: unused-local
 function hello(test) end
