@@ -102,7 +102,8 @@ Known types are: `nil, any, boolean, string, number, integer, function, table, t
 ---@return table|nil info
 function GetQuestInfo(nameOrIndex) end
 ```
-![](https://user-images.githubusercontent.com/1073877/111910355-5526d080-8a61-11eb-9c6e-26a30604258e.png)
+![](https://user-images.githubusercontent.com/1073877/114528298-2c9d8b00-9c49-11eb-9d37-9219f8df5a0d.png)
+
 * `@type` specifies the type of a variable. 
 * Arrays are indicated with a `[]`
 ```lua
@@ -121,12 +122,12 @@ local CalendarStatus = {
 }
 ```
 
-* Functions are formatted as `fun(param: VALUE_TYPE): RETURN_TYPE` and can be used in e.g. [@overload](EmmyLua-Annotations#overload)
+* Functions are formatted as `fun(param: VALUE_TYPE): RETURN_TYPE` and are used in e.g. [@overload](EmmyLua-Annotations#overload)
 ```lua
 fun(x: number): number
 ```
 ### Comments
-There are multiple ways to format comments. The `@` and `#` symbols can be used to begin an annotation comment. This is useful for `@return` if you don't want to specify a param name but do want to add a comment.
+There are multiple ways to format comments. The `@` and `#` symbols can be used to explicitly begin an annotation comment. This is useful for `@return` if you don't want to specify a param name but do want to add a comment.
 ```lua
 --this is a valid comment
 --- this is also valid
@@ -163,9 +164,9 @@ Appending a question mark (after the first word) marks a param optional/nilable.
 ---@param mode? string
 ---@return file*?
 ---@return string? errmsg
-function io.popen3(prog, mode) end
+function io.popen2(prog, mode) end
 ```
-![](https://user-images.githubusercontent.com/1073877/112008831-21fa4500-8b26-11eb-999b-b7dab2fc8298.png)
+![](https://user-images.githubusercontent.com/1073877/114528633-7be3bb80-9c49-11eb-8d34-a66db3c9e449.png)
 
 #### `@vararg`
 Indicates a function has multiple variable arguments.
@@ -184,26 +185,26 @@ function tostringall(...) end
 #### `@alias`
 Aliases are useful for reusing param types e.g. a function or string literals.
 ```lua
----@alias exitcode '"exit"'|'"signal"'
+---@alias exitcode2 '"exit"' | '"signal"'
 
----@return exitcode exitcode
-function file:close() end
+---@return exitcode2
+function io.close2() end
 
----@return exitcode exitcode
-function io.close(file) end
+---@return exitcode2
+function file:close2() end
 ```
 
-String literals for an alias can be put on multiple lines and commented with `#`
+String literals for an alias can be listed on multiple lines and commented with `#`
 ```lua
----@alias popenmode2
+---@alias popenmode3
 ---| '"r"' # Read data from this program by `file`.
 ---| '"w"' # Write data to this program by `file`.
 
 ---@param prog string
----@param mode popenmode2
-function io.popen2(prog, mode) end
+---@param mode popenmode3
+function io.popen3(prog, mode) end
 ```
-![](https://user-images.githubusercontent.com/1073877/112009178-743b6600-8b26-11eb-95b2-5f127a58b1be.png)
+![](https://user-images.githubusercontent.com/1073877/114529340-252ab180-9c4a-11eb-8f08-f34a3e94957b.png)
 
 #### `@overload`
 Specifies multiple signatures.
@@ -257,7 +258,7 @@ function hello(test) end
 
 ![](https://user-images.githubusercontent.com/1073877/112364413-c4f1c100-8cd6-11eb-88a0-e45a56953e76.gif)
 
-The diagnostics state can be toggled.
+The diagnostics state behaves as a toggle.
 
 ![](https://user-images.githubusercontent.com/1073877/114522605-d0843800-9c43-11eb-878b-c5c67166260f.png)
 
