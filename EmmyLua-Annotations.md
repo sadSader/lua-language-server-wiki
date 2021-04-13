@@ -215,7 +215,7 @@ Specifies multiple signatures.
 ---@overload fun(name: string, hook: function)
 function hooksecurefunc(tbl, name, hook) end
 ```
-![](https://user-images.githubusercontent.com/1073877/111889021-0128d700-89e2-11eb-9091-01b991b017af.png)
+![](https://user-images.githubusercontent.com/1073877/114531962-a84d0700-9c4c-11eb-90ef-ea1fdddb9137.png)
 
 #### `@generic`
 Simulates generics.
