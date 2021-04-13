@@ -52,34 +52,21 @@ function GetName() end
 Simulates classes, supporting OOP inheritance.
 ```lua
 ---@class Animal
----@field weight number
-local animal = {}
+---@field legs number
+local Animal = {}
+function Animal:Walk() end
 
-function animal:eat()
-end
+---@class Pet
+---@field ownerName string
+local Pet = {}
 
----@class Dog : Animal
-local dog = {}
+---@class Cat : Animal, Pet
+local Cat = {}
 
----@type Dog
-local dog2 = {}
+---@type Cat
+local gamercat = {}
 ```
-![](https://user-images.githubusercontent.com/1073877/112010965-14de5580-8b28-11eb-8f97-31851ba0cc1d.png)
-
-Classes can support multiple inheritance.
-```lua
----@class ScriptObject
-local ScriptObject = {}
-function ScriptObject:GetScript() end
-
----@class UIObject
-local UIObject = {}
-function UIObject:GetName() end
-
----@class Frame : ScriptObject, UIObject
-local Frame = {}
-```
-![](https://user-images.githubusercontent.com/1073877/111890328-bced0500-89e8-11eb-9129-81e220e8428f.png)
+![](https://user-images.githubusercontent.com/1073877/114519054-4c7c8100-9c40-11eb-9619-565be6aee7fd.png)
 
 #### `@field`
 Declares a field on a class. For example a table/structure can be annotated as a class with fields.
@@ -102,9 +89,9 @@ local BNetGameAccountInfo = {}
 local info = GetAccountInfoByID(1)
 print(info.gameAccountInfo.characterName)
 ```
-![](https://user-images.githubusercontent.com/1073877/112010872-fe37fe80-8b27-11eb-9180-65f3903b2203.png)
+![](https://user-images.githubusercontent.com/1073877/114519513-c6146f00-9c40-11eb-8866-9ab6f6df5a27.png)
 
-![](https://user-images.githubusercontent.com/1073877/112011546-a77ef480-8b28-11eb-8f98-8fe8f0c09385.png)
+![](https://user-images.githubusercontent.com/1073877/114520809-19d38800-9c42-11eb-9bbe-4310e5b0b986.gif)
 
 #### Types and `@type`
 Known types are: `nil, any, boolean, string, number, integer, function, table, thread, ..., userdata, lightuserdata`
@@ -139,7 +126,7 @@ local CalendarStatus = {
 fun(x: number): number
 ```
 ### Comments
-There are multiple ways to format comments. The `@` and `#` symbols can be used to begin an annotation comment. This can be useful for `@return` if you don't want to specify a param name but do want to add a comment.
+There are multiple ways to format comments. The `@` and `#` symbols can be used to begin an annotation comment. This is useful for `@return` if you don't want to specify a param name but do want to add a comment.
 ```lua
 --this is a valid comment
 --- this is also valid
@@ -221,10 +208,10 @@ function io.popen2(prog, mode) end
 #### `@overload`
 Specifies multiple signatures.
 ```lua
----@overload fun(name: string, hook: function)
 ---@param tbl table
 ---@param name string
 ---@param hook function
+---@overload fun(name: string, hook: function)
 function hooksecurefunc(tbl, name, hook) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/111889021-0128d700-89e2-11eb-9091-01b991b017af.png)
@@ -234,18 +221,16 @@ Simulates generics.
 ```lua
 ---@class Foo
 local Foo = {}
-
-function Foo:bar1() end
+function Foo:Bar() end
 
 ---@generic T
----@param arg1 `T`
+---@param name `T`
 ---@return T
-function Generic(arg1) print(arg1) end
+function Generic(name) end
 
-local v1 = Generic("Foo") -- v1 is an object of the Foo class
-print(v1.bar1) -- function
+local v = Generic("Foo") -- v is an object of Foo
 ```
-![](https://user-images.githubusercontent.com/1073877/112006145-bc0cbe00-8b23-11eb-8b59-ffe4cc4c6904.png)
+![](https://user-images.githubusercontent.com/1073877/114521804-0d9bfa80-9c43-11eb-81cb-61aa9d281f40.png)
 
 #### `@version`
 Marks if a function or class is exclusive to specific Lua versions: `5.1, 5.2, 5.3, 5.4, JIT`
@@ -262,8 +247,8 @@ function hello() end
 Controls diagnostics for errors, warnings, information and hints ([script/proto/define.lua](https://github.com/sumneko/lua-language-server/blob/1.19.0/script/proto/define.lua))
 * `disable-next-line` - Disables diagnostics for the next line.
 * `disable-line`
-* `disable` - Disables diagnostics for the file (acts as a toggle).
-* `enable` - Enables diagnostics for the file (acts as a toggle).
+* `disable` - Disables diagnostics for the file.
+* `enable` - Enables diagnostics for the file.
 ```lua
 ---@diagnostic disable-next-line: unused-local
 function hello(test) end
@@ -272,9 +257,13 @@ function hello(test) end
 
 ![](https://user-images.githubusercontent.com/1073877/112364413-c4f1c100-8cd6-11eb-88a0-e45a56953e76.gif)
 
-![](https://user-images.githubusercontent.com/75196080/112667560-6fe8b300-8e6e-11eb-80b5-991827306f49.png)
+The diagnostics state can be toggled.
+
+![](https://user-images.githubusercontent.com/1073877/114522605-d0843800-9c43-11eb-878b-c5c67166260f.png)
 
 #### `@deprecated`
+Visibly marks a function as deprecated.
+
 ![](https://user-images.githubusercontent.com/75196080/112711806-35b5fa80-8edc-11eb-9a06-41a41545c686.gif)
 
 #### `@see`
