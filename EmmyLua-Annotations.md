@@ -47,18 +47,6 @@ function GetName() end
 ---@return string firstName, string middleName, string lastName
 function GetName() end
 ```
-```lua
---- with return name
----@return string newmsg comment
-function Foo1(msg) end
-```
-![](https://user-images.githubusercontent.com/75196080/112711892-ecb27600-8edc-11eb-9215-9d2f6761d086.png)
-```lua
---- without return name
----@return string # newmsg comment
-function Foo2(msg) end
-```
-![](https://user-images.githubusercontent.com/75196080/112711894-f045fd00-8edc-11eb-9652-563c52dbaa6e.png)
 
 #### `@class`
 Simulates classes, supporting OOP inheritance.
@@ -150,43 +138,38 @@ local CalendarStatus = {
 ```lua
 fun(x: number): number
 ```
-
 ### Comments
-Annotation comments start with `@` or `#`
-
-In line `---@param` symbol `@` or `#` can be omitted
+There are multiple ways to format comments. The `@` and `#` symbols can be used to begin an annotation comment. This can be useful for `@return` if you don't want to specify a param name but do want to add a comment.
 ```lua
 --this is a valid comment
----@param msg string @the message to show
-function greet(msg) end
+--- this is also valid
+---@param apple string comment 1
+---@return string banana comment 2
+---@return string @comment 3
+---@return string #comment 4
+function Foo(apple) end
 ```
-![](https://user-images.githubusercontent.com/1073877/111888658-d25d3180-89de-11eb-9e05-10bc61627f2a.png)
+![](https://user-images.githubusercontent.com/1073877/114513477-85195c00-9c3a-11eb-85d7-124488d4b00b.png)
 
-Comments have markdown formatting.
+Comments support markdown formatting.
 ```lua
---- This is **bolded text**
---- [click me](https://www.google.com/)
+--- This is **bolded** and this is *cursive* text
+---
+--- [Click me](https://www.google.com/)
 --- ```
---- for i, v in ipairs(tbl) do body end
+--- for i, v in ipairs(tbl) do
+--- 	-- do stuff
+--- end
 --- ```
----@param msg string
-function greet(msg) end
+--- - item 1
+--- - item 2
+---   - level 2
+---@param tbl table comment for `tbl`
+function Foo(tbl) end
 ```
-![](https://user-images.githubusercontent.com/1073877/111888172-64af0680-89da-11eb-9c49-26a69642d74b.png)
-```lua
---- ordered and unordered list:
----@param tbl table comments for param *tbl*
--- - *unordered list*
---   - item Level 2
---     - item level 3
---* *ordered list*
--- 1. item 1
--- 8. item 2
-function Greet(tbl) end
-```
-![](https://user-images.githubusercontent.com/75196080/112712043-d9ec7100-8edd-11eb-9f4d-09bb9433ae05.png)
+![image](https://user-images.githubusercontent.com/1073877/114515870-1e497200-9c3d-11eb-808c-acd74db824de.png)
 
-### Nilable Params
+### Optional Params
 Appending a question mark (after the first word) marks a param optional/nilable.
 ```lua
 ---@param prog  string
@@ -294,11 +277,11 @@ function hello(test) end
 #### `@deprecated`
 ![](https://user-images.githubusercontent.com/75196080/112711806-35b5fa80-8edc-11eb-9a06-41a41545c686.gif)
 
-#### `@meta`
-This is for internal use by Sumneko. Files marked with this will be ignored ([#370](https://github.com/sumneko/lua-language-server/issues/370#issuecomment-770678133)).
-
 #### `@see`
 Functionally the same as an annotation comment.
+
+#### `@meta`
+This is for internal use by Sumneko. Files marked with this will be ignored ([#370](https://github.com/sumneko/lua-language-server/issues/370#issuecomment-770678133)).
 
 ### References
 * EmmyLua: https://emmylua.github.io/annotation.html
