@@ -66,7 +66,7 @@ local Cat = {}
 ---@type Cat
 local gamercat = {}
 ```
-![](https://user-images.githubusercontent.com/1073877/114519054-4c7c8100-9c40-11eb-9619-565be6aee7fd.png)
+![](https://user-images.githubusercontent.com/1073877/114530434-3627f280-9c4b-11eb-9f8d-358e9aadde87.png)
 
 #### `@field`
 Declares a field on a class. For example a table/structure can be annotated as a class with fields.
