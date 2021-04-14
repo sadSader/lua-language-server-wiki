@@ -11,21 +11,21 @@ git submodule update --init --recursive
 + `Windows`:
 ```shell
 cd 3rd\luamake
-tools\ninja.exe -f ninja\msvc.ninja
+compile\install.bat
 cd ..\..
 3rd\luamake\luamake.exe rebuild
 ```
 + `Linux`:
 ```shell
 cd 3rd/luamake
-ninja -f ninja/linux.ninja
+compile/install.sh
 cd ../..
 ./3rd/luamake/luamake rebuild
 ```
 + `macOS`:
 ```shell
 cd 3rd/luamake
-ninja -f ninja/macos.ninja
+compile/install.sh
 cd ../..
 ./3rd/luamake/luamake rebuild
 ```
