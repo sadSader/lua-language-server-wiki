@@ -11,7 +11,7 @@
 * [@field](#field)
 * [Types and @type](#types-and-type)
 * [Comments](#Comments)
-* [Nilable Params](#nilable-params)
+* [Optional Params](#optional-params)
 * [@vararg](#vararg)
 * [@alias](#alias)
 * [@overload](#overload)
