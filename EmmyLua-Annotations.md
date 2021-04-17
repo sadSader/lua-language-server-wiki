@@ -16,8 +16,8 @@
 * [@alias](#alias)
 * [@overload](#overload)
 * [@generic](#generic)
-* [@version](#version)
 * [@diagnostic](#diagnostic)
+* [@version](#version)
 * [@deprecated](#deprecated)
 * [@meta](#meta)
 * [@see](#see)
@@ -233,17 +233,6 @@ local v = Generic("Foo") -- v is an object of Foo
 ```
 ![](https://user-images.githubusercontent.com/1073877/114521804-0d9bfa80-9c43-11eb-81cb-61aa9d281f40.png)
 
-#### `@version`
-Marks if a function or class is exclusive to specific Lua versions: `5.1, 5.2, 5.3, 5.4, JIT`
-```lua
----@version 5.1
-function hello() end
-```
-```lua
----@version >5.2,JIT
-function hello() end
-```
-
 #### `@diagnostic`
 Controls diagnostics for errors, warnings, information and hints ([script/proto/define.lua](https://github.com/sumneko/lua-language-server/blob/1.19.0/script/proto/define.lua))
 * `disable-next-line` - Disables diagnostics for the next line.
@@ -261,6 +250,17 @@ function hello(test) end
 The diagnostics state behaves as a toggle.
 
 ![](https://user-images.githubusercontent.com/1073877/114522605-d0843800-9c43-11eb-878b-c5c67166260f.png)
+
+#### `@version`
+Marks if a function or class is exclusive to specific Lua versions: `5.1, 5.2, 5.3, 5.4, JIT`
+```lua
+---@version 5.1
+function hello() end
+```
+```lua
+---@version >5.2,JIT
+function hello() end
+```
 
 #### `@deprecated`
 Visibly marks a function as deprecated.
