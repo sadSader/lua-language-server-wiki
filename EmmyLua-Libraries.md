@@ -8,6 +8,7 @@ EmmyLua [annotations](https://github.com/sumneko/lua-language-server/wiki/EmmyLu
 		"d:\\SomePath\\EmmyLuaFolder"
 	],
 ```
+![](https://user-images.githubusercontent.com/1073877/115629918-7f3f0d00-a303-11eb-954f-134cb646c030.png)
 
 ## Plugin extension
 To make this more user friendly, an [extension](https://code.visualstudio.com/api/get-started/your-first-extension) that ships its own EmmyLua folder(s) can choose to automatically add this path.
