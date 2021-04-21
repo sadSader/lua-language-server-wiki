@@ -34,13 +34,13 @@ function SetColor(r, g, b) end
 #### `@return`
 Specifies the type of function returns. Note that the return name is optional.
 ```lua
----@return string, string, string 
-function GetName() end
-```
-```lua
 ---@return string firstName
 ---@return string middleName
 ---@return string lastName
+function GetName() end
+```
+```lua
+---@return string, string, string 
 function GetName() end
 ```
 ```lua
@@ -58,10 +58,8 @@ function Animal:Walk() end
 
 ---@class Pet
 ---@field ownerName string
-local Pet = {}
 
 ---@class Cat : Animal, Pet
-local Cat = {}
 
 ---@type Cat
 local gamercat = {}
