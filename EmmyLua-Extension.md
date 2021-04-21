@@ -1,12 +1,15 @@
 * _Disclaimer: This article was written by [someone](https://github.com/sumneko/lua-language-server/issues/417) inexperienced with TypeScript and VS Code extensions._
 * Built-in libraries are also planned to be supported for commonly used environments, see [#409](https://github.com/sumneko/lua-language-server/issues/409).
 
+## External libraries
 EmmyLua [annotations](https://github.com/sumneko/lua-language-server/wiki/EmmyLua-Annotations) can be manually added as an external library via the `Lua -> Workspace: Library` option or in `settings.json`
 ```json
 	"Lua.workspace.library": [
 		"d:\\SomePath\\EmmyLuaFolder"
 	],
 ```
+
+## Third party extension
 To make this more user friendly, an [extension](https://code.visualstudio.com/api/get-started/your-first-extension) that ships its own EmmyLua folder(s) can choose to automatically add this path.
 
 * Add an extension [dependency](https://code.visualstudio.com/api/references/extension-manifest) to your `package.json`
