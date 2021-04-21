@@ -9,7 +9,7 @@ EmmyLua [annotations](https://github.com/sumneko/lua-language-server/wiki/EmmyLu
 	],
 ```
 
-## Third party extension
+## Plugin extension
 To make this more user friendly, an [extension](https://code.visualstudio.com/api/get-started/your-first-extension) that ships its own EmmyLua folder(s) can choose to automatically add this path.
 
 * Add an extension [dependency](https://code.visualstudio.com/api/references/extension-manifest) to your `package.json`
