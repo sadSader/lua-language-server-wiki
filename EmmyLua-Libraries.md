@@ -1,5 +1,5 @@
 ## External libraries
-EmmyLua [annotations](https://github.com/sumneko/lua-language-server/wiki/EmmyLua-Annotations) can be manually added as an external library via the `Lua -> Workspace: Library` option or in `settings.json`
+EmmyLua [annotations](https://github.com/sumneko/lua-language-server/wiki/EmmyLua-Annotations) and other source code can be manually added as external libraries via the `Lua -> Workspace: Library` option or in `settings.json`
 ```json
 	"Lua.workspace.library": [
 		"d:\\SomePath\\EmmyLuaFolder"
