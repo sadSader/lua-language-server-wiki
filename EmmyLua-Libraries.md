@@ -31,7 +31,7 @@ function setExternalLibrary(enable: boolean) {
 	let luaConfig = vscode.workspace.getConfiguration("Lua")
 	let config: string[] | undefined = luaConfig.get("workspace.library")
 	if (config) {
-		// remove any older release versions of our extension path e.g. "publisher.name-0.0.1"
+		// remove any older versions of our path e.g. "publisher.name-0.0.1"
 		for (let i = config.length-1; i >= 0; i--) {
 			const el = config[i]
 			if (el.indexOf(name) > -1 && el.indexOf(path) == -1) {
