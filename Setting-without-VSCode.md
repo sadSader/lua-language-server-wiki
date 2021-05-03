@@ -47,8 +47,10 @@ settings = {
       }
     },
     workspace = {
-      [vim.fn.expand'~/.luarocks/share/lua/5.3'] = true,
-      ['/usr/share/lua/5.3'] = true
+      library = {
+        [vim.fn.expand'~/.luarocks/share/lua/5.3'] = true,
+        ['/usr/share/lua/5.3'] = true
+      }
     }
   }
 }
