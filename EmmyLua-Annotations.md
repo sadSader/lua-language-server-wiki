@@ -156,7 +156,7 @@ function Foo(tbl) end
 ![image](https://user-images.githubusercontent.com/1073877/114515870-1e497200-9c3d-11eb-808c-acd74db824de.png)
 
 ### Optional Params
-Appending a question mark (after the first word) marks a param optional/nilable.
+Appending a question mark (after the first word) marks a param optional/nilable. Another option is to instead use `|nil` as a second type.
 ```lua
 ---@param prog  string
 ---@param mode? string
