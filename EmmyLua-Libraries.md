@@ -23,13 +23,13 @@ An [extension](https://code.visualstudio.com/api/get-started/your-first-extensio
 2.  Add the path to your EmmyLua folder in the configuration.
 ```ts
 function setExternalLibrary(enable: boolean) {
-	let name = "publisher.name" // your extension id
+	const name = "publisher.name" // your extension id
 	// get emmylua path
-	let extension = vscode.extensions.getExtension(name)
-	let path = extension?.extensionPath+"\\EmmyLuaFolder"
+	const extension = vscode.extensions.getExtension(name)
+	const path = extension?.extensionPath+"\\EmmyLuaFolder"
 	// get configuration
-	let luaConfig = vscode.workspace.getConfiguration("Lua")
-	let config: string[] | undefined = luaConfig.get("workspace.library")
+	const luaConfig = vscode.workspace.getConfiguration("Lua")
+	const config: string[] | undefined = luaConfig.get("workspace.library")
 	if (config) {
 		// remove any older versions of our path e.g. "publisher.name-0.0.1"
 		for (let i = config.length-1; i >= 0; i--) {
