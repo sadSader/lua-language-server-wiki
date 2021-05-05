@@ -8,7 +8,7 @@ EmmyLua [annotations](https://github.com/sumneko/lua-language-server/wiki/EmmyLu
 ![](https://user-images.githubusercontent.com/1073877/115629918-7f3f0d00-a303-11eb-954f-134cb646c030.png)
 
 ## Plugin extension
-* _Disclaimer: This article was written by [someone](https://github.com/sumneko/lua-language-server/issues/417) inexperienced with TypeScript and VS Code extensions._
+* _Disclaimer: This article was written by a [user](https://github.com/sumneko/lua-language-server/issues/417)._
 * Built-in libraries are also planned to be supported for commonly used environments, see [#409](https://github.com/sumneko/lua-language-server/issues/409).
 
 An [extension](https://code.visualstudio.com/api/get-started/your-first-extension) that ships its own EmmyLua folder(s) can choose to automatically add this path.
@@ -25,35 +25,34 @@ An [extension](https://code.visualstudio.com/api/get-started/your-first-extensio
 function setExternalLibrary(folder: string, enable: boolean) {
 	const extensionId = "publisher.name"
 	const extensionPath = vscode.extensions.getExtension(extensionId)?.extensionPath
-	const folderPath = extensionPath+folder
+	const folderPath = extensionPath+"\\"+folder
 	const config = vscode.workspace.getConfiguration("Lua")
-	const property: string[] | undefined = config.get("workspace.library")
-	if (property && extensionPath) {
+	const library: string[] | undefined = config.get("workspace.library")
+	if (library && extensionPath) {
 		// remove any older versions of our path e.g. "publisher.name-0.0.1"
-		for (let i = property.length-1; i >= 0; i--) {
-			const el = property[i]
+		for (let i = library.length-1; i >= 0; i--) {
+			const el = library[i]
 			const isSelfExtension = el.indexOf(extensionId) > -1
 			const isCurrentVersion = el.indexOf(extensionPath) > -1
 			if (isSelfExtension && !isCurrentVersion) {
-				property.splice(i, 1)
+				library.splice(i, 1)
 			}
 		}
-		const index = property.indexOf(folderPath)
+		const index = library.indexOf(folderPath)
 		if (enable) {
 			if (index == -1) {
-				property.push(folderPath)
+				library.push(folderPath)
 			}
 		}
 		else {
 			if (index > -1) {
-				property.splice(index, 1)
+				library.splice(index, 1)
 			}
 		}
-		config.update("workspace.library", property, true)
+		config.update("workspace.library", library, true)
 	}
 }
-
-setExternalLibrary("\\EmmyLua", true)
+setExternalLibrary("EmmyLua", true)
 ```
 ```json
     "Lua.workspace.library": [
