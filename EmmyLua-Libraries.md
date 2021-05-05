@@ -23,7 +23,7 @@ An [extension](https://code.visualstudio.com/api/get-started/your-first-extensio
 2.  Add the path to your folder(s) in the configuration.
 ```ts
 function setExternalLibrary(folder: string, enable: boolean) {
-	const extensionId = "publisher.name" // your extension id
+	const extensionId = "publisher.name"
 	const extensionPath = vscode.extensions.getExtension(extensionId)?.extensionPath
 	const folderPath = extensionPath+folder
 	const config = vscode.workspace.getConfiguration("Lua")
@@ -34,8 +34,9 @@ function setExternalLibrary(folder: string, enable: boolean) {
 			const el = property[i]
 			const isSelfExtension = el.indexOf(extensionId) > -1
 			const isCurrentVersion = el.indexOf(extensionPath) > -1
-			if (isSelfExtension && !isCurrentVersion)
+			if (isSelfExtension && !isCurrentVersion) {
 				property.splice(i, 1)
+			}
 		}
 		const index = property.indexOf(folderPath)
 		if (enable) {
