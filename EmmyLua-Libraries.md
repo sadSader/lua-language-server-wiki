@@ -20,41 +20,44 @@ An [extension](https://code.visualstudio.com/api/get-started/your-first-extensio
 	],
 ```
 
-2.  Add the path to your EmmyLua folder in the configuration.
+2.  Add the path to your folder(s) in the configuration.
 ```ts
-function setExternalLibrary(enable: boolean) {
-	const name = "publisher.name" // your extension id
-	// get emmylua path
-	const extension = vscode.extensions.getExtension(name)
-	const path = extension?.extensionPath+"\\EmmyLuaFolder"
-	// get configuration
-	const luaConfig = vscode.workspace.getConfiguration("Lua")
-	const config: string[] | undefined = luaConfig.get("workspace.library")
-	if (config) {
+function setExternalLibrary(folder: string, enable: boolean) {
+	const extensionId = "publisher.name" // your extension id
+	const extensionPath = vscode.extensions.getExtension(extensionId)?.extensionPath
+	const folderPath = extensionPath+folder
+	const config = vscode.workspace.getConfiguration("Lua")
+	const property: string[] | undefined = config.get("workspace.library")
+	if (property && extensionPath) {
 		// remove any older versions of our path e.g. "publisher.name-0.0.1"
-		for (let i = config.length-1; i >= 0; i--) {
-			const el = config[i]
-			if (el.indexOf(name) > -1 && el.indexOf(path) == -1) {
-				config.splice(i, 1)
-			}
+		for (let i = property.length-1; i >= 0; i--) {
+			const el = property[i]
+			const isSelfExtension = el.indexOf(extensionId) > -1
+			const isCurrentVersion = el.indexOf(extensionPath) > -1
+			if (isSelfExtension && !isCurrentVersion)
+				property.splice(i, 1)
 		}
-		// add or remove path
-		const index = config.indexOf(path)
+		const index = property.indexOf(folderPath)
 		if (enable) {
 			if (index == -1) {
-				config.push(path)
+				property.push(folderPath)
 			}
 		}
 		else {
 			if (index > -1) {
-				config.splice(index, 1)
+				property.splice(index, 1)
 			}
 		}
-		luaConfig.update("workspace.library", config, true)
+		config.update("workspace.library", property, true)
 	}
 }
 
-setExternalLibrary(true)
+setExternalLibrary("\\EmmyLua", true)
+```
+```json
+    "Lua.workspace.library": [
+        "c:\\Users\\UserName\\.vscode\\extensions\\publisher.name-0.0.2\\EmmyLua"
+    ],
 ```
 Note that when your extension is uninstalled this path will still remain in the configuration.
 1. After restarting VS Code, the extension files will be removed from disk. However the EmmyLua files would still be already preloaded.
