@@ -15,9 +15,9 @@ An [extension](https://code.visualstudio.com/api/get-started/your-first-extensio
 
 1. Add an extension [dependency](https://code.visualstudio.com/api/references/extension-manifest) to your `package.json`
 ```json
-	"extensionDependencies": [
-		"sumneko.lua"
-	],
+    "extensionDependencies": [
+        "sumneko.lua"
+    ],
 ```
 
 2.  Add the path to your folder(s) in the configuration.
