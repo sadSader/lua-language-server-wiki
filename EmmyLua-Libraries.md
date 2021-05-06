@@ -52,12 +52,13 @@ function setExternalLibrary(folder: string, enable: boolean) {
 		config.update("workspace.library", library, true)
 	}
 }
+
 setExternalLibrary("EmmyLua", true)
 ```
 ```json
-    "Lua.workspace.library": [
-        "c:\\Users\\UserName\\.vscode\\extensions\\publisher.name-0.0.2\\EmmyLua"
-    ],
+	"Lua.workspace.library": [
+		"c:\\Users\\UserName\\.vscode\\extensions\\publisher.name-0.0.2\\EmmyLua"
+	],
 ```
 Note that when your extension is uninstalled this path will still remain in the configuration.
 1. After restarting VS Code, the extension files will be removed from disk. However the EmmyLua files would still be already preloaded.
