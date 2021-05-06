@@ -1,9 +1,9 @@
 ## External libraries
 EmmyLua [annotations](https://github.com/sumneko/lua-language-server/wiki/EmmyLua-Annotations) and other source code can be manually added as external libraries via the `Lua -> Workspace: Library` option or in `settings.json`
 ```json
-	"Lua.workspace.library": [
-		"d:\\SomePath\\EmmyLuaFolder"
-	],
+    "Lua.workspace.library": [
+        "d:\\SomePath\\EmmyLuaFolder"
+    ],
 ```
 ![](https://user-images.githubusercontent.com/1073877/115629918-7f3f0d00-a303-11eb-954f-134cb646c030.png)
 
@@ -56,9 +56,9 @@ function setExternalLibrary(folder: string, enable: boolean) {
 setExternalLibrary("EmmyLua", true)
 ```
 ```json
-	"Lua.workspace.library": [
-		"c:\\Users\\UserName\\.vscode\\extensions\\publisher.name-0.0.2\\EmmyLua"
-	],
+    "Lua.workspace.library": [
+        "c:\\Users\\UserName\\.vscode\\extensions\\publisher.name-0.0.2\\EmmyLua"
+    ],
 ```
 Note that when your extension is uninstalled this path will still remain in the configuration.
 1. After restarting VS Code, the extension files will be removed from disk. However the EmmyLua files would still be already preloaded.
