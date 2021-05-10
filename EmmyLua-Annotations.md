@@ -58,8 +58,10 @@ function Animal:Walk() end
 
 ---@class Pet
 ---@field ownerName string
+local Pet = {}
 
 ---@class Cat : Animal, Pet
+local Cat = {}
 
 ---@type Cat
 local gamercat = {}
@@ -77,12 +79,10 @@ function GetAccountInfoByID(id) end
 ---@field accountName string
 ---@field isFriend boolean
 ---@field gameAccountInfo BNetGameAccountInfo
-local BNetAccountInfo = {}
 
 ---@class BNetGameAccountInfo
 ---@field gameAccountID number
 ---@field characterName string
-local BNetGameAccountInfo = {}
 
 local info = GetAccountInfoByID(1)
 print(info.gameAccountInfo.characterName)
