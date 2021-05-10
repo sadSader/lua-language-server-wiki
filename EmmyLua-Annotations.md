@@ -252,13 +252,16 @@ The diagnostics state behaves as a toggle.
 #### `@version`
 Marks if a function or class is exclusive to specific Lua versions: `5.1, 5.2, 5.3, 5.4, JIT`
 ```lua
----@version 5.1
-function hello() end
-```
-```lua
 ---@version >5.2,JIT
 function hello() end
 ```
+```lua
+---@version 5.4
+function Hello() end
+
+print(Hello())
+```
+![](https://user-images.githubusercontent.com/1073877/117734858-a008cd00-b1f4-11eb-9113-8392129e2b5c.png)
 
 #### `@deprecated`
 Visibly marks a function as deprecated.
