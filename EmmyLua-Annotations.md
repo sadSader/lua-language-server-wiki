@@ -251,6 +251,7 @@ The diagnostics state behaves as a toggle.
 
 #### `@version`
 Marks if a function or class is exclusive to specific Lua versions: `5.1, 5.2, 5.3, 5.4, JIT`. Requires configuring `Diagnostics: Needed File Status` ([#494](https://github.com/sumneko/lua-language-server/issues/494)).
+
 ![](https://user-images.githubusercontent.com/75196080/115882223-3dbe7700-a455-11eb-892c-6b67ce17029f.png)
 ```lua
 ---@version >5.2,JIT
