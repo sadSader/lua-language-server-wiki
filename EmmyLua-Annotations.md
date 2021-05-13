@@ -127,20 +127,20 @@ fun(x: number): number
 ### Comments
 There are multiple ways to format comments. The `@` and `#` symbols can be used to explicitly begin an annotation comment. This is useful for `@return` if you don't want to specify a param name but do want to add a comment.
 ```lua
---this is a valid comment
---- this is also valid
----@param apple string comment 1
----@return string banana comment 2
----@return string @comment 3
----@return string #comment 4
+---@param apple string hello 1
+---@return string banana hello 2
+---@return string @hello 3
+---@return string #hello 4
 function Foo(apple) end
 ```
-![](https://user-images.githubusercontent.com/1073877/114513477-85195c00-9c3a-11eb-85d7-124488d4b00b.png)
+![](https://user-images.githubusercontent.com/1073877/118131122-66a3ad80-b3fe-11eb-8f14-7c05e539078b.png)
 
-Comments support markdown formatting.
+Comments support [Markdown](https://www.markdownguide.org/) formatting. To create a line break, use two trailing spaces ([#526](https://github.com/sumneko/lua-language-server/issues/526)), note it will trigger the `trailing-space` diagnostic.
 ```lua
---- This is **bolded** and this is *cursive* text
+--this is a **valid** comment  
+---this is *also* valid and on a newline
 ---
+--- this is a new paragraph
 --- [Click me](https://www.google.com/)
 --- ```
 --- for i, v in ipairs(tbl) do
@@ -148,12 +148,11 @@ Comments support markdown formatting.
 --- end
 --- ```
 --- - item 1
---- - item 2
 ---   - level 2
 ---@param tbl table comment for `tbl`
 function Foo(tbl) end
 ```
-![image](https://user-images.githubusercontent.com/1073877/114515870-1e497200-9c3d-11eb-808c-acd74db824de.png)
+![](https://user-images.githubusercontent.com/1073877/118130952-38be6900-b3fe-11eb-8534-974c38f677d1.png)
 
 ### Optional Params
 Appending a question mark (after the first word) marks a param optional/nilable. Another option is to instead use `|nil` as a second type.
