@@ -92,7 +92,7 @@ print(info.gameAccountInfo.characterName)
 ![](https://user-images.githubusercontent.com/1073877/114520809-19d38800-9c42-11eb-9bbe-4310e5b0b986.gif)
 
 #### Types and `@type`
-Known types are: `nil, any, boolean, string, number, integer, function, table, thread, ..., userdata, lightuserdata`
+Known types are: `nil, any, boolean, string, number, integer, function, table, thread, userdata, lightuserdata`
 * Classes can be [used](EmmyLua-Annotations#class) and passed or [returned](EmmyLua-Annotations#field) as a type.
 * Multiple types are separated with `|`
 ```lua
