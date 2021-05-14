@@ -135,7 +135,7 @@ function Foo(apple) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/118131122-66a3ad80-b3fe-11eb-8f14-7c05e539078b.png)
 
-Comments support [Markdown](https://www.markdownguide.org/) formatting. To create a line break, use two trailing spaces ([#526](https://github.com/sumneko/lua-language-server/issues/526)), note it will trigger the `trailing-space` diagnostic.
+Comments support [Markdown](https://www.markdownguide.org/) formatting. To create a line break, use two trailing spaces ([#526](https://github.com/sumneko/lua-language-server/issues/526)), note it will trigger the `trailing-space` diagnostic hint.
 ```lua
 --this is a **valid** comment  
 ---this is *also* valid and on a newline
