@@ -4,23 +4,27 @@
 
 ![](https://user-images.githubusercontent.com/1073877/111884243-a337c780-89c0-11eb-856e-b6c3b1042810.gif)
 
-## Annotations
-* [@param](#param)
-* [@return](#return)
-* [@class](#class)
-* [@field](#field)
-* [Types and @type](#types-and-type)
-* [Comments](#Comments)
-* [Optional Params](#optional-params)
-* [@vararg](#vararg)
-* [@alias](#alias)
-* [@overload](#overload)
-* [@generic](#generic)
-* [@diagnostic](#diagnostic)
-* [@version](#version)
-* [@deprecated](#deprecated)
-* [@meta](#meta)
-* [@see](#see)
+* Annotations
+  * [@param](#param)
+  * [@return](#return)
+  * [@class](#class)
+  * [@field](#field)
+  * [Types and @type](#types-and-type)
+  * [Comments](#Comments)
+  * [Optional Params](#optional-params)
+  * [@vararg](#vararg)
+  * [@alias](#alias)
+  * [@overload](#overload)
+  * [@generic](#generic)
+  * [@diagnostic](#diagnostic)
+  * [@version](#version)
+  * [@deprecated](#deprecated)
+  * [@meta](#meta)
+  * [@see](#see)
+* Options
+  * [Completion: Display Context](#completion-display-context)
+  * [Hover: Enums Limit](#hover-enums-limit)
+* [References](#references)
 
 #### `@param`
 Specifies the type of function params.
@@ -274,6 +278,33 @@ Functionally the same as an annotation comment.
 
 #### `@meta`
 This is for internal use by Sumneko. Files marked with this will be ignored ([#370](https://github.com/sumneko/lua-language-server/issues/370#issuecomment-770678133)).
+
+### Settings
+There are a few notable EmmyLua options one should consider.
+
+#### Completion: Display Context
+
+![](https://user-images.githubusercontent.com/1073877/117556717-2e9e1280-b06c-11eb-8cde-48c594933933.png)
+
+`"Lua.completion.displayContext": 6` (default)
+
+![](https://user-images.githubusercontent.com/1073877/117555567-95b5ca00-b060-11eb-90d3-576aa0fa0d42.png)
+
+`"Lua.completion.displayContext": 0`
+
+![](https://user-images.githubusercontent.com/1073877/117555531-5a1b0000-b060-11eb-915c-d3c5f43a1664.png)
+
+#### Hover: Enums Limit
+
+![](https://user-images.githubusercontent.com/1073877/117556752-80469d00-b06c-11eb-9458-5be73d2f95d1.png)
+
+`"Lua.hover.enumsLimit": 5` (default)
+
+![](https://user-images.githubusercontent.com/1073877/117557513-c7845c00-b073-11eb-997f-97fa15a32214.png)
+
+`"Lua.hover.enumsLimit": 0`
+
+![](https://user-images.githubusercontent.com/1073877/117557542-02868f80-b074-11eb-9fbc-a94ef5c630a4.png)
 
 ### References
 * EmmyLua: https://emmylua.github.io/annotation.html
