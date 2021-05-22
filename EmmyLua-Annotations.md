@@ -131,7 +131,7 @@ local CalendarStatus = {
 fun(x: number): number
 ```
 ### Comments
-There are multiple ways to format comments. The `@` and `#` symbols can be used to explicitly begin an annotation comment. This is useful for `@return` if you don't want to specify a param name but do want to add a comment.
+There are multiple ways to format comments. The `@` and `#` symbols can be used to (explicitly) begin an annotation comment. This is useful for `@return` if you don't want to specify a param name but do want to add a comment.
 ```lua
 ---@param apple string hello 1
 ---@return string banana hello 2
