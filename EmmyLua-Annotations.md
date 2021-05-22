@@ -284,7 +284,7 @@ This is for internal use by Sumneko. Files marked with this will be ignored ([#3
 ## Settings
 There are a few notable EmmyLua options one should consider.
 
-#### Completion: Display Context
+### Completion: Display Context
 
 ![](https://user-images.githubusercontent.com/1073877/117556717-2e9e1280-b06c-11eb-8cde-48c594933933.png)
 
@@ -296,7 +296,7 @@ There are a few notable EmmyLua options one should consider.
 
 ![](https://user-images.githubusercontent.com/1073877/117555531-5a1b0000-b060-11eb-915c-d3c5f43a1664.png)
 
-#### Hover: Enums Limit
+### Hover: Enums Limit
 
 ![](https://user-images.githubusercontent.com/1073877/117556752-80469d00-b06c-11eb-9458-5be73d2f95d1.png)
 
