@@ -4,6 +4,7 @@
 
 ![](https://user-images.githubusercontent.com/1073877/111884243-a337c780-89c0-11eb-856e-b6c3b1042810.gif)
 
+## Table of Contents
 * Annotations
   * [@param](#param)
   * [@return](#return)
@@ -26,6 +27,7 @@
   * [Hover: Enums Limit](#hover-enums-limit)
 * [References](#references)
 
+## Annotations
 #### `@param`
 Specifies the type of function params.
 ```lua
@@ -279,7 +281,7 @@ Functionally the same as an annotation comment.
 #### `@meta`
 This is for internal use by Sumneko. Files marked with this will be ignored ([#370](https://github.com/sumneko/lua-language-server/issues/370#issuecomment-770678133)).
 
-### Settings
+## Settings
 There are a few notable EmmyLua options one should consider.
 
 #### Completion: Display Context
