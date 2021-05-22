@@ -1,4 +1,4 @@
-* _Disclaimer: This article was written by a user in an effort to get basic documentation._
+_Disclaimer: This article was written by a user in an effort to get basic documentation._
 
 [EmmyLua](https://github.com/EmmyLua) annotations are doc comments similar to [LDoc](https://stevedonovan.github.io/ldoc/manual/doc.md.html) tags, but besides adding documentation they are used to improve features like code completion and signature information. Also refer to the [official documentation](https://emmylua.github.io/annotation.html), although Sumneko's implementation might not necessarily be the same.
 
