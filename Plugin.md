@@ -1,7 +1,8 @@
 (This wiki is translated by a translator. You are free to improve the content)
 
 Create `.vscode/lua/plugin.lua` in your workspace.
-The path can be specified by setting `Lua.runtime.plugin`.
+You should specify this path by setting `Lua.runtime.plugin`.
+For security reasons, this setting is empty by default (meaning that no local files can be loaded).
 
 ## OnSetText
 
