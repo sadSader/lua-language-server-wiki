@@ -9,6 +9,35 @@ If your editor supports `jsonschema`, it would prompt you all the settings and o
 
 (对于中文用户，使用 `https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema-zh-cn.json` 可以看到中文的提示）
 
+You can find the description of the settings here: https://github.com/sumneko/vscode-lua/blob/master/setting/schema.json
+
+## Load local setting
+You could load local setting by [command line](https://github.com/sumneko/lua-language-server/wiki/Command-line) `--configpath="config.json"`. the path can be related to workspace. Once you use this parameter, the settings will no longer be read from other places (for example VSCode client).
+
+Config files should be `Lua` or `Json`:
+
+```lua
+return {
+    ['Lua.runtime.version'] = 'Lua 5.1',
+    Lua = {
+        diagnostics = {
+            enable = false
+        }
+    }
+}
+```
+
+```json
+{
+    "Lua.runtime.version" : "Lua 5.1",
+    "Lua" : {
+        "diagnostics": {
+            "enable": false
+        }
+    }
+}
+```
+
 ## Different clients load `setting.json` in different ways:
 
 ### Neovim with built-in LSP client
