@@ -8,6 +8,7 @@ If you don't want to send any of this information to the team, please follow the
 
 If the ``Lua.telemetry.enable`` setting is configured to be ``true``, anonymous, non-identifying usage and stack traces from errors is sent to the development team, including:
 * A random token, used to count the number of users online
+* Extension version, e.g. `2.2.0`
 * OS, e.g. `Windows 64`
 * Client name, e.g. `Visual Studio Code 1.54.3`
 * C++ runtime name, e.g. `msvc MSVC STL 202011L`
