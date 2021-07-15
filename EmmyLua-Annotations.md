@@ -278,7 +278,11 @@ Visibly marks a function as deprecated.
 Functionally the same as an annotation comment.
 
 #### `@meta`
-This is for internal use by Sumneko. Files marked with this will be ignored ([#370](https://github.com/sumneko/lua-language-server/issues/370#issuecomment-770678133)).
+This is for internal use by Sumneko. The mark will have some details on the impact, and may continue to increase in the future. Currently they are:
+
+* comletion will not display context in a meta file
+* hover of `require` a meta file shows `[[meta]]` instead of absolute path
+* find reference ignores results in a meta file
 
 ## Settings
 There are a few notable EmmyLua options one should consider.
