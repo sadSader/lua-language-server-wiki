@@ -32,13 +32,13 @@ cd ../..
 5. Run
 + `Windows`:
 ```shell
-bin\Windows\lua-language-server.exe -E main.lua
+bin\Windows\lua-language-server.exe main.lua
 ```
 + `Linux`:
 ```shell
-./bin/Linux/lua-language-server -E ./main.lua
+./bin/Linux/lua-language-server ./main.lua
 ```
 + `macOS`:
 ```shell
-./bin/macOS/lua-language-server -E ./main.lua
+./bin/macOS/lua-language-server ./main.lua
 ```
