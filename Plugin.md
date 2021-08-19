@@ -60,5 +60,10 @@ function OnSetText(uri, text) end
 ```
 
 After enable developer mode, you can find `diffed.lua` in the log directory, the content of which is the new text after the application differences, for you to debug.
-On VSCode, set `Lua.develop.enable` to `true` to enable developer mode.
+On VSCode, set 
+```
+  "Lua.misc.parameters": [
+    "--develop=true"
+  ],
+``` to enable developer mode.
 On other clients, use `--develop=true` in command line to enable developer mode.
