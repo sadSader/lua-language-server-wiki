@@ -1,5 +1,7 @@
 (This wiki is translated by a translator. You are free to improve the content)
 
+**Attention：This feature is use to support your custom syntax, it will save the replaced file content to LOGPATH/diffed.lua when you set the `Lua.misc.parametes:[--develop=true ]` configuration. But it will not replace the content in the vscode's texteditor's content，which is a formatting feature now this server not have**。
+
 Create `.vscode/lua/plugin.lua` in your workspace or other path.
 You should specify this path by setting `Lua.runtime.plugin`.
 For security reasons, this setting is empty by default (meaning that no local files can be loaded).
