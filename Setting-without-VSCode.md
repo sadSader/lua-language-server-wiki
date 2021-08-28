@@ -222,7 +222,7 @@ As of 2020-11-07, the following works on the system identified in the comment:
 
 ## Instructions for [kakoune](https://github.com/mawww/kakoune) using [kak-lsp](https://github.com/kak-lsp/kak-lsp)
 
-Install `kak-lsp` using the plugin system of your choice. Here, we use [`plug.kak`](https://github.com/andreyorst/plug.kak):
+Install `kak-lsp` using the plugin system of your choice. Here, we use [`plug.kak`](https://github.com/andreyorst/plug.kak). Stick the following in your `kakrc`:
 
 ```kakounescript
 plug "kak-lsp/kak-lsp" do %{ cargo install --locked --force --path . } config %{
