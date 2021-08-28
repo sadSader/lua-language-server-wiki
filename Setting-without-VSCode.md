@@ -219,3 +219,44 @@ As of 2020-11-07, the following works on the system identified in the comment:
         }
     }
 ```
+
+## Instructions for [kakoune](https://github.com/mawww/kakoune) using [kak-lsp](https://github.com/kak-lsp/kak-lsp)
+
+Install `kak-lsp` using the plugin system of your choice. Here, we use [`plug.kak`](https://github.com/andreyorst/plug.kak):
+
+```kakounescript
+plug "kak-lsp/kak-lsp" do %{ cargo install --locked --force --path . } config %{
+    hook global KakEnd .* lsp-exit
+}
+```
+
+Then, call `lsp-enable-window` in a filetype hook for `lua`:
+
+```kakounescript
+hook global WinSetOption filetype=lua %{
+    lsp-enable-window
+}
+```
+
+Stick the following in your `kak-lsp.toml`:
+
+```toml
+[language.lua]
+filetypes = ["lua"]
+roots = [".git/"]
+command = "lua-language-server"
+args = ["-E", "/usr/share/lua-language-server/main.lua"]
+```
+
+This will get you up and running.
+
+### Server settings
+
+To define server settings, put them under `[language.lua.initialization_options]` in your `kak-lsp.toml`:
+
+```toml
+[language.lua.initialization_options]
+Lua.diagnostics.severity = { undefined-global = "Error" }
+Lua.runtime.version = "Lua 5.2"
+Lua.telemetry.enable = false
+```
