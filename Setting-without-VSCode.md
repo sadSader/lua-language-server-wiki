@@ -255,7 +255,7 @@ This will get you up and running.
 To define server settings, put them under `[language.lua.initialization_options]` in your `kak-lsp.toml`:
 
 ```toml
-[language.lua.initialization_options]
+[language.lua.settings]
 Lua.diagnostics.severity = { undefined-global = "Error" }
 Lua.runtime.version = "Lua 5.2"
 Lua.telemetry.enable = false
