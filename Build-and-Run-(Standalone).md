@@ -42,3 +42,11 @@ bin\Windows\lua-language-server.exe main.lua
 ```shell
 ./bin/macOS/lua-language-server ./main.lua
 ```
+
+---
+
+### Common issues
+
+* Compile error `/usr/bin/ld: cannot find -lstdc++` or similar when running install.sh
+
+  * You may need to install libstdc++. On Fedora linux or similar: `dnf install libstdc++-static`
