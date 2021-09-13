@@ -64,4 +64,4 @@ Note that when your extension is uninstalled this path will still remain in the 
 1. After restarting VS Code, the extension files will be removed from disk. However the EmmyLua files would still be already preloaded.
 2. Only on the second restart will the EmmyLua files not be preloaded since the extension is now gone.
 
-There is an [uninstall hook](https://code.visualstudio.com/api/references/extension-manifest#extension-uninstall-hook) but the writer has not been able to get it working.
+There is a [deactivate()](https://code.visualstudio.com/api/references/activation-events) event and an [uninstall hook](https://code.visualstudio.com/api/references/extension-manifest#extension-uninstall-hook) but it appears they [cannot edit](https://github.com/microsoft/vscode/issues/45474) the configuration.
