@@ -1,1 +1,1 @@
-Welcome to the lua-language-server wiki!
+Welcome to the lua-language-server wiki! Found wikis in the `Pages` ! `------------------------------------------->`
