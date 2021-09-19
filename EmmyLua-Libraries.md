@@ -9,7 +9,7 @@ EmmyLua [annotations](https://github.com/sumneko/lua-language-server/wiki/EmmyLu
 
 ## Plugin extension
 * _Disclaimer: This article was written by a [user](https://github.com/sumneko/lua-language-server/issues/417)._
-* Built-in libraries are also planned to be supported for commonly used environments, see [#409](https://github.com/sumneko/lua-language-server/issues/409).
+* Built-in libraries are also supported for commonly used environments, see [#409](https://github.com/sumneko/lua-language-server/issues/409).
 
 An [extension](https://code.visualstudio.com/api/get-started/your-first-extension) that ships its own EmmyLua folder(s) can choose to automatically add this path.
 
@@ -23,7 +23,7 @@ An [extension](https://code.visualstudio.com/api/get-started/your-first-extensio
 2.  Add the path to your folder(s) in the configuration.
 ```ts
 function setExternalLibrary(folder: string, enable: boolean) {
-	const extensionId = "publisher.name"
+	const extensionId = "publisher.name" // this id is case sensitive
 	const extensionPath = vscode.extensions.getExtension(extensionId)?.extensionPath
 	const folderPath = extensionPath+"\\"+folder
 	const config = vscode.workspace.getConfiguration("Lua")
