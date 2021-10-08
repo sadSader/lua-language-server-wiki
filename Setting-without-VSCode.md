@@ -1,20 +1,16 @@
-## Json Schema
-Here is a [json schema](https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json) file to help you configure setting manually.
+## Sources
+This extensin loads setting from these sources:
 
-You could download a template `setting.json` from https://github.com/sumneko/vscode-lua/blob/master/setting/setting.json.
+1. The configuration file specified by the command line `--configpath="config.json"`
+2. `.luarc.json` in your workspace.
+3. The client sends it via LSP
 
-If your editor supports `jsonschema`, it would prompt you all the settings and options like this:
+The extension will try to load the configuration file in this order, and once it is successfully loaded, it will not try the following sources again.
 
-![setting-without-vscode](https://github.com/sumneko/vscode-lua/blob/master/images/setting-without-vscode.gif?raw=true)
+## Configuration file
+You could load local configuration file by [command line](https://github.com/sumneko/lua-language-server/wiki/Command-line) `--configpath="config.json"`. the path can be related to workspace.
 
-(对于中文用户，使用 `https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema-zh-cn.json` 可以看到中文的提示）
-
-You can find the description of the settings here: https://github.com/sumneko/vscode-lua/blob/master/setting/schema.json
-
-## Load local setting
-You could load local setting by [command line](https://github.com/sumneko/lua-language-server/wiki/Command-line) `--configpath="config.json"`. the path can be related to workspace. Once you use this parameter, the settings will no longer be read from other places (for example VSCode client).
-
-Config files should be `Lua` or `Json`:
+configuration file should be `Lua` or `Json`:
 
 ```lua
 return {
@@ -37,6 +33,22 @@ return {
     }
 }
 ```
+
+`.luarc.json` can only be json.
+
+## Json Schema
+Here is a [json schema](https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json) file to help you configure setting manually.
+
+You could download a template `setting.json` from https://github.com/sumneko/vscode-lua/blob/master/setting/setting.json.
+
+If your editor supports `jsonschema`, it would prompt you all the settings and options like this:
+
+![setting-without-vscode](https://github.com/sumneko/vscode-lua/blob/master/images/setting-without-vscode.gif?raw=true)
+
+(对于中文用户，使用 `https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema-zh-cn.json` 可以看到中文的提示）
+
+You can find the description of the settings here: https://github.com/sumneko/vscode-lua/blob/master/setting/schema.json
+
 
 ## Different clients load `setting.json` in different ways:
 
