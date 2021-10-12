@@ -1,4 +1,4 @@
-`BINRARY/lua-language-server [entry] [options...]   
+`BINRARY/lua-language-server [entry] [options...]`
 
 * entry: The main script file `LUA_LANGUAGE_SERVER/main.lua`. If not specified, it will try to load `BINRARY/../../main.lua`, This is the default location relationship used by the VSCode release.
 * options
