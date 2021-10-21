@@ -234,23 +234,44 @@ As of 2020-11-07, the following works on the system identified in the comment:
 
 ## Instructions for [kakoune](https://github.com/mawww/kakoune) using [kak-lsp](https://github.com/kak-lsp/kak-lsp)
 
-Install `kak-lsp` using the plugin system of your choice. Here, we use [`plug.kak`](https://github.com/andreyorst/plug.kak). Stick the following in your `kakrc`:
+### Installation
+
+Install `lua-language-server` via your package manager or build it manually.
+
+Then, install `kak-lsp`:
+
+#### [plug.kak](https://github.com/andreyorst/plug.kak)
+
+Stick the following in your `kakrc`:
 
 ```kakounescript
-plug "kak-lsp/kak-lsp" do %{ cargo install --locked --force --path . } config %{
-    hook global KakEnd .* lsp-exit
+plug "kak-lsp/kak-lsp" do %{ cargo install --locked --force --path . }
+```
+
+#### Standalone
+
+Put the `kak-lsp` binary on your `PATH`, then put the following in your `kakrc`:
+
+```kakounescript
+evaluate-commands %sh{
+    kak-lsp --kakoune -s $kak_session
 }
 ```
 
-Then, call `lsp-enable-window` in a filetype hook for `lua`:
+### Initialization
+
+Stick the following in your `kakrc`:
 
 ```kakounescript
+# Enable kak-lsp for Lua files
 hook global WinSetOption filetype=lua %{
     lsp-enable-window
 }
+# Close kak-lsp when kakoune is terminated
+hook global KakEnd .* lsp-exit
 ```
 
-Stick the following in your `kak-lsp.toml`:
+Stick the following in your `kak-lsp.toml` to inform it about the language server:
 
 ```toml
 [language.lua]
@@ -260,11 +281,9 @@ command = "lua-language-server"
 args = ["-E", "/usr/share/lua-language-server/main.lua"]
 ```
 
-This will get you up and running.
+### Configuration
 
-### Server settings
-
-To define server settings, put them under `[language.lua.initialization_options]` in your `kak-lsp.toml`:
+To define server settings, put them under `[language.lua.settings]` in your `kak-lsp.toml`:
 
 ```toml
 [language.lua.settings]
