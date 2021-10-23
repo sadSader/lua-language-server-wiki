@@ -32,7 +32,7 @@ return {
 }
 ```
 
-`.luarc.json` can only be json.
+For safety, `.luarc.json` can only be json.
 
 ## Json Schema
 Here is a [json schema](https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json) file to help you configure setting manually.
