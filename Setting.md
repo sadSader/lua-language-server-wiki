@@ -10,26 +10,24 @@ The extension will try to load the configuration file in this order, and once it
 ## Configuration file
 You could load local configuration file by [command line](https://github.com/sumneko/lua-language-server/wiki/Command-line) `--configpath="config.json"`. the path can be related to workspace.
 
+You can omit the beginning of `Lua.` in this way, which means that `"runtime.version": "Lua 5.1"` and `"Lua.runtime.version": "Lua 5.1"` are completely equivalent.
+
 configuration file should be `Lua` or `Json`:
 
 ```lua
 return {
-    ['Lua.runtime.version'] = 'Lua 5.1',
-    Lua = {
-        diagnostics = {
-            enable = false
-        }
+    ['runtime.version'] = 'Lua 5.1',
+    diagnostics = {
+        enable = false
     }
 }
 ```
 
 ```json
 {
-    "Lua.runtime.version" : "Lua 5.1",
-    "Lua" : {
-        "diagnostics": {
-            "enable": false
-        }
+    "runtime.version" : "Lua 5.1",
+    "diagnostics": {
+        "enable": false
     }
 }
 ```
