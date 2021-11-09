@@ -31,10 +31,10 @@ compile/install.sh
 cd ../..
 ./3rd/luamake/luamake rebuild
 ```
-5. Run
+5. Run (non-VSCode)
 + `Windows`:
 ```shell
-bin\Windows\lua-language-server.exe
+.\bin\Windows\lua-language-server.exe
 ```
 + `Linux`:
 ```shell
