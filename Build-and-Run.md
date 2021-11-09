@@ -1,4 +1,4 @@
-You should try [PreCompiled binaries](https://github.com/sumneko/lua-language-server/wiki/PreCompiled-Binaries) before building by yourself
+You could try [PreCompiled binaries](https://github.com/sumneko/lua-language-server/wiki/PreCompiled-Binaries) before building by yourself
 
 1. Install [ninja](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages)
 2. Make sure you have C++17
