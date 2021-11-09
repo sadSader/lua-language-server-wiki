@@ -1,10 +1,9 @@
 Welcome to the lua-language-server wiki!
 
 + Build and Run
-  * [In VSCode](https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(In-VSCode))
-  * [Standalone](https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone))
-  * [Command line](https://github.com/sumneko/lua-language-server/wiki/Command-line)
   * [Pre-compiled binaries](https://github.com/sumneko/lua-language-server/wiki/PreCompiled-Binaries)
+  * [Build](https://github.com/sumneko/lua-language-server/wiki/Build-and-Run)
+  * [Command line](https://github.com/sumneko/lua-language-server/wiki/Command-line)
 + Advanced Feature
   * [EmmyLua Annotations](https://github.com/sumneko/lua-language-server/wiki/EmmyLua-Annotations)
   * [EmmyLua Libraries](https://github.com/sumneko/lua-language-server/wiki/EmmyLua-Libraries)
