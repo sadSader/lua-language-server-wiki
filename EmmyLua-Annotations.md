@@ -1,6 +1,6 @@
 _Disclaimer: This article was written by a user in an effort to get basic documentation._
 
-[EmmyLua](https://github.com/EmmyLua) annotations are doc comments similar to [LDoc](https://stevedonovan.github.io/ldoc/manual/doc.md.html) tags, but besides adding documentation they are used to improve features like code completion and signature information. Also refer to the [official documentation](https://emmylua.github.io/annotation.html) and [Luanalysis](https://github.com/Benjamin-Dobell/IntelliJ-Luanalysis#static-analysis-features) (EmmyLua fork), although Sumneko's implementation might not necessarily be the same.
+[EmmyLua](https://github.com/EmmyLua) annotations are doc comments similar to [LDoc](https://stevedonovan.github.io/ldoc/manual/doc.md.html) tags, but besides adding documentation they are used to improve features like code completion and signature information. Also refer to the [official documentation](https://emmylua.github.io/annotation.html) and [Luanalysis](https://github.com/Benjamin-Dobell/IntelliJ-Luanalysis#static-analysis-features) (EmmyLua fork), although Sumneko's implementation might not be the same.
 
 ![](https://user-images.githubusercontent.com/1073877/111884243-a337c780-89c0-11eb-856e-b6c3b1042810.gif)
 
@@ -286,12 +286,12 @@ Functionally the same as an annotation comment.
 #### `@meta`
 This is for internal use by Sumneko. The mark will have some details on the impact, and may continue to increase in the future. Currently they are:
 
-* comletion will not display context in a meta file
+* completion will not display context in a meta file
 * hover of `require` a meta file shows `[[meta]]` instead of absolute path
 * find reference ignores results in a meta file
 
 ## Settings
-There are a few notable EmmyLua options one should consider.
+There are a few notable EmmyLua options one should consider changing.
 
 ### Completion: Display Context
 
