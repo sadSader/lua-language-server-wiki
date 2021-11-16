@@ -18,6 +18,7 @@ _Disclaimer: This article was written by a user in an effort to get basic docume
   * [@overload](#overload)
   * [@generic](#generic)
   * [@diagnostic](#diagnostic)
+  * [@import](#import)
   * [@version](#version)
   * [@deprecated](#deprecated)
   * [@meta](#meta)
@@ -54,7 +55,7 @@ function GetName() end
 ```
 
 #### `@class`
-Simulates classes, supporting OOP inheritance.
+Defines classes.
 ```lua
 ---@class Animal
 ---@field legs number
@@ -63,10 +64,8 @@ function Animal:Walk() end
 
 ---@class Pet
 ---@field ownerName string
-local Pet = {}
 
 ---@class Cat : Animal, Pet
-local Cat = {}
 
 ---@type Cat
 local gamercat = {}
