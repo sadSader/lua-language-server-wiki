@@ -18,7 +18,7 @@ _Disclaimer: This article was written by a user in an effort to get basic docume
   * [@overload](#overload)
   * [@generic](#generic)
   * [@diagnostic](#diagnostic)
-  * [@import](#import)
+  * [@module](#module)
   * [@version](#version)
   * [@deprecated](#deprecated)
   * [@meta](#meta)
@@ -252,10 +252,10 @@ The diagnostics state behaves as a toggle.
 
 ![](https://user-images.githubusercontent.com/1073877/114522605-d0843800-9c43-11eb-878b-c5c67166260f.png)
 
-#### `@import`
+#### `@module`
 Provide the semantics of `require`
 ```lua
----@import 'mylib.module'
+---@module'mylib.module'
 local module -- same as `local module = require 'mylib.module'`
 ```
 
