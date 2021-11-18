@@ -8,6 +8,7 @@ Welcome to the lua-language-server wiki!
   * [EmmyLua Annotations](https://github.com/sumneko/lua-language-server/wiki/EmmyLua-Annotations)
   * [EmmyLua Libraries](https://github.com/sumneko/lua-language-server/wiki/EmmyLua-Libraries)
   * [Plugin](https://github.com/sumneko/lua-language-server/wiki/Plugin)
+  * [IntelliSense optional features](https://github.com/sumneko/lua-language-server/wiki/IntelliSense-optional-features)
 + QA
   * [Where can found log path?](https://github.com/sumneko/lua-language-server/wiki/Default-log-path)
   * [How to setting without VSCode?](https://github.com/sumneko/lua-language-server/wiki/Setting-without-VSCode)
