@@ -44,13 +44,15 @@ local y = f() -- `y` can NOT be found
 * `true`
 ```lua
 local x -- find references of `x`
-local y = x -- `y` can be found
+local y
+y = x -- `y` can be found
 ```
 
 * `false`
 ```lua
 local x -- find references of `x`
-local y = x -- `y` can NOT be found
+local y
+y = x -- `y` can NOT be found
 ```
 
 #### `Lua.IntelliSense.traceFieldInject`
