@@ -25,9 +25,9 @@ local x = 1.0 -- x is `number`
 ```lua
 local x -- find references of `x`
 local function f()
-    return x -- `x` is found
+    return x -- `x` can be found
 end
-local y = f() -- `y` is found
+local y = f() -- `y` can be found
 ```
 
 * `false`
