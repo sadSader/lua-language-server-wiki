@@ -71,3 +71,5 @@ On VSCode, set
 ``` 
 to enable developer mode.
 On other clients, use `--develop=true` in command line to enable developer mode.
+
+Sample: https://github.com/sumneko/sample-plugin
