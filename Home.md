@@ -10,8 +10,8 @@ Welcome to the lua-language-server wiki!
   * [Plugin](https://github.com/sumneko/lua-language-server/wiki/Plugin)
   * [IntelliSense optional features](https://github.com/sumneko/lua-language-server/wiki/IntelliSense-optional-features)
 + QA
-  * [Where can found log path?](https://github.com/sumneko/lua-language-server/wiki/Default-log-path)
-  * [How to setting without VSCode?](https://github.com/sumneko/lua-language-server/wiki/Setting-without-VSCode)
+  * [Where can I find logs?](https://github.com/sumneko/lua-language-server/wiki/Default-log-path)
+  * [How to change settings without VS Code?](https://github.com/sumneko/lua-language-server/wiki/Setting-without-VSCode)
   * [Why scanning home folder?](https://github.com/sumneko/lua-language-server/wiki/Why-scanning-home-folder%3F)
 + Privacy Policy
   * [English](https://github.com/sumneko/lua-language-server/wiki/Privacy-Policy)
