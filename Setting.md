@@ -1,18 +1,18 @@
 ## Sources
-This extensin loads setting from these sources:
+This extension loads settings from following sources:
 
 1. The configuration file specified by the command line `--configpath="config.json"`
 2. `.luarc.json` in your workspace.
 3. The client sends it via LSP
 
-The extension will try to load the configuration file in this order, and once it is successfully loaded, it will not try the following sources again.
+The extension will try to load a configuration file in this order. Once one was successfully loaded, it will stop and not try the other sources.
 
 ## Configuration file
-You could load local configuration file by [command line](https://github.com/sumneko/lua-language-server/wiki/Command-line) `--configpath="config.json"`. the path can be related to workspace.
+You can load a local configuration file by [command line](https://github.com/sumneko/lua-language-server/wiki/Command-line) `--configpath="config.json"`. The path is related to your workspace.
 
-You can omit the beginning of `Lua.` in this way, which means that `"runtime.version": "Lua 5.1"` and `"Lua.runtime.version": "Lua 5.1"` are completely equivalent.
+You can omit the beginning of `Lua.` which means that `"runtime.version": "Lua 5.1"` and `"Lua.runtime.version": "Lua 5.1"` are completely equivalent.
 
-configuration file should be `Lua` or `Json`:
+The configuration file can be either Lua or JSON:
 
 ```lua
 return {
@@ -32,12 +32,12 @@ return {
 }
 ```
 
-For safety, `.luarc.json` can only be json.
+For safety, `.luarc.json` can only be JSON.
 
-## Json Schema
-Here is a [json schema](https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json) file to help you configure setting manually.
+## JSON Schema
+There is a [json schema](https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json) file to help you configure settings manually.
 
-You could download a template `setting.json` from https://github.com/sumneko/vscode-lua/blob/master/setting/setting.json.
+You can download a template `setting.json` from https://github.com/sumneko/vscode-lua/blob/master/setting/setting.json.
 
 If your editor supports `jsonschema`, it would prompt you all the settings and options like this:
 
