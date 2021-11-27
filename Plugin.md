@@ -1,22 +1,19 @@
-(This wiki is translated by a translator. You are free to improve the content)
+(This wiki is translated by a machine translator. You are free to improve the content!)
 
-**Attention：This feature is use to support your custom syntax, it will not hint your custom syntax as errors, and will save the replaced file content to LOGPATH/diffed.lua when you set the `Lua.misc.parameters:[--develop=true ]` configuration. But it will not replace the content in the vscode's texteditor's content，which is a formatting feature now this server not have**。
+**Notice：This feature allows you to support add your own custom doc syntax format to the language server. It will not hint your custom syntax as errors, and will save the replaced file content to `LOGPATH/diffed.lua` when you set `Lua.misc.parameters:[--develop=true ]` in configuration. But it will not replace the content in VS Code's text editor，which is a formatting feature this server does not implement.**。
 
-Create `.vscode/lua/plugin.lua` in your workspace or other path.
-You should specify this path by setting `Lua.runtime.plugin`.
+Create `.vscode/lua/plugin.lua` in your workspace (or other path), specifying this path via setting `Lua.runtime.plugin`.
 For security reasons, this setting is empty by default (meaning that no local files can be loaded).
 
 ## OnSetText
 
-The code in your workspace is converted through this function. This function can be used to parse some custom syntax.
+The `OnSetText(uri, text)` function virtually transforms the code in your workspace for the language server, allowing you to parse custom syntax. The code you are entering in the editor is schon on the right side of the below figure, the result after transformation, aka code read by the language server, is on the left:
 
 ![plugin-diff](https://github.com/sumneko/vscode-lua/blob/master/images/plugin-diff.gif?raw=true)
 
-The code on the right side of the figure above is the code you are entering in the editor, and the code on the left side of the figure above is the code read by the extension.
+Whenever you enter new content, the extension calls this function and passes the entire file content as a parameter. You need to generate a list of differences, which will be used by the extension to transform the contents of the file.
 
-Whenever you enter content, the extension calls this function and passes in the content of the entire file as a parameter. You need to generate a list of differences, which will be used by the extension to transform the contents of the file.
-
-The effect of the figure above is achieved by the following code:
+The effects shown in the demo figure above is achieved by the following code:
 
 ```lua
 function OnSetText(uri, text)
