@@ -21,6 +21,8 @@ _Disclaimer: This article was written by a user in an effort to get basic docume
   * [@module](#module)
   * [@version](#version)
   * [@deprecated](#deprecated)
+  * [@async](#async)
+  * [@nodiscard](#nodiscard)
   * [@meta](#meta)
   * [@see](#see)
 * Options
