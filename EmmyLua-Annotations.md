@@ -290,21 +290,6 @@ This is for internal use by Sumneko. The mark will have some details on the impa
 * hover of `require` a meta file shows `[[meta]]` instead of absolute path
 * find reference ignores results in a meta file
 
-## Settings
-There are a few notable EmmyLua options one should consider changing.
-
-### Completion: Display Context
-
-![](https://user-images.githubusercontent.com/1073877/117556717-2e9e1280-b06c-11eb-8cde-48c594933933.png)
-
-`"Lua.completion.displayContext": 6` (default)
-
-![](https://user-images.githubusercontent.com/1073877/117555567-95b5ca00-b060-11eb-90d3-576aa0fa0d42.png)
-
-`"Lua.completion.displayContext": 0`
-
-![](https://user-images.githubusercontent.com/1073877/117555531-5a1b0000-b060-11eb-915c-d3c5f43a1664.png)
-
 ### References
 * EmmyLua: https://emmylua.github.io/annotation.html
 * Examples: https://github.com/sumneko/lua-language-server/tree/master/meta
