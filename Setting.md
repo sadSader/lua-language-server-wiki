@@ -5,7 +5,7 @@ This extension loads settings from following sources:
 2. `.luarc.json` in your workspace.
 3. The client sends it via LSP
 
-The extension will try to load a configuration file in this order. Once one was successfully loaded, it will stop and not try the other sources.
+The extension will try to load a configuration file in this order.
 
 ## Configuration file
 You can load a local configuration file by [command line](https://github.com/sumneko/lua-language-server/wiki/Command-line) `--configpath="config.json"`. The path is related to your workspace.
