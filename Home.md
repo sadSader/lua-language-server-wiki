@@ -17,3 +17,6 @@ Welcome to the lua-language-server wiki!
   * [English](https://github.com/sumneko/lua-language-server/wiki/Privacy-Policy)
   * [中文](https://github.com/sumneko/lua-language-server/wiki/%E9%9A%90%E7%A7%81%E5%A3%B0%E6%98%8E)
 + [Sponsor](https://github.com/sumneko/lua-language-server/issues/484)
++ [Developer]
+  * [Theme tokens](https://github.com/sumneko/lua-language-server/blob/master/theme-tokens.md)
+  * [Debug](https://github.com/sumneko/lua-language-server/wiki/Debug)
