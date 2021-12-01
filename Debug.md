@@ -50,5 +50,5 @@ In VSCode, they are displayed in OUTPUT pannel.
         "--dbgport=11413"
     ],
     ```
-
-Select `attach` and press F5 to attach server.
+5. Restart target server (`F1` -> `Reload Window`)
+6. Select `attach` and press F5 to attach target server
