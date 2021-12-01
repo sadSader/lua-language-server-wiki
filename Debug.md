@@ -51,4 +51,4 @@ In VSCode, they are displayed in OUTPUT pannel.
     ],
     ```
 
-Press F5 to attach server.
+Select `attach` and press F5 to attach server.
