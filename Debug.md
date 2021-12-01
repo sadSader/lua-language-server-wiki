@@ -32,12 +32,12 @@ In VSCode, they are displayed in OUTPUT pannel.
 1. Open server folder in VSCode
 2. Install [actboy168.lua-debug](https://marketplace.visualstudio.com/items?itemName=actboy168.lua-debug)
 3. Copy [setting.json](https://github.com/sumneko/lua-language-server/blob/master/.vscode/launch.json) into your folder
-4. The debugger target uses setting:
+4. The debug target uses setting:
     ```json
     "Lua.misc.parameters": [
         "--develop=true",
         "--dbgport=11413"
     ],
     ```
-5. Restart target server (`F1` -> `Reload Window`)
+5. Restart debug target server (`F1` -> `Reload Window`)
 6. Select `attach` and press F5 to attach target server
