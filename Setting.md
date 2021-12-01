@@ -3,7 +3,7 @@ This extension loads settings from following sources:
 
 1. The configuration file specified by the command line `--configpath="config.json"`
 2. `.luarc.json` in your workspace.
-3. The client sends it via LSP
+3. The client sends it via LSP (in VSCode, it is `.vscode/setting.json`)
 
 The extension will try to load a configuration file in this order.
 
