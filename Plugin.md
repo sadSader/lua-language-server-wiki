@@ -5,6 +5,8 @@
 Create `.vscode/lua/plugin.lua` in your workspace (or other path), specifying this path via setting `Lua.runtime.plugin`.
 For security reasons, this setting is empty by default (meaning that no local files can be loaded).
 
+[Debug your plugin](https://github.com/sumneko/lua-language-server/wiki/Debug)
+
 ## OnSetText
 
 The `OnSetText(uri, text)` function virtually transforms the code in your workspace for the language server, allowing you to parse custom syntax. The code you are entering in the editor is schon on the right side of the below figure, the result after transformation, aka code read by the language server, is on the left:
