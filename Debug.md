@@ -1,4 +1,4 @@
-### quick debug
+### Quick Debug
 
 #### `log.debug`
 ```lua
@@ -38,4 +38,17 @@ Send message by [window/showMessage](https://microsoft.github.io/language-server
 
 In VSCode, they are displayed in OUTPUT pannel.
 
-### Debugger
+### Debugger Attach
+
+1. Open server folder in VSCode
+2. Install [actboy168.lua-debug](https://marketplace.visualstudio.com/items?itemName=actboy168.lua-debug)
+3. Copy [setting.json](https://github.com/sumneko/lua-language-server/blob/master/.vscode/launch.json) into your folder
+4. The debugger target uses setting:
+    ```json
+    "Lua.misc.parameters": [
+        "--develop=true",
+        "--dbgport=11413"
+    ],
+    ```
+
+Press F5 to attach server.
