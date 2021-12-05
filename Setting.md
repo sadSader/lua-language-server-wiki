@@ -58,7 +58,7 @@ which is passed as the `settings` field of your configuration. Here is a
 minimal example
 
 ```lua
-require'nvim_lsp'.sumneko_lua.setup {
+require'lspconfig'.sumneko_lua.setup {
   settings = {
     -- Insert your settings here
   }
