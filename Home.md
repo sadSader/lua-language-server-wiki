@@ -1,7 +1,7 @@
 Welcome to the lua-language-server wiki!
 
 + Build and Run
-  * [Pre-compiled binaries](https://github.com/sumneko/lua-language-server/wiki/PreCompiled-Binaries)
+  * [Precompiled binaries](https://github.com/sumneko/lua-language-server/wiki/Precompiled-Binaries)
   * [Build](https://github.com/sumneko/lua-language-server/wiki/Build-and-Run)
   * [Command line](https://github.com/sumneko/lua-language-server/wiki/Command-line)
 + Advanced Features
