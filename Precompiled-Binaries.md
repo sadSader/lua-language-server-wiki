@@ -17,3 +17,8 @@ If your package manager does not offer `lua-language-server`, you can download t
 4. Binaries should be placed in `bin/<platform>/` under the repository root. If you are using VSCode, it should be placed in the corresponding location in the extension directory.
 5. If you are on a `Linux` or `macOS` platform, you may need to add execution permissions before running, such as `chmod +x lua-language-server`
 
+Note that you can't simply create a symbolic link to the binary in one of the directories on your `$PATH`, since `lua-language-server` expects to find the scripts in a fixed location relative to the directory it is run from. Instead, create a wrapper script with the contents, e.g.,
+```bash
+#!/bin/bash
+exec "<path-to-repository>/bin/<platform>/lua-language-server" "$@"
+```
