@@ -113,7 +113,6 @@ For example, mine has the following json:
         "lua": {
 	    "cwd": "full path of lua-language-server directory", (not sure this one is really necessary)
 	    "command": "full path to lua-language-server executable",
-	    "args": ["-E", "-e", "LANG=en", "[full path of lua-language-server directory]/main.lua"],
 	    "filetypes": ["lua"],
 	    "rootPatterns": [".git/"]
         }
@@ -147,8 +146,7 @@ I'm posting this in the hope that it'll save someone else from spending an after
     // coc-settings.json
     "languageserver": {
         "lua": {
-            "command": "/path/to/lua-language-server/bin/macOS/lua-language-server",
-            "args": ["-E", "/path/to/lua-language-server/main.lua"],
+            "command": "/path/to/lua-language-server/bin/lua-language-server",
             "filetypes": ["lua"],
             "rootPatterns": [".git/"]
         }
@@ -168,8 +166,7 @@ I'm posting this in the hope that it'll save someone else from spending an after
     // coc-settings.json
     "languageserver": {
         "lua": {
-            "command": "/path/to/lua-language-server/bin/macOS/lua-language-server",
-            "args": ["-E", "/path/to/lua-language-server/main.lua"],
+            "command": "/path/to/lua-language-server/bin/lua-language-server",
             "filetypes": ["lua"],
             "rootPatterns": [".git/"],
             "settings": {
@@ -199,8 +196,7 @@ As of 2020-11-07, the following works on the system identified in the comment:
     // coc-settings.json
     "languageserver": {
         "lua": {
-            "command": "/path/to/lua-language-server/bin/macOS/lua-language-server",
-            "args": ["-E", "/path/to/lua-language-server/main.lua"],
+            "command": "/path/to/lua-language-server/bin/lua-language-server",
             "filetypes": ["lua"],
             "rootPatterns": [".git/"],
             "settings": {
@@ -276,7 +272,6 @@ Stick the following in your `kak-lsp.toml` to inform it about the language serve
 filetypes = ["lua"]
 roots = [".git/"]
 command = "lua-language-server"
-args = ["-E", "/usr/share/lua-language-server/main.lua"]
 ```
 
 ### Configuration
