@@ -4,6 +4,6 @@
 * options
     * `--logpath=D:/log`: The write location of the log, default is `LUA_LANGUAGE_SERVER/log`
     * `--metapath=D:/meta`: Generation location of definition file of standard library, default is `LUA_LANGUAGE_SERVER/meta`
-    * `--locale=en-us`: The localized language used, will override the client's settings. Currently supports `en-us` and `zh-cn`
+    * `--locale=en-us`: The localized language used, will override the client's settings. Currently supports `en-us`, `zh-cn` and `pt-br`
     * `--configpath="config.json"`: Load local config path, the path can be related to workspace. Once you use this parameter, the settings will no longer be read from other places (for example VSCode client). [Lean more here](https://github.com/sumneko/lua-language-server/wiki/Setting-without-VSCode).
     * `--version`: Shows the version number. The server will immediately exit.
