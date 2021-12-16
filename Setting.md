@@ -154,10 +154,10 @@ I'm posting this in the hope that it'll save someone else from spending an after
         }
     }
 
-    "Lua.workspace.library":  {  // ← coc.nvim will warn:  "Property Lua.workspace.library is not allowed."
-        "/path/to/hammerspoon-completion/build/stubs": true, 
-        "/path/to/neovim/runtime/lua": true 
-    },
+    "Lua.workspace.library":  [  // ← coc.nvim will warn:  "Property Lua.workspace.library is not allowed."
+        "/path/to/hammerspoon-completion/build/stubs", 
+        "/path/to/neovim/runtime/lua" 
+    ],
 ```
 
 ---
@@ -173,10 +173,10 @@ I'm posting this in the hope that it'll save someone else from spending an after
             "filetypes": ["lua"],
             "rootPatterns": [".git/"],
             "settings": {
-                 "Lua.workspace.library":  {  // ← don't use dot-separated keys, properly nested keys are required.
-                     "/path/to/hammerspoon-completion/build/stubs": true, 
-                     "/path/to/neovim/runtime/lua": true 
-               },
+                 "Lua.workspace.library":  [  // ← don't use dot-separated keys, properly nested keys are required.
+                     "/path/to/hammerspoon-completion/build/stubs", 
+                     "/path/to/neovim/runtime/lua"
+               ],
             }
         }
     }
@@ -206,10 +206,10 @@ As of 2020-11-07, the following works on the system identified in the comment:
             "settings": {
                 "Lua": {
                     "workspace": {
-                        "library": {
-                            "/path/to/hammerspoon-completion/build/stubs": true,
-                            "/path/to/neovim/runtime/lua": true
-                        },
+                        "library": [
+                            "/path/to/hammerspoon-completion/build/stubs",
+                            "/path/to/neovim/runtime/lua"
+                        ],
                         "maxPreload": 2000,
                         "preloadFileSize": 1000
                     },
