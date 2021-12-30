@@ -38,7 +38,7 @@ cd ../..
 ```
 + `Linux`:
 ```shell
-./bin/Linux/lua-language-server
+./bin/lua-language-server
 ```
 + `macOS`:
 ```shell
