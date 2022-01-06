@@ -34,7 +34,7 @@ cd ../..
 5. Run (non-VSCode)
 + `Windows`:
 ```shell
-.\bin\Windows\lua-language-server.exe
+.\bin\lua-language-server.exe
 ```
 + `Linux`:
 ```shell
@@ -42,7 +42,7 @@ cd ../..
 ```
 + `macOS`:
 ```shell
-./bin/macOS/lua-language-server
+./bin/lua-language-server
 ```
 
 ---
