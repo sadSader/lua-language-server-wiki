@@ -19,4 +19,5 @@ Welcome to the lua-language-server wiki!
 + Developer
   * [Theme tokens](https://github.com/sumneko/lua-language-server/blob/master/theme-tokens.md)
   * [Debug](https://github.com/sumneko/lua-language-server/wiki/Debug)
+  * [Multi-workspace](https://github.com/sumneko/lua-language-server/wiki/Multi-workspace-supports)
 + [Sponsor](https://github.com/sumneko/lua-language-server/issues/484)
