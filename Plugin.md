@@ -1,6 +1,6 @@
 (This wiki is translated by a machine translator. You are free to improve the content!)
 
-**Notice：This feature allows you to add your own custom doc syntax format to the language server. It will not hint your custom syntax as errors, and will save the replaced file content to `LOGPATH/diffed.lua` when you set `Lua.misc.parameters:[--develop=true ]` in configuration. But it will not replace the content in VS Code's text editor, which is a formatting feature this server does not implement.
+**Notice：This feature allows you to add your own custom doc syntax format to the language server. It will not hint your custom syntax as errors, and will save the replaced file content to `LOGPATH/diffed.lua` when you set `Lua.misc.parameters:[--develop=true ]` in configuration. But it will not replace the content in VS Code's text editor, which is a formatting feature this server does not implement.**
 
 Create `.vscode/lua/plugin.lua` in your workspace (or other path), specifying this path via the setting `Lua.runtime.plugin`.
 For security reasons, this setting is empty by default (meaning that no local files can be loaded).
