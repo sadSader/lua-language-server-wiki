@@ -12,3 +12,6 @@ For configuration documents, please refer to https://github.com/CppCXY/EmmyLuaCo
 
 ## Create a template configuration
 create a `.edtorconfig` file in the project root and copy from [template](https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/lua.template.editorconfig)
+
+## Feature request and bug reports
+https://github.com/CppCXY/EmmyLuaCodeStyle/issues
