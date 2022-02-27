@@ -11,7 +11,7 @@ Or if you want different files in the current directory to use different configu
 For configuration documents, please refer to https://github.com/CppCXY/EmmyLuaCodeStyle
 
 ## Create a template configuration
-create a `.edtorconfig` file in the project root and copy from [template](https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/lua.template.editorconfig)
+create a `.editorconfig` file in the project root and copy from [template](https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/lua.template.editorconfig)
 
 ## Feature request and bug reports
 https://github.com/CppCXY/EmmyLuaCodeStyle/issues
