@@ -239,7 +239,7 @@ local v = Generic("Foo") -- v is an object of Foo
 #### `@diagnostic`
 Controls diagnostics for errors, warnings, information and hints ([script/proto/define.lua](https://github.com/sumneko/lua-language-server/blob/1.19.0/script/proto/define.lua))
 * `disable-next-line` - Disables diagnostics for the next line.
-* `disable-line`
+* `disable-line` - Disables diagnostics for the current line.
 * `disable` - Disables diagnostics for the file.
 * `enable` - Enables diagnostics for the file.
 ```lua
