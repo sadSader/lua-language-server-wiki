@@ -41,5 +41,19 @@ Lua = {
 }
 ```
 
+## How to enable code style check
+
+#### For Neovim
+
+```lua
+Lua = {
+  diagnostics = {
+    neededFileStatus = {
+      ["codestyle-check"] = "Any",
+    },
+  },
+}
+```
+
 ## Feature request and bug reports
 https://github.com/CppCXY/EmmyLuaCodeStyle/issues
