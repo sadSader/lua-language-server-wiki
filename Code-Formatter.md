@@ -13,5 +13,33 @@ For configuration documents, please refer to https://github.com/CppCXY/EmmyLuaCo
 ## Create a template configuration
 create a `.editorconfig` file in the project root and copy from [template](https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/lua.template.editorconfig)
 
+## How to setup default format options
+If you do not want to specify the common format options for every project via `.editorconfig`, you can setup the default format options.
+
+#### For Neovim
+
+```lua
+Lua = {
+  format = {
+    enable = true,
+    -- Put format options here
+    -- NOTE: the value should be STRING!!
+    defaultConfig = {
+      indent_style = "space",
+      indent_size = "2", 
+    }
+  },
+}
+```
+
+#### For VSCode
+
+```json
+"Lua.format.defaultConfig":{
+    "indent_style":"space",
+    "indent_size":"2"
+}
+```
+
 ## Feature request and bug reports
 https://github.com/CppCXY/EmmyLuaCodeStyle/issues
