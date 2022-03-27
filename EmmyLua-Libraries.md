@@ -7,9 +7,39 @@ EmmyLua [annotations](https://github.com/sumneko/lua-language-server/wiki/EmmyLu
 ```
 ![](https://user-images.githubusercontent.com/1073877/115629918-7f3f0d00-a303-11eb-954f-134cb646c030.png)
 
-## Plugin extension
+## Third party directories
+
+Third party directories are somewhat similar to workspace libraries, but aside from just providing meta definitions, you can define:
+* When to suggest the third party library
+* Changes to apply to the [server configuration](https://github.com/sumneko/lua-language-server/wiki/Setting)
+* [Plugins](https://github.com/sumneko/lua-language-server/wiki/Plugin)
+
+![image](https://user-images.githubusercontent.com/79615454/160298856-ec66a65b-448a-4eff-b650-060c02616e71.png)
+
+You can find more information on the motivation of this in [#409](https://github.com/sumneko/lua-language-server/issues/409). Built-in libraries are also supported for commonly used environments, such as OpenResty.
+
+To add a custom third party directory, supply the path in `Lua.workspace.userThirdParty`:
+```json
+    "Lua.workspace.userThirdParty": [
+        "d:\\SomePath\\ThirdPartyFolder",
+        "./meta/MyThirdParty"
+    ],
+```
+
+Note: The language server will search for content in **sub-directories** of the path supplied to `Lua.workspace.userThirdParty`, meaning that your `userThirdParty` should look like that:
+> * MyThirdParty/
+>   * Library1/
+>     * library/
+>     * config.lua
+>   * Library2/
+>     * library/
+>     * config.lua
+>     * plugin.lua
+
+You can find examples for third party libraries [here](https://github.com/sumneko/lua-language-server/tree/master/meta/3rd).
+
+## Bundling in a plugin extension
 * _Disclaimer: This article was written by a [user](https://github.com/sumneko/lua-language-server/issues/417)._
-* Built-in libraries are also supported for commonly used environments, see [#409](https://github.com/sumneko/lua-language-server/issues/409).
 
 An [extension](https://code.visualstudio.com/api/get-started/your-first-extension) that ships its own EmmyLua folder(s) can choose to automatically add this path.
 
