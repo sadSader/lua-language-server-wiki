@@ -53,9 +53,6 @@ It would prompt you all the settings and options like this:
 
 ![setting-without-vscode](https://github.com/sumneko/vscode-lua/blob/master/images/setting-without-vscode.gif?raw=true)
 
-
-
-
 ## Different clients load `setting.json` in different ways:
 
 ### Neovim with built-in LSP client
