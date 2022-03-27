@@ -35,17 +35,25 @@ return {
 For safety, `.luarc.json` can only be JSON.
 
 ## JSON Schema
-There is a [json schema](https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json) file to help you configure settings manually.
+There is a [JSON schema](https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json) file to help you configure settings manually. You can find the description of the settings here: https://github.com/sumneko/vscode-lua/blob/master/setting/schema.json
 
-You can download a template `setting.json` from https://github.com/sumneko/vscode-lua/blob/master/setting/setting.json.
+In VSCode, the schema is automatically injected into both `.vscode/setting.json` and `.luarc.json` so you do not need the `$schema` key for these.
 
-If your editor supports `jsonschema`, it would prompt you all the settings and options like this:
+For other editors that support `jsonschema`, you can [download](https://github.com/sumneko/vscode-lua/blob/master/setting/setting.json) the schema and reference it by adding `$schema` to the top of your configuration:
 
-![setting-without-vscode](https://github.com/sumneko/vscode-lua/blob/master/images/setting-without-vscode.gif?raw=true)
+```json
+{
+    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json"
+}
+```
 
 (对于中文用户，使用 `https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema-zh-cn.json` 可以看到中文的提示）
 
-You can find the description of the settings here: https://github.com/sumneko/vscode-lua/blob/master/setting/schema.json
+It would prompt you all the settings and options like this:
+
+![setting-without-vscode](https://github.com/sumneko/vscode-lua/blob/master/images/setting-without-vscode.gif?raw=true)
+
+
 
 
 ## Different clients load `setting.json` in different ways:
