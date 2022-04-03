@@ -29,6 +29,6 @@ If you choose to enable telemetry, I would be very grateful. In addition to impr
 
 # Use of the collected data
 
-The collected data is used to improve the `Lua-language-server`. The collected data is public, you can find it at http://119.45.194.183/
+The collected data is used to improve the `Lua-language-server`. The collected data is public, you can find it at http://154.23.191.94/
 
 Find collecting codes at https://github.com/sumneko/lua-telemetry-server/tree/master/method
