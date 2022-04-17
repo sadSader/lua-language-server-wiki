@@ -15,6 +15,7 @@ Welcome to the lua-language-server wiki!
   * [How to change settings without VS Code?](https://github.com/sumneko/lua-language-server/wiki/Setting)
   * [Why scanning home folder?](https://github.com/sumneko/lua-language-server/wiki/Why-scanning-home-folder%3F)
   * [How to configure formatter?](https://github.com/sumneko/lua-language-server/wiki/Code-Formatter)
+  * [How to improve startup speed?](https://github.com/sumneko/lua-language-server/wiki/How-to-improve-startup-speed)
 + Privacy Policy
   * [English](https://github.com/sumneko/lua-language-server/wiki/Privacy-Policy)
   * [中文](https://github.com/sumneko/lua-language-server/wiki/%E9%9A%90%E7%A7%81%E5%A3%B0%E6%98%8E)
