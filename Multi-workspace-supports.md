@@ -16,7 +16,9 @@ Scope可以附加一些工作区以外的文件或目录，比如你的工作区
 
 
 每个Scope会拥有独立的环境，用于分离全局变量/class/设置/require可见度等。
+
 -------------------------------------------------
+
 The server will create a `<fallback>` scope by default. When you start in "single file mode", your files will be regarded as in the `<fallback>` scope.    
 If you start in workspace mode, each workspace will create a corresponding scope.
 
