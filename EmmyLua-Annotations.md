@@ -1,8 +1,9 @@
-_Disclaimer: This article was written by a user in an effort to get basic documentation._
 
-[EmmyLua](https://github.com/EmmyLua) annotations are doc comments similar to [LDoc](https://stevedonovan.github.io/ldoc/manual/doc.md.html) tags, but besides adding documentation they are used to improve features like code completion and signature information. Also refer to the [official documentation](https://emmylua.github.io/annotation.html) and [Luanalysis](https://github.com/Benjamin-Dobell/IntelliJ-Luanalysis#static-analysis-features) (EmmyLua fork), although Sumneko's implementation might not be the same.
+The language server provides Intellisense through the concept of types. However, some situations may call for manual type annotations and documentation to improve features like code completion and signature information.
 
 ![](https://user-images.githubusercontent.com/1073877/111884243-a337c780-89c0-11eb-856e-b6c3b1042810.gif)
+
+_Note:_ Sumneko's type annotations are based off [EmmyLua annotations](https://emmylua.github.io/annotation.html), but will continue to be referred to as such in some places, although this may change in the future as they are [no longer cross-compatible](https://github.com/sumneko/lua-language-server/issues/980) since version 3.0.0.
 
 ## Table of Contents
 * Annotations
@@ -25,13 +26,18 @@ _Disclaimer: This article was written by a user in an effort to get basic docume
   * [@nodiscard](#nodiscard)
   * [@meta](#meta)
   * [@see](#see)
-* Options
-  * [Completion: Display Context](#completion-display-context)
+* [Trivia](#trivia)
 * [References](#references)
 
 ## Annotations
-#### `@param`
+
 Specifies the type of function params.
+
+#### `@param` [name]
+
+* Syntax:
+```
+@param 
 ```lua
 ---@param r number
 ---@param g number
@@ -291,6 +297,9 @@ This is for internal use by Sumneko. The mark will have some details on the impa
 * completion will not display context in a meta file
 * hover of `require` a meta file shows `[[meta]]` instead of absolute path
 * find reference ignores results in a meta file
+
+### Trivia
+* Sumneko's type annotations are based off [EmmyLua](https://github.com/EmmyLua) tags. EmmyLua annotations are doc comments similar to [LDoc](https://stevedonovan.github.io/ldoc/manual/doc.md.html) tags, but besides adding documentation they are used to improve features like code completion and signature information.  Also refer to the [official documentation](https://emmylua.github.io/annotation.html) and [Luanalysis](https://github.com/Benjamin-Dobell/IntelliJ-Luanalysis#static-analysis-features) (EmmyLua fork), although Sumneko's implementation might not be the same.
 
 ### References
 * EmmyLua: https://emmylua.github.io/annotation.html
