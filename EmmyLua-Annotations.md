@@ -17,7 +17,7 @@ _Note:_ Sumneko's type annotations are based off [EmmyLua annotations](https://e
   * [@vararg](#vararg)
   * [@alias](#alias)
   * [@overload](#overload)
-  * [@generic](#generic)
+  * [Generics and @generic](#generics-and-generic)
   * [@diagnostic](#diagnostic)
   * [@module](#module)
   * [@version](#version)
@@ -268,7 +268,8 @@ local x = mt() -> x is `Class` here
 
 #### Generics and `@generic`
 
-##### `@generic`
+**`@generic`**
+
 Simulates generics. Generics allow greater flexibility in typings and improves code reuse. 
 * Syntax:
 ```
@@ -299,7 +300,7 @@ local v = Generic("Foo") -- v is an object of Foo
 ```
 ![](https://user-images.githubusercontent.com/1073877/114521804-0d9bfa80-9c43-11eb-81cb-61aa9d281f40.png)
 
-##### Generic class and alias
+**Generic class and alias**
 
 Aside from functions, classes and aliases can also make use of generics.
 ```type
