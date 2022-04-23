@@ -31,13 +31,17 @@ _Note:_ Sumneko's type annotations are based off [EmmyLua annotations](https://e
 
 ## Annotations
 
-Specifies the type of function params.
+Annotations are defined via comments with 3 lines (`---`) before the tags.
 
-#### `@param` [name]
+#### `@param`
+Specifies the type of function params.
 
 * Syntax:
 ```
-@param 
+@param <name> <type> [comment]
+```
+
+* Example:
 ```lua
 ---@param r number
 ---@param g number
@@ -47,6 +51,13 @@ function SetColor(r, g, b) end
 
 #### `@return`
 Specifies the type of function returns. Note that the return name is optional.
+
+* Syntax:
+```
+@return <type> [name] [comment]
+```
+
+* Example:
 ```lua
 ---@return string firstName
 ---@return string middleName
@@ -63,7 +74,9 @@ function GetName() end
 ```
 
 #### `@class`
-Defines classes.
+Defines classes and table structures.
+
+* Example:
 ```lua
 ---@class Animal
 ---@field legs number
@@ -82,6 +95,8 @@ local gamercat = {}
 
 #### `@field`
 Declares a field on a class. For example a table/structure can be annotated as a class with fields.
+
+* Example:
 ```lua
 ---@param id number
 ---@return BNetAccountInfo accountInfo
@@ -106,22 +121,26 @@ print(info.gameAccountInfo.characterName)
 #### Types and `@type`
 Known types are: `nil, any, boolean, string, number, integer, function, table, thread, userdata, lightuserdata`
 * Classes can be [used](EmmyLua-Annotations#class) and passed or [returned](EmmyLua-Annotations#field) as a type.
-* Multiple types are separated with `|`
+* Multiple union types are separated with `|`
 ```lua
 ---@param nameOrIndex string|number
 ---@return table|nil info
 function GetQuestInfo(nameOrIndex) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/114528298-2c9d8b00-9c49-11eb-9d37-9219f8df5a0d.png)
-
 * `@type` specifies the type of a variable. 
 * Arrays are indicated with a `[]`
 ```lua
 ---@type string[]
 local msg = {"hello", "world"}
 ```
+* Literals are understood as valid sub-types in various places. This can provide more context for additional Intellisense features.
+```lua
+--- @alias Alias "enum1" | 1
+```
+![image](https://user-images.githubusercontent.com/79615454/164944678-74fed16b-a092-4cd5-b68c-6a73ba825e3e.png)
 
-* Tables are formatted as `table<KEY_TYPE, VALUE_TYPE>`
+* Table records are formatted as `table<KEY_TYPE, VALUE_TYPE>`
 ```lua
 ---@type table<string, number>
 local CalendarStatus = {
@@ -131,11 +150,18 @@ local CalendarStatus = {
 	Confirmed = 3,
 }
 ```
+* Table literals are formatted as `{ name: VALUE_TYPE, name2: VALUE_TYPE }`.
+Index signatures can also be used to describe a table record.
+```lua
+--- @type { [string]: true }
+local a -- `a[""]` is type `true`
+```
 
 * Functions are formatted as `fun(param: VALUE_TYPE): RETURN_TYPE` and are used in e.g. [@overload](EmmyLua-Annotations#overload)
 ```lua
 fun(x: number): number
 ```
+
 ### Comments
 There are multiple ways to format comments. The `@` and `#` symbols can be used to (explicitly) begin an annotation comment. This is useful for `@return` if you don't want to specify a param name but do want to add a comment.
 ```lua
@@ -194,7 +220,7 @@ function tostringall(...) end
 #### `@alias`
 Aliases are useful for reusing param types e.g. a function or string literals.
 ```lua
----@alias exitcode2 '"exit"' | '"signal"'
+---@alias exitcode2 "exit" | 'signal'
 
 ---@return exitcode2
 function io.close2() end
@@ -206,8 +232,8 @@ function file:close2() end
 String literals for an alias can be listed on multiple lines and commented with `#`
 ```lua
 ---@alias popenmode3
----| '"r"' # Read data from this program by `file`.
----| '"w"' # Write data to this program by `file`.
+---| 'r' # Read data from this program by `file`.
+---| 'w' # Write data to this program by `file`.
 
 ---@param prog string
 ---@param mode popenmode3
@@ -217,6 +243,8 @@ function io.popen3(prog, mode) end
 
 #### `@overload`
 Specifies multiple signatures.
+
+* Function overloading:
 ```lua
 ---@param tbl table
 ---@param name string
@@ -226,21 +254,59 @@ function hooksecurefunc(tbl, name, hook) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/114531962-a84d0700-9c4c-11eb-90ef-ea1fdddb9137.png)
 
-#### `@generic`
-Simulates generics.
+<!-- 3.2.0
+* Class overloading:
+This can be useful if you implement a `__call` metamethod on your class, which could be used as a constructor.
+```lua
+---@class Class
+---@overload fun():Class
+local mt
+
+local x = mt() -> x is `Class` here
+```
+-->
+
+#### Generics and `@generic`
+
+##### `@generic`
+Simulates generics. Generics allow greater flexibility in typings and improves code reuse. 
+* Syntax:
+```
+@generic <name> [:parent_type] [, <name> [:parent_type]]
+```
+
+```lua
+---@generic TArg1 : integer
+---@param p1 TArg1
+---@return TArg1, TArg1[]
+function Generic(p1) end
+
+local arg1, arg1 = Generic(2) -- arg1 is `integer`, arg2 is `integer[]`
+```
+
+Encapsulating the generic type in backticks (`` ` ``) captures the **name** of the generic type.
 ```lua
 ---@class Foo
 local Foo = {}
 function Foo:Bar() end
 
 ---@generic T
----@param name `T`
----@return T
+---@param name `T` # the name generic type is captured here
+---@return T       # generic type is returned
 function Generic(name) end
 
 local v = Generic("Foo") -- v is an object of Foo
 ```
 ![](https://user-images.githubusercontent.com/1073877/114521804-0d9bfa80-9c43-11eb-81cb-61aa9d281f40.png)
+
+##### Generic class and alias
+
+Aside from functions, classes and aliases can also make use of generics.
+```type
+---@class table<K, V>: { [K]: V } -> this is builtin
+
+---@alias mark<K> { [K]: true } 
+```
 
 #### `@diagnostic`
 Controls diagnostics for errors, warnings, information and hints ([script/proto/define.lua](https://github.com/sumneko/lua-language-server/blob/1.19.0/script/proto/define.lua))
@@ -298,8 +364,25 @@ This is for internal use by Sumneko. The mark will have some details on the impa
 * hover of `require` a meta file shows `[[meta]]` instead of absolute path
 * find reference ignores results in a meta file
 
+<!-- 3.2.0
+#### `@as`
+Casts a variable into a defined type.
+
+* Syntax:
+```lua
+--[[@as <type>]]
+```
+
+* Example:
+```
+local x = true
+local y = x--[[@as integer]] -- y is `integer` here
+```
+-->
+
 ### Trivia
 * Sumneko's type annotations are based off [EmmyLua](https://github.com/EmmyLua) tags. EmmyLua annotations are doc comments similar to [LDoc](https://stevedonovan.github.io/ldoc/manual/doc.md.html) tags, but besides adding documentation they are used to improve features like code completion and signature information.  Also refer to the [official documentation](https://emmylua.github.io/annotation.html) and [Luanalysis](https://github.com/Benjamin-Dobell/IntelliJ-Luanalysis#static-analysis-features) (EmmyLua fork), although Sumneko's implementation might not be the same.
+* Sumneko's type annotations are based off [EmmyLua annotations](https://emmylua.github.io/annotation.html), but will continue to be referred to as such in some places, although this may change in the future as they are [no longer cross-compatible](https://github.com/sumneko/lua-language-server/issues/980) since version 3.0.0.
 
 ### References
 * EmmyLua: https://emmylua.github.io/annotation.html
@@ -307,3 +390,4 @@ This is for internal use by Sumneko. The mark will have some details on the impa
 * Tests: https://github.com/sumneko/lua-language-server/blob/master/test/definition/luadoc.lua
 * Issues: https://github.com/sumneko/lua-language-server/issues?q=label%3AEmmyLua
 * Discussion: https://github.com/sumneko/lua-language-server/discussions/470
+* Changelogs: https://github.com/sumneko/lua-language-server/blob/master/changelog.md
