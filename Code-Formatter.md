@@ -41,6 +41,8 @@ Lua = {
 }
 ```
 
+`NOTE`: In fact, the indentation cannot be set by the above setting method. indentation uses the editor's indentation settings for the current file
+
 ## How to enable code style check
 
 #### For Neovim
