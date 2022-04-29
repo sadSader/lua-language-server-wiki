@@ -76,7 +76,7 @@ Please take a look before reading the following content: https://github.com/sumn
 
 When you start the server in single file mode, the server will only create a `<fallback>` scope, and all Lua files will be processed here.
 
-When you start the server in workspace mode, the server will actually create two scopes, one is your workspace, and the other is the `<fallback>'. When you open a Lua file that does not belong to the workspace, the file will be placed in `<fallback>` to prevent the global variables of the file from polluting your workspace environment.
+When you start the server in workspace mode, the server will actually create two scopes, one is your workspace, and the other is the `<fallback>`. When you open a Lua file that does not belong to the workspace, the file will be placed in `<fallback>` to prevent the global variables of the file from polluting your workspace environment.
 
 Since my development environment is VSCode, and VSCode can simply set different settings for different workspaces, I make the following assumptions:
 * The user will set the `workspace.library` separately for workspaces, because Lua's capabilities are mainly provided by the host, and different workspaces generally correspond to different hosts.
