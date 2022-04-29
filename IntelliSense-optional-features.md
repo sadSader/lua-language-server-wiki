@@ -1,3 +1,5 @@
+# Deprecated since 3.0.0
+
 #### `Lua.IntelliSense.traceLocalSet`
 
 * `true`
