@@ -5,9 +5,9 @@ You could try [PreCompiled binaries](https://github.com/sumneko/lua-language-ser
 3. Clone project
 ```shell
 # clone project
-git clone https://github.com/sumneko/lua-language-server
+git clone  --depth=1 https://github.com/sumneko/lua-language-server
 cd lua-language-server
-git submodule update --init --recursive
+git submodule update --depth 1 --init --recursive
 ```
 4. Build
 + `Windows`:
