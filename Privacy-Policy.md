@@ -19,7 +19,7 @@ Find sending codes at https://github.com/sumneko/lua-language-server/blob/master
 
 # Disabling telemetry
 
-To not send any usage data or error reports to the development team, set the ``Lua.telemetry.enable`` setting to ``false``. (To do so, search for the variable by name under Code->Preferences->Settings.)
+To not send any usage data or error reports to the development team, set the ``Lua.telemetry.enable`` setting to ``false``. (To do so, search for the variable by name under File/Code->Preferences->Settings.)
 
 # Opt-in policy
 
