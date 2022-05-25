@@ -12,7 +12,7 @@ Welcome to the lua-language-server wiki!
 + QA
   * [Where can I find logs?](https://github.com/sumneko/lua-language-server/wiki/Default-log-path)
   * [How to change settings without VS Code?](https://github.com/sumneko/lua-language-server/wiki/Setting)
-  * [Why scanning home folder?](https://github.com/sumneko/lua-language-server/wiki/Why-scanning-home-folder%3F)
+  * [Why scanning home folder?](https://github.com/sumneko/lua-language-server/wiki/Why-scanning-home-folder)
   * [How to configure formatter?](https://github.com/sumneko/lua-language-server/wiki/Code-Formatter)
   * [How to improve startup speed?](https://github.com/sumneko/lua-language-server/wiki/How-to-improve-startup-speed)
 + Privacy Policy
