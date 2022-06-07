@@ -1,7 +1,5 @@
 Thank you for reading this wiki. I will briefly describe the file construction of this language server.
 
-WIP...
-
 # 3rd
 submodules
 
@@ -165,7 +163,7 @@ vm.compileNode('mt')
 
 -->
 
-{
+node: {
     [1] = {
         type = 'local',
         [1]  = 'mt',
@@ -178,7 +176,91 @@ vm.compileNode('mt')
 }
 ```
 
-### compiler.lua
+### script/vm/compiler.lua
+provide `vm.compileNode(source) --> node`
+
+### script/vm/def.lua
+provide `vm.getDefs(source) --> source[]`
+
+### script/vm/doc.lua
+provide EmmyLua related features
+
+### script/vm/field.lua
+provide `vm.getFields(source) --> source[]`
+
+### script/vm/generic.lua
+resolve generic by `proto`, `sign` and `call args`
+
+### script/vm/global.lua
+manager for global variables and types
+
+> include `GlobalVar.x.y.z`
+
+### script/vm/infer.lua
+provide class `infer`: infer types of sources
+
+### script/vm/local-id.lua
+manager for local variables
+
+> include `localVar.x.y.z`
+
+### script/vm/node.lua
+class `node`
+
+### script/vm/ref.lua
+provide `vm.getRefs(source) --> source[]`
+
+### script/vm/runner.lua
+process analysis and tracking for local variables
+
+```lua
+---@type number|nil
+local x
+
+if x then
+    print(x) --> `x` is number here
+end
+```
+
+### script/vm/sign.lua
+create generic instance
+
+## script/workspace
+manager of workspace
+
+### script/workspace/loading.lua
+workspace loading process
+
+### script/workspace/require-path.lua
+compute require name of file
+
+### script/workspace/scope.lua
+class `scope`, see [multi workspace supports](https://github.com/sumneko/lua-language-server/wiki/Multi-workspace-supports)
+
+### script/workspace/workspace.lua
+provide workspace related features
+
+## script/await.lua
+simple coroutine library
+
+## script/client.lua
+* wrapped LSP request from server to client
+* modify configuration file
+
+## script/files.lua
+manager files
+
+## script/language.lua
+provide locale supports
+
+## script/lclient.lua
+fake client for `cli` and `tests`
+
+## script/library.lua
+meta related features
+
+## script/plugin.lua
+plugin feature, see [plugin](https://github.com/sumneko/lua-language-server/wiki/Plugin)
 
 # test
 
