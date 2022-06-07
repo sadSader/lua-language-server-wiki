@@ -20,40 +20,40 @@ used for build
 # meta
 provide definition files.
 
-## 3rd
+## meta/3rd
 definition files for built-in 3rd library, e.g. `love2d`, `OpenResty`.
 
-## template
+## meta/template
 definition template files for built-in library, e.g. `io`, `table`  
 after the language server is started, real definition files will be generated according to your Lua version, language ID and file encoding
 
-## Lua {LUA_VERSION} {LANGUAGE_ID} {FILE_ENCODING}
+## meta/Lua {LUA_VERSION} {LANGUAGE_ID} {FILE_ENCODING}
 definition files for built-in library, ignored in git
 
 # script
 code executed by the language server
 
-## brave
+## script/brave
 sub thread workers, provide "read protocol from standard input", "read file content" and "regularly wake up the main thread"
 
-## cli
+##  script/cli
 provide `--version` and `--check`, see https://github.com/sumneko/lua-language-server/wiki/Command-line
 
-## config
+## script/config
 
-## core
+## script/core
 provide language features
 
 the file name is the feature, so it will not be introduced separately
 
-## encoder
+## script/encoder
 convert encoding between `ansi`, `utf8` and `utf16`
 
-## glob
+## script/glob
 [lua-glob](https://github.com/sumneko/lua-glob)  
 Used to resolve `abc/*/[1-9].lua`
 
-## parser
+## script/parser
 [LuaParser](https://github.com/sumneko/LuaParser)  
 parsing Lua code into an abstract syntax tree
 
@@ -102,13 +102,13 @@ y = 1
 
 most of the files are obsolete, and only the following files are in use
 
-### guide.lua
+### script/parser/guide.lua
 provide utility functions, for example `getVisibleLocals(source, position)`, `getParentFunction(source)` and `positionToOffset(state, position)`
 
-### luadoc.lua
+### script/parser/luadoc.lua
 parse EmmyLua from `state.comments`
 
-### newparser.lua
+### script/parser/newparser.lua
 parsing Lua code into an abstract syntax tree, then wrapping into `state`
 
 ```lua
@@ -122,37 +122,37 @@ local state = {
 }
 ```
 
-### tokens.lua
+### script/parser/tokens.lua
 split text into tokens by `LpegLabel`
 
-## proto
+## script/proto
 LSP related
 
-### converter.lua
+### script/proto/converter.lua
 `50003` -> `{ line = 5, character = 3 }`
 
-### define.lua
+### script/proto/define.lua
 consts
 
-### proto.lua
+### script/proto/proto.lua
 communication with client
 
-## provider
+## script/provider
 bridging LSP requests with core features
 
-### diagnostic.lua
+### script/provider/diagnostic.lua
 manage diagnostic push service
 
-### provider.lua
+### script/provider/provider.lua
 register server capability
 
-## pub
+## script/pub
 sub thread host
 
-## service
+## script/service
 server runtime and event loop
 
-## vm
+## script/vm
 semantic analysis of the abstract syntax tree, and binding status according to the workspace files
 
 ```lua
@@ -177,6 +177,8 @@ vm.compileNode('mt')
     },
 }
 ```
+
+### compiler.lua
 
 # test
 
