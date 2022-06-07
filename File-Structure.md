@@ -1,7 +1,5 @@
 Thank you for reading this wiki. I will briefly describe the file construction of this language server.
 
-WIP...
-
 # 3rd
 submodules
 
@@ -52,12 +50,7 @@ provide `--version` and `--check`, see https://github.com/sumneko/lua-language-s
 ## core
 provide language features
 
-<details>
-<summary>subdirectories</summary>
-
-
-
-</details>
+the file name is the feature, so it will not be introduced separately
 
 ## encoder
 convert encoding between `ansi`, `utf8` and `utf16`
@@ -111,6 +104,7 @@ y = 1
 
 > first line is 0, `start` is cursor position on the left and `finish` is cursor position on the right
 > position = row * 10000 + col, therefore, only codes without more than 10000 bytes in a single line are supported
+> these nodes are generally named `source`
 
 most of the files are obsolete, and only the following files are in use
 
@@ -121,7 +115,92 @@ most of the files are obsolete, and only the following files are in use
 provide utility functions, for example `getVisibleLocals(source, position)`, `getParentFunction(source)` and `positionToOffset(state, position)`
 
 ### luadoc.lua
-parse EmmyLua
+parse EmmyLua from `state.comments`
+
+### newparser.lua
+parsing Lua code into an abstract syntax tree, then wrapping into `state`
+
+```lua
+local state = {
+    version = 'Lua 5.4',
+    lua     = [[local x = 1]],
+    ast     = { ... },
+    errs    = { ... }, -- syntax errors
+    comms   = { ... }, -- comments
+    lines   = { ... }, -- map of offset and position
+}
+```
+
+### tokens.lua
+split text into tokens by `LpegLabel`
+
+</details>
+
+## proto
+LSP related
+
+<details>
+<summary>subdirectories</summary>
+
+### converter.lua
+`50003` -> `{ line = 5, character = 3 }`
+
+### define.lua
+consts
+
+### proto.lua
+communication with client
+
+</details>
+
+## provider
+bridging LSP requests with core features
+
+<details>
+<summary>subdirectories</summary>
+
+### diagnostic.lua
+manage diagnostic push service
+
+### provider.lua
+register server capability
+
+</details>
+
+## pub
+sub thread host
+
+## service
+server runtime and event loop
+
+## vm
+semantic analysis of the abstract syntax tree, and binding status according to the workspace files
+
+```lua
+---@class myClass
+local mt
+```
+
+```lua
+vm.compileNode('mt')
+
+-->
+
+{
+    [1] = {
+        type = 'local',
+        [1]  = 'mt',
+    },
+    [2] = {
+        type = 'global',
+        cate = 'type',
+        name = 'myClass',
+    },
+}
+```
+
+<details>
+<summary>subdirectories</summary>
 
 </details>
 
