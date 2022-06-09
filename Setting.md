@@ -34,6 +34,9 @@ return {
 
 For safety, `.luarc.json` can only be JSON.
 
+## Doc
+https://github.com/sumneko/lua-language-server/tree/master/doc
+
 ## JSON Schema
 There is a [JSON schema](https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json) file to help you configure settings manually. You can find the description of the settings here: https://github.com/sumneko/vscode-lua/blob/master/setting/schema.json
 
