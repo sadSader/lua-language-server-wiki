@@ -204,6 +204,13 @@ function io.popen2(prog, mode) end
 ![](https://user-images.githubusercontent.com/1073877/114528633-7be3bb80-9c49-11eb-8d34-a66db3c9e449.png)
 
 ## `@vararg`
+
+> ⚠️ This is primarily for legacy support for EmmyLua annotations. `@vararg` does not provide typing or allow descriptions. You should instead use [@param](#param) when documenting parameters (variable or not).
+
+### Syntax
+`@vararg <type>`
+
+### Usage
 Indicates a function has multiple variable arguments.
 ```lua
 ---@vararg string
