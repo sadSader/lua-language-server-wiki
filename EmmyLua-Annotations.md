@@ -5,7 +5,7 @@ The language server provides Intellisense through the concept of types. However,
 
 _Note:_ Sumneko's type annotations are based off [EmmyLua annotations](https://emmylua.github.io/annotation.html), but will continue to be referred to as such in some places, although this may change in the future as they are [no longer cross-compatible](https://github.com/sumneko/lua-language-server/issues/980) since version 3.0.0.
 
-## Table of Contents
+# Table of Contents
 * Annotations
   * [@param](#param)
   * [@return](#return)
@@ -29,11 +29,11 @@ _Note:_ Sumneko's type annotations are based off [EmmyLua annotations](https://e
 * [Trivia](#trivia)
 * [References](#references)
 
-## Annotations
+# Annotations
 
 Annotations are defined via comments with 3 lines (`---`) before the tags.
 
-#### `@param`
+## `@param`
 Specifies the type of function params.
 
 * Syntax:
@@ -49,7 +49,7 @@ Specifies the type of function params.
 function SetColor(r, g, b) end
 ```
 
-#### `@return`
+## `@return`
 Specifies the type of function returns. Note that the return name is optional.
 
 * Syntax:
@@ -65,7 +65,7 @@ Specifies the type of function returns. Note that the return name is optional.
 function GetName() end
 ```
 ```lua
----@return string, string, string 
+---@return string, string, string
 function GetName() end
 ```
 ```lua
@@ -73,7 +73,7 @@ function GetName() end
 function GetName() end
 ```
 
-#### `@class`
+## `@class`
 Defines classes and table structures.
 
 * Example:
@@ -93,7 +93,7 @@ local gamercat = {}
 ```
 ![](https://user-images.githubusercontent.com/1073877/114530434-3627f280-9c4b-11eb-9f8d-358e9aadde87.png)
 
-#### `@field`
+## `@field`
 Declares a field on a class. For example a table/structure can be annotated as a class with fields.
 
 * Example:
@@ -118,7 +118,7 @@ print(info.gameAccountInfo.characterName)
 
 ![](https://user-images.githubusercontent.com/1073877/114520809-19d38800-9c42-11eb-9bbe-4310e5b0b986.gif)
 
-#### Types and `@type`
+## Types and `@type`
 Known types are: `nil, any, boolean, string, number, integer, function, table, thread, userdata, lightuserdata`
 * Classes can be [used](EmmyLua-Annotations#class) and passed or [returned](EmmyLua-Annotations#field) as a type.
 * Multiple union types are separated with `|`
@@ -128,7 +128,7 @@ Known types are: `nil, any, boolean, string, number, integer, function, table, t
 function GetQuestInfo(nameOrIndex) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/114528298-2c9d8b00-9c49-11eb-9d37-9219f8df5a0d.png)
-* `@type` specifies the type of a variable. 
+* `@type` specifies the type of a variable.
 * Arrays are indicated with a `[]`
 ```lua
 ---@type string[]
@@ -162,7 +162,7 @@ local a -- `a[""]` is type `true`
 fun(x: number): number
 ```
 
-### Comments
+# Comments
 There are multiple ways to format comments. The `@` and `#` symbols can be used to (explicitly) begin an annotation comment. This is useful for `@return` if you don't want to specify a param name but do want to add a comment.
 ```lua
 ---@param apple string hello 1
@@ -175,7 +175,7 @@ function Foo(apple) end
 
 Comments support [Markdown](https://www.markdownguide.org/) formatting. To create a line break, use two trailing spaces ([#526](https://github.com/sumneko/lua-language-server/issues/526)), note it will trigger the `trailing-space` diagnostic hint.
 ```lua
---this is a **valid** comment  
+--this is a **valid** comment
 ---this is *also* valid and on a newline
 ---
 --- this is a new paragraph
@@ -192,7 +192,7 @@ function Foo(tbl) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/118130952-38be6900-b3fe-11eb-8534-974c38f677d1.png)
 
-### Optional Params
+# Optional Params
 Appending a question mark (after the first word) marks a param optional/nilable. Another option is to instead use `|nil` as a second type.
 ```lua
 ---@param prog  string
@@ -203,7 +203,7 @@ function io.popen2(prog, mode) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/114528633-7be3bb80-9c49-11eb-8d34-a66db3c9e449.png)
 
-#### `@vararg`
+## `@vararg`
 Indicates a function has multiple variable arguments.
 ```lua
 ---@vararg string
@@ -217,7 +217,7 @@ For returning a vararg you can use `...` as a type.
 function tostringall(...) end
 ```
 
-#### `@alias`
+## `@alias`
 Aliases are useful for reusing param types e.g. a function or string literals.
 ```lua
 ---@alias exitcode2 "exit" | 'signal'
@@ -241,7 +241,7 @@ function io.popen3(prog, mode) end
 ```
 ![](https://user-images.githubusercontent.com/1073877/114529340-252ab180-9c4a-11eb-8f08-f34a3e94957b.png)
 
-#### `@overload`
+## `@overload`
 Specifies multiple signatures.
 
 * Function overloading:
@@ -266,11 +266,11 @@ local x = mt() -> x is `Class` here
 ```
 -->
 
-#### Generics and `@generic`
+## Generics and `@generic`
 
 **`@generic`**
 
-Simulates generics. Generics allow greater flexibility in typings and improves code reuse. 
+Simulates generics. Generics allow greater flexibility in typings and improves code reuse.
 * Syntax:
 ```
 @generic <name> [:parent_type] [, <name> [:parent_type]]
@@ -306,10 +306,10 @@ Aside from functions, classes and aliases can also make use of generics.
 ```type
 ---@class table<K, V>: { [K]: V } -> this is builtin
 
----@alias mark<K> { [K]: true } 
+---@alias mark<K> { [K]: true }
 ```
 
-#### `@diagnostic`
+## `@diagnostic`
 Controls diagnostics for errors, warnings, information and hints ([script/proto/define.lua](https://github.com/sumneko/lua-language-server/blob/1.19.0/script/proto/define.lua))
 * `disable-next-line` - Disables diagnostics for the next line.
 * `disable-line` - Disables diagnostics for the current line.
@@ -327,14 +327,14 @@ The diagnostics state behaves as a toggle.
 
 ![](https://user-images.githubusercontent.com/1073877/114522605-d0843800-9c43-11eb-878b-c5c67166260f.png)
 
-#### `@module`
+## `@module`
 Provide the semantics of `require`
 ```lua
 ---@module'mylib.module'
 local module -- same as `local module = require 'mylib.module'`
 ```
 
-#### `@version`
+## `@version`
 Marks if a function or class is exclusive to specific Lua versions: `5.1, 5.2, 5.3, 5.4, JIT`. Requires configuring `Diagnostics: Needed File Status` ([#494](https://github.com/sumneko/lua-language-server/issues/494)).
 
 ![](https://user-images.githubusercontent.com/75196080/115882223-3dbe7700-a455-11eb-892c-6b67ce17029f.png)
@@ -350,15 +350,15 @@ print(Hello())
 ```
 ![](https://user-images.githubusercontent.com/1073877/117734858-a008cd00-b1f4-11eb-9113-8392129e2b5c.png)
 
-#### `@deprecated`
+## `@deprecated`
 Visibly marks a function as deprecated.
 
 ![](https://user-images.githubusercontent.com/75196080/112711806-35b5fa80-8edc-11eb-9a06-41a41545c686.gif)
 
-#### `@see`
+## `@see`
 Functionally the same as an annotation comment.
 
-#### `@meta`
+## `@meta`
 This is for internal use by Sumneko. The mark will have some details on the impact, and may continue to increase in the future. Currently they are:
 
 * completion will not display context in a meta file
@@ -381,11 +381,11 @@ local y = x--[[@as integer]] -- y is `integer` here
 ```
 -->
 
-### Trivia
+# Trivia
 * Sumneko's type annotations are based off [EmmyLua](https://github.com/EmmyLua) tags. EmmyLua annotations are doc comments similar to [LDoc](https://stevedonovan.github.io/ldoc/manual/doc.md.html) tags, but besides adding documentation they are used to improve features like code completion and signature information.  Also refer to the [official documentation](https://emmylua.github.io/annotation.html) and [Luanalysis](https://github.com/Benjamin-Dobell/IntelliJ-Luanalysis#static-analysis-features) (EmmyLua fork), although Sumneko's implementation might not be the same.
 * Sumneko's type annotations are based off [EmmyLua annotations](https://emmylua.github.io/annotation.html), but will continue to be referred to as such in some places, although this may change in the future as they are [no longer cross-compatible](https://github.com/sumneko/lua-language-server/issues/980) since version 3.0.0.
 
-### References
+# References
 * EmmyLua: https://emmylua.github.io/annotation.html
 * Examples: https://github.com/sumneko/lua-language-server/tree/master/meta
 * Tests: https://github.com/sumneko/lua-language-server/blob/master/test/definition/luadoc.lua
