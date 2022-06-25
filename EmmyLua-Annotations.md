@@ -19,6 +19,7 @@ _Note:_ Sumneko's type annotations are based off [EmmyLua annotations](https://e
   * [@overload](#overload)
   * [Generics and @generic](#generics-and-generic)
   * [@diagnostic](#diagnostic)
+  * [@cast](#cast)
   * [@module](#module)
   * [@version](#version)
   * [@deprecated](#deprecated)
@@ -333,6 +334,29 @@ function hello(test) end
 The diagnostics state behaves as a toggle.
 
 ![](https://user-images.githubusercontent.com/1073877/114522605-d0843800-9c43-11eb-878b-c5c67166260f.png)
+
+## `@cast`
+Cast types of variables.
+
+```lua
+---@type integer
+local x --> x: integer
+
+---@cast x boolean
+print(x) --> x: boolean
+
+---@cast x +string, +integer
+print(x) --> x: boolean|string|integer
+
+---@cast x -integer, -boolean
+print(x) --> x: string
+
+---@cast x +?
+print(x) --> x: string?
+
+---@cast x -?
+print(x) --> x: string
+```
 
 ## `@module`
 Provide the semantics of `require`
