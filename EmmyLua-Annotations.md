@@ -20,6 +20,7 @@ _Note:_ Sumneko's type annotations are based off [EmmyLua annotations](https://e
   * [Generics and @generic](#generics-and-generic)
   * [@diagnostic](#diagnostic)
   * [@cast](#cast)
+  * [@as](#as)
   * [@module](#module)
   * [@version](#version)
   * [@deprecated](#deprecated)
@@ -364,6 +365,15 @@ Provide the semantics of `require`
 ---@module'mylib.module'
 local module -- same as `local module = require 'mylib.module'`
 ```
+
+## `@as`
+Force mark type of an exp.
+
+```lua
+openFile(root / 'script' / 'main.lua' --[[@as fspath]])
+```
+
+This can only be used by `--[[@as type]]`, can not be used by `---@as type`
 
 ## `@version`
 Marks if a function or class is exclusive to specific Lua versions: `5.1, 5.2, 5.3, 5.4, JIT`. Requires configuring `Diagnostics: Needed File Status` ([#494](https://github.com/sumneko/lua-language-server/issues/494)).
