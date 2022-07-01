@@ -46,3 +46,5 @@ local x, y, z = getXYZ(v1 + v2 --[[as vector]])
 ```
 
 learn more [cast](https://github.com/sumneko/lua-language-server/wiki/EmmyLua-Annotations#cast) and [as](https://github.com/sumneko/lua-language-server/wiki/EmmyLua-Annotations#as)
+
+Also see [castNumberToIntger](https://github.com/sumneko/lua-language-server/blob/master/doc/en-us/config.md#typecastnumbertointeger) and [weakUnionCheck](https://github.com/sumneko/lua-language-server/blob/master/doc/en-us/config.md#typeweakunioncheck)
