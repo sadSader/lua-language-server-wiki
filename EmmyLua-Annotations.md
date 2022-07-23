@@ -28,6 +28,7 @@ _Note:_ Sumneko's type annotations are based off [EmmyLua annotations](https://e
   * [@nodiscard](#nodiscard)
   * [@meta](#meta)
   * [@see](#see)
+  * [@enum](#enum)
 * [Trivia](#trivia)
 * [References](#references)
 
@@ -405,6 +406,20 @@ This is for internal use by Sumneko. The mark will have some details on the impa
 * completion will not display context in a meta file
 * hover of `require` a meta file shows `[[meta]]` instead of absolute path
 * find reference ignores results in a meta file
+
+## `@enum`
+Allows to define enum types. Use above the table containing the enum fields, and works the same as doing `@alias EnumType tab.ENUM1|tab.ENUM2|...`
+
+```Lua
+---@enum Realm --> Equivalent to ---@alias Realm Realm.Realm_Client|Realm.Realm_Server|...
+local Realm = {
+	Realm_Client = 0, --> type: Realm.Realm_Client
+	Realm_Server = 1, --> type: Realm.Realm_Server
+	Realm_ClientAndServer = 2,
+	Realm_None = 3,
+	Realm_Pipeline = 4,
+}
+```
 
 <!-- 3.2.0
 #### `@as`
