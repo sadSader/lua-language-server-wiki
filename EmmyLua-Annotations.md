@@ -29,6 +29,7 @@ _Note:_ Sumneko's type annotations are based off [EmmyLua annotations](https://e
   * [@meta](#meta)
   * [@see](#see)
   * [@enum](#enum)
+  * [@operator](#operator)
 * [Trivia](#trivia)
 * [References](#references)
 
@@ -410,10 +411,14 @@ This is for internal use by Sumneko. The mark will have some details on the impa
 ## `@enum`
 Mark a table as an enum. If you want an enum but can't define it as a Lua table, take a look at the [@alias](#alias) tag.
 
-Syntax
-@enum <name>
+### Syntax
 
-Usage
+```
+@enum <name>
+```
+
+### Usage
+
 ```Lua
 ---@enum colors
 local colors = {
@@ -430,6 +435,41 @@ local function setColor(color) end
 -- Completion and hover is provided for the below param
 setColor(colors.green)
 ```
+
+## `@operator`
+Provide type declaration for [operator metamethods](http://lua-users.org/wiki/MetatableEvents).
+
+Syntax
+```
+@operator <operation>[(input_type)]:<resulting_type>
+```
+
+### Usage
+
+#### Vector Add Metamethod
+
+```Lua
+---@class Vector
+---@operation add(Vector):Vector
+
+vA = Vector.new(1, 2, 3)
+vB = Vector.new(10, 20, 30)
+
+vC = vA + vB
+--> Vector
+```
+
+#### Unary Minus
+
+```Lua
+---@class Passcode
+---@operation unm:integer
+
+pA = Passcode.new(1234)
+pB = -pA
+--> integer
+```
+
 
 <!-- 3.2.0
 #### `@as`
