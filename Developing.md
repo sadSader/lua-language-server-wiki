@@ -14,9 +14,11 @@ In other clients, use `--develop=true` as a flag from the command line.
 Debugging can be performed in a few ways. You can [do a quick `print()`](#quick-print), [write to the log file](#append-to-log-file), or [attach a debugger](#attach-debugger) to get all the info you need.
 
 ### Quick Print
-You can quickly `print()` to the `OUTPUT` panel (<kbd>Ctrl + Shift + U</kbd>) in Visual Studio Code. Below is an example of how a [plugin](https://github.com/sumneko/lua-language-server/wiki/Plugins) can be debugged.
+You can quickly `print()` to the `OUTPUT` panel (<kbd>Ctrl + Shift + U</kbd>) in Visual Studio Code.
 
-<!-- outputPanel.png -->
+![outputPanel](https://user-images.githubusercontent.com/61925890/181308229-52b7e9b7-2893-429b-bca2-8386670df6b0.png)
+
+Below is an example of how a [plugin](https://github.com/sumneko/lua-language-server/wiki/Plugins) can be debugged.
 
 ```lua
 local util   = require 'utility'
@@ -64,6 +66,7 @@ The below steps guide you through setting up Lua debugging:
    ```
 4. Restart the **Debug Target** (<kbd>F1</kbd> -> `Reload Window`)
 5. Open the `Run and Debug` sidepanel (<kbd>Ctrl + Shift + D</kbd>) and select `🍄 attach`
+   ![outputPanel](https://user-images.githubusercontent.com/61925890/181308530-264e8c8e-3847-4ae4-a4f0-2446c41fbfc8.png)
 6. Press <kbd>F5</kbd> to begin debugging
 
 > ℹ️ Note: If you got the server through git you will need to change the debug port in `settings.json` to `"--dbgport=XXXXX"` and address to `"address": "127.0.0.1:XXXXX"` in `launch.json`.
