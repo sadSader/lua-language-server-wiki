@@ -1,1 +1,0 @@
-see https://github.com/sumneko/lua-language-server/blob/master/theme-tokens.md
