@@ -13,7 +13,7 @@ Settings that adjust how autocompletions are provided while typing.
 
 When the input looks like a file name, automatically require the file.
 
-<!-- completion.autoRequire.gif -->
+![completion autoRequire](https://user-images.githubusercontent.com/61925890/181309077-6877717e-0884-4297-8e3b-9cbe70143e55.gif)
 
 <br>
 
@@ -32,7 +32,7 @@ Whether to show call snippets or not. When disabled, only the function name will
 
 > ℹ️ Note: the below GIF is using the `"Both"` option
 
-<!-- completion.callSnippet.gif -->
+![completion callSnippet](https://user-images.githubusercontent.com/61925890/181309121-ccdce8bd-4d53-4c65-933f-1a754537ecf9.gif)
 
 <br>
 
@@ -46,7 +46,7 @@ When a snippet is being suggested, this setting will set the amount of lines aro
 
 Setting to `0` will disable this feature.
 
-<!-- completion.displayContext.png -->
+![completion displayContext](https://user-images.githubusercontent.com/61925890/181309155-a3881c8d-5fef-4ec1-abfa-bc758e208ff4.png)
 
 <br>
 
@@ -73,7 +73,7 @@ Enable/disable completion. Completion works like any autocompletion you already 
 
 Whether to show a snippet for key words like `if`, `while`, etc. When disabled, only the keyword will be completed. When enabled, a "more complete" snippet will be offered.
 
-<!-- completion.keywordSnippet.gif -->
+![completion keywordSnippet](https://user-images.githubusercontent.com/61925890/181309193-bd98c7c4-e7b6-4014-b280-49beb5e9a386.gif)
 
 <br>
 
@@ -85,7 +85,7 @@ Whether to show a snippet for key words like `if`, `while`, etc. When disabled, 
 
 The character to use for triggering a "postfix suggestion". A postfix allows you to write some code and then trigger a snippet after (post) to "fix" the code you have written. This can save some time as instead of typing `table.insert(myTable, )`, you can just type `myTable@`.
 
-<!-- comletion.postfix.gif -->
+![completion postfix](https://user-images.githubusercontent.com/61925890/181309242-104b7cba-d2a5-496a-bde2-6ec060d95215.gif)
 
 <br>
 
@@ -673,7 +673,7 @@ Settings for configuring inline hints
 - `"Auto"` - Only show hint when there is more than 3 items or the table is mixed (indexes and keys)
 - `"Disable"` - Disable array index hints
 
-<!-- hint.arrayIndex.png -->
+![hint arrayIndex](https://user-images.githubusercontent.com/61925890/181309302-ccd2be1d-6488-4d4e-b375-42cf9bc5b8cd.png)
 
 <br>
 
