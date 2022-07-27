@@ -109,7 +109,7 @@ local function checkSide(side) end
 
 </details>
 
-<!-- alias.png -->
+![alias](https://user-images.githubusercontent.com/61925890/181307619-fce11318-7b2a-490c-8c03-e935438e3b1a.png)
 
 <br>
 
@@ -140,7 +140,7 @@ doSomething(x --[[@as string]])
 
 </details>
 
-<!-- as.png -->
+![as](https://user-images.githubusercontent.com/61925890/181307718-cb0e7fa1-6cf1-48be-a97f-46a1a99d8997.png)
 
 <br>
 
@@ -162,7 +162,7 @@ function http.get(url) end
 
 </details>
 
-<!-- async.png -->
+![async](https://user-images.githubusercontent.com/61925890/181307740-22ad1d85-f132-492a-a2c9-c7969cc53637.png)
 
 <br>
 
@@ -339,7 +339,7 @@ local COLORS = {
 local function setColor(color) end
 ```
 
-<!-- enum.png -->
+![enum](https://user-images.githubusercontent.com/61925890/181307783-532fdd86-6004-4483-9d81-2c822c01fa51.png)
 
 </details>
 
@@ -367,9 +367,9 @@ Define a field within a table. Should be immediately following a [`@class`](http
 local function hire(person) end
 ```
 
-<!-- field.gif -->
-
 </details>
+
+![field](https://user-images.githubusercontent.com/61925890/181307814-81f14004-db8a-4f17-af40-03dd27673648.gif)
 
 <br>
 
