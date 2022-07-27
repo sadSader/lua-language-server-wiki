@@ -16,7 +16,7 @@ The ambiguity diagnostic group contains diagnostics that have to do with ambiguo
 **Default Severity:** `Warning`
 Triggered when there is an ambiguous statement that may need some brackets in order to correct the order of operations.
 
-<!-- ambiguity-1.png -->
+![ambiguity-1](https://user-images.githubusercontent.com/61925890/181308848-15193c22-82bf-4dae-93f3-30deefd678b6.png)
 
 <br>
 
