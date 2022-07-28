@@ -91,6 +91,18 @@ Triggered when there is an indexing operation taking place in a function's name 
 ### `jump-local-scope`
 Triggered when a local variable is "jumped" over using `goto` and labels. "jumping" the variable means it is never defined and will cause errors when it is referenced. This diagnostic serves to protect against such errors.
 
+```lua
+goto jump
+
+local a = 10
+
+::jump::
+-- a is jumped over by this label,
+-- meaning it is never defined
+
+print(a)
+```
+
 <br>
 
 ### `keyword`

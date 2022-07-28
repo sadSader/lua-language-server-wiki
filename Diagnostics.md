@@ -179,15 +179,9 @@ The global group contains diagnostics that deal with the global scope.
 Triggered when a global variable is defined and the environment (`_ENV`) is `nil`.
 
 ```lua
-goto jump
+_ENV = nil
 
-local a = 10
-
-::jump::
--- a is jumped over by this label,
--- meaning it is never defined
-
-print(a)
+myGlobalVar = true
 ```
 
 <br>
