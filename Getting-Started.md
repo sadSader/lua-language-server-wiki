@@ -8,6 +8,8 @@ You'll probably want to get familiar with the [annotations](https://github.com/s
 Using the language server through the VS Code extension is a super easy and convenient way to get set up and start coding.
 
 ### Install
+[![Install in VS Code](https://img.shields.io/badge/Install%20For-VS%20Code-blue?style=for-the-badge&logo=visualstudiocode "Install in VS Code")](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)
+
 The Visual Studio Code extension can be installed from the [marketplace](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) or found in VS Code under `sumneko.lua`.
 
 ### Configuration
