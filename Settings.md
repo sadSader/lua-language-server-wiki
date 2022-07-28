@@ -1173,7 +1173,6 @@ Whether it is permitted to assign a union type which only has one matching type 
 local str = false
 ```
 
----
 
 ## window
 The window group contains settings that modify the window in VS Code.
