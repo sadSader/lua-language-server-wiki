@@ -70,6 +70,8 @@ Are you able to provide translations? There is also a [translations](https://git
 
 Looking to get right into coding? Head over to the [developing](https://github.com/sumneko/lua-language-server/wiki/Developing) section.
 
+Have improvements for this wiki? You are absolutely welcome to [open up an issue](https://github.com/sumneko/lua-language-server/issues/new) to provide fixes and suggest improvements!
+
 
 ## Sponsor
 Sponsorships are appreciated and help continue development of the language server. More info can be found in [#484](https://github.com/sumneko/lua-language-server/issues/484).
