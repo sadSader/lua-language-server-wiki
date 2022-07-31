@@ -65,7 +65,9 @@ An alias can be useful when re-using a type. It can also be used to provide an e
 
 **Syntax**
 `---@alias <name> <type>`
+
 or
+
 ```lua
 ---@alias <name>
 ---| '<value>' [# description]
