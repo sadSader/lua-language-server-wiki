@@ -64,6 +64,7 @@ Below is a list of all annotations recognized by the language server:
 An alias can be useful when re-using a type. It can also be used to provide an enum. If you are looking for an enum and already have the values defined in a Lua table, take a look at [`@enum`](https://github.com/sumneko/lua-language-server/wiki/Annotations#enum).
 
 **Syntax**
+
 `---@alias <name> <type>`
 
 or
@@ -123,6 +124,7 @@ Force a type onto an expression.
 > ℹ️ Note: When marking an expression as an array, such as `string[]`, you must use `--[=[@as string[]]=]` due to the extra square brackets causing parsing issues.
 
 **Syntax**
+
 `--[[@as <type>]]`
 
 > ℹ️ Note: The square brackets in the above syntax definition do not refer to it being optional. Those square brackets must be used verbatim.
@@ -150,6 +152,7 @@ doSomething(x --[[@as string]])
 Mark a function as being asynchronous. When [`hint.await`](https://github.com/sumneko/lua-language-server/wiki/Settings#hintawait) is `true`, functions marked with `@async` will have an `await` hint displayed next to them. Used by diagnostics from the [`await` group](https://github.com/sumneko/lua-language-server/wiki/Diagnostics#await).
 
 **Syntax**
+
 `---@async`
 
 **Examples**
@@ -172,6 +175,7 @@ function http.get(url) end
 Cast a variable to a different type or types
 
 **Syntax**
+
 `---@cast [+|-]<type|?>[, [+|-]<type|?>...]`
 
 **Examples**
@@ -246,6 +250,7 @@ print(x) --> x:string?
 Define a class. Can be used with [`@field`](https://github.com/sumneko/lua-language-server/wiki/Annotations#field) to define a table structure. Once a class is defined, it can be used as a type for [parameters](https://github.com/sumneko/lua-language-server/wiki/Annotations#param), [returns](https://github.com/sumneko/lua-language-server/wiki/Annotations#return), and more.
 
 **Syntax**
+
 `---@class <name>`
 
 **Examples**
@@ -265,6 +270,7 @@ local Car = {}
 Mark a function as deprecated. This will trigger the [`deprecated` diagnostic](https://github.com/sumneko/lua-language-server/wiki/Diagnostics#deprecated), displaying it as ~~struck through~~.
 
 **Syntax**
+
 `---@deprecated`
 
 **Examples**
@@ -320,6 +326,7 @@ Mark a Lua table as an enum, giving it similar functionality to [`@alias`](https
 [View Original Request](https://github.com/sumneko/lua-language-server/issues/1255)
 
 **Syntax**
+
 `---@enum <name>`
 
 **Examples**
@@ -351,6 +358,7 @@ local function setColor(color) end
 Define a field within a table. Should be immediately following a [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class).
 
 **Syntax**
+
 `---@field <name> <type> [description]`
 
 **Examples**
@@ -379,6 +387,7 @@ local function hire(person) end
 Generics allow code to be reused and serve as a sort of "placeholder" for a type. Surrounding the generic in backticks (`` ` ``) will capture the value and use it for the type.
 
 **Syntax**
+
 `---@generic <name> [:parent_type] [, <name> [:parent_type]]`
 
 **Examples**
@@ -478,6 +487,7 @@ Marks a file as "meta", meaning it is used for definitions and not for its funct
 - `Find Reference` ignores meta files
 
 **Syntax**
+
 `---@meta`
 
 **Examples**
@@ -496,6 +506,7 @@ Marks a file as "meta", meaning it is used for definitions and not for its funct
 Simulates `require`-ing a file.
 
 **Syntax**
+
 `---@module '<module_name>'`
 
 **Examples**
@@ -532,6 +543,7 @@ local http = require 'http'
 Mark a function as having return values that **cannot** be ignored/discarded. This can help users understand how to use the function as if they do not capture the returns, a warning will be raised.
 
 **Syntax**
+
 `---@nodiscard`
 
 **Examples**
@@ -554,6 +566,7 @@ Provides type declarations for an [operator metamethod](http://lua-users.org/wik
 [View Original Request](https://github.com/sumneko/lua-language-server/issues/599)
 
 **Syntax**
+
 `---@operator <operation>[(input_type)]:<resulting_type>`
 
 **Examples**
@@ -597,6 +610,7 @@ local pB = -pA
 Define an additional signature for a function. This does not allow descriptions to be provided for the new signature being defined - if you want descriptions, you are better off writing out an entire `function` with the same name but different [`@param`](https://github.com/sumneko/lua-language-server/wiki/Annotations#param) and [`@return`](https://github.com/sumneko/lua-language-server/wiki/Annotations#return) annotations.
 
 **Syntax**
+
 `---@overload fun([param: type[, param: type...]]): [return_value[, return_value]]`
 
 **Examples**
@@ -619,6 +633,7 @@ local function removeObject(objectID, whenOutOfView) end
 Define a parameter for a function. This tells the language server what types are expected and can help enforce types and provide completion. Putting a question mark (`?`) after the parameter name will mark it as optional, meaning `nil` is an accepted type. The `type` provided can be an [`@alias`](https://github.com/sumneko/lua-language-server/wiki/Annotations#alias), [`@enum`](https://github.com/sumneko/lua-language-server/wiki/Annotations#enum), or [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class) as well.
 
 **Syntax**
+
 `---@param <name[?]> <type[|type...]> [description]`
 
 **Examples**
@@ -691,6 +706,7 @@ See [`@generic`](https://github.com/sumneko/lua-language-server/wiki/Annotations
 Define a `return` value for a function. This tells the language server what types are expected and can help enforce types and provide completion.
 
 **Syntax**
+
 `---@return <type> [<name> [comment] | [name] #<comment>]`
 
 **Examples**
@@ -761,6 +777,7 @@ local function getNicknames() end
 Currently has no function other than allowing you to add a basic comment. This is not shown when hovering and has no additional functionality [yet](https://github.com/sumneko/lua-language-server/issues/1344).
 
 **Syntax**
+
 `---@see`
 
 **Examples**
@@ -780,6 +797,7 @@ function request(url) end
 Document the source for a piece of code
 
 **Syntax**
+
 `---@source <url|uri>`
 
 **Examples**
@@ -809,6 +827,7 @@ local function fromLocalFile() end
 Mark a variable as being of a certain type. Union types are separated with a pipe character `|`. The `type` provided can be an [`@alias`](https://github.com/sumneko/lua-language-server/wiki/Annotations#alias), [`@enum`](https://github.com/sumneko/lua-language-server/wiki/Annotations#enum), or [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class) as well.
 
 **Syntax**
+
 `---@type <type>`
 
 **Examples**
@@ -913,6 +932,7 @@ local x
 Mark a `function` as having variable arguments. For variable returns, see [`@return`](https://github.com/sumneko/lua-language-server/wiki/Annotations#return).
 
 **Syntax**
+
 `---@vararg <type>`
 
 **Examples**
@@ -933,6 +953,7 @@ Mark the required Lua version for a `function` or [`@class`](https://github.com/
 
 
 **Syntax**
+
 `---@version [<|>]<version> [, [<|>]version...]`
 
 Possible `version` values:
