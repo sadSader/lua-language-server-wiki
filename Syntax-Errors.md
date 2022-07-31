@@ -208,8 +208,11 @@ local x = function x() end
 <br>
 
 ### `unexpect-lfunc-name`
-<!-- TODO: description -->
-🚧 Description needed 🚧
+Triggered when a function is marked as local. The method either belongs to a table or is a local function, not both.
+
+```lua
+local function x:t() end
+```
 
 <br>
 
