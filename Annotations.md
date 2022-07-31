@@ -33,7 +33,7 @@ Below is a list of how you can document more advanced types:
 
 |      Type       |               Document As                |
 | :-------------: | :--------------------------------------: |
-|   Union Type    |             `TYPE_1|TYPE_2`              |
+|   Union Type    |             `TYPE_1\|TYPE_2`              |
 |      Array      |             `<VALUE_TYPE>[]`             |
 |   Dictionary    |        `{ [string]: VALUE_TYPE }`        |
 | Key-Value Table |      `table<KEY_TYPE, VALUE_TYPE>`       |
@@ -50,7 +50,7 @@ To get an understanding of how to use the annotations described on this page, yo
 |     `<value_name>`      |  A required value that you provide   |
 |     `[value_name]`      |    Everything inside is optional     |
 |    `[value_name...]`    |       This value is repeatable       |
-| `value_name|value_name` | The left **or** right side are valid |
+| `value_name\|value_name` | The left **or** right side are valid |
 
 Any other symbols are syntactically required and should be copied verbatim.
 
