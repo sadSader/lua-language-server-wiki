@@ -199,8 +199,11 @@ Triggered when using the variable arguments symbol (`...`) outside of a function
 <br>
 
 ### `unexpect-efunc-name`
-<!-- TODO: description -->
-🚧 Description needed 🚧
+Triggered when a function is being assigned to a variable and is also given a name.
+
+```lua
+local x = function x() end
+```
 
 <br>
 
