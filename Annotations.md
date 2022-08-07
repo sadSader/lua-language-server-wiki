@@ -5,6 +5,10 @@ Annotations are prefixed with `---`, like a Lua comment with one extra dash. To 
 
 ![](https://user-images.githubusercontent.com/1073877/111884243-a337c780-89c0-11eb-856e-b6c3b1042810.gif)
 
+When annotating a function, typing `---` will offer a snippet that will add a `@param` and `@return` for each param/return found in the following function.
+
+![](https://user-images.githubusercontent.com/61925890/183302905-32daa693-1da6-4d62-a10c-40f018b1eb5b.png)
+
 > ℹ️ Note: The annotations used by the server are based off of [EmmyLua annotations](https://emmylua.github.io/annotation.html) and are referred to as such in some places.
 
 > ⚠️ Warning: The annotations used by the server are [no longer cross-compatible](https://github.com/sumneko/lua-language-server/issues/980) with [EmmyLua annotations](https://emmylua.github.io/annotation.html) since `v3.0.0`.
