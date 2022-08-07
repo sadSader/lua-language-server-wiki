@@ -177,13 +177,13 @@ Make sure you have `kak-lsp` installed.
 #### Installation
 If using [`plug.kak`](https://github.com/andreyorst/plug.kak), place the following in your `kakrc`:
 
-```kakounescript
+```
 plug "kak-lsp/kak-lsp" do %{ cargo install --locked --force --path . }
 ```
 
 If running standalone, place the `kak-lsp` binary on your `PATH` and then place the following in your `kakrc`:
 
-```kakounescript
+```
 evaluate-commands %sh{
     kak-lsp --kakoune -s $kak_session
 }
@@ -192,7 +192,7 @@ evaluate-commands %sh{
 #### Initialization
 Place the following in your `kakrc`:
 
-```kakounescript
+```
 # Enable kak-lsp for Lua files
 hook global WinSetOption filetype=lua %{
     lsp-enable-window

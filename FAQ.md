@@ -23,7 +23,7 @@ When a workspace is opened, the client will send the URI of the directory to be 
 ### How to Check the URI Being Sent
 [Find the server log](#where-can-i-find-the-log-file) for your OS and then search for `Client init`. You should find something similar to the below with the `rootUri` field.
 
-```log
+```
 [17:58:27.365][debug][#0:script\provider\client.lua:32]: Client init	{
     capabilities = {...
     },
