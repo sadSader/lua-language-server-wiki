@@ -48,7 +48,7 @@ For answers to some frequently asked questions, take a look at the [FAQ](https:/
 
 You can also visit the [discussions](https://github.com/sumneko/lua-language-server/discussions) page to discuss ideas, ask questions, and get help.
 
-> Please make sure to check for duplicate discussions first :heart:
+> Please make sure to check for duplicate discussions first ❤️
 >
 > It can help you find an answer quicker and helps keeps things organized.
 
