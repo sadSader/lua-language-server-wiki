@@ -65,4 +65,4 @@ function OnSetText(uri, text)
 end
 ```
 ## Template
-https://github.com/sumneko/sample-plugin
+[https://github.com/sumneko/sample-plugin](https://github.com/sumneko/sample-plugin)
