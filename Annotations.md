@@ -78,7 +78,7 @@ or
 ---| '<value>' [# description]
 ```
 
-> ℹ️ Note: The pipe character (`|`) on the left above is necessary for each line and does not signify an "or".
+> ℹ️ Note: The above pipe character (`|`) on the left is necessary for each line and does not signify an "or".
 
 **Examples**
 <details>
