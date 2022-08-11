@@ -1,7 +1,7 @@
 # Formatter
 The language server also offers a code formatter so you can easily make your code prettier.
 
-It also offers [code style checking](#)
+It also offers [code style checking](#code-style-checking)
 
 This functionality is implemented by [`CppCXY/EmmyLuaCodeStyle`](https://github.com/CppCXY/EmmyLuaCodeStyle).
 
