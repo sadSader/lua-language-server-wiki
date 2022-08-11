@@ -139,12 +139,12 @@ These tokens are being previewed in `Dark+` of Visual Studio Code as it has grea
 
 ### Semantic Tokens
 
-| semantic token          | fallen syntax token        | preview                                                                                                 |
-| :---------------------- | :------------------------- | :------------------------------------------------------------------------------------------------------ |
-| `namespace.static`      | `support.function.lua`     | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/namespace.static.jpg?raw=true)      |
-| `namespace.readonly`    | `constant.language.lua`    | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/namespace.readonly.jpg?raw=true)    |
-| `namespace.deprecated`  | `entity.name.label`        | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/namespace.deprecated.jpg?raw=true)  |
-| `parameter.declaration` | `variable.parameter`       | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/parameter.declaration.jpg?raw=true) |
-| `property.declaration`  | `entity.other.attribute`   | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/property.declaration.jpg?raw=true)  |
-| `variable`              | `variable.other.lua`       | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/variable.jpg?raw=true)              |
+|     semantic token      |    fallen syntax token     |                                                 preview                                                 |
+| :---------------------: | :------------------------: | :-----------------------------------------------------------------------------------------------------: |
+|   `namespace.static`    |   `support.function.lua`   |   ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/namespace.static.jpg?raw=true)    |
+|  `namespace.readonly`   |  `constant.language.lua`   |  ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/namespace.readonly.jpg?raw=true)   |
+| `namespace.deprecated`  |    `entity.name.label`     | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/namespace.deprecated.jpg?raw=true)  |
+| `parameter.declaration` |    `variable.parameter`    | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/parameter.declaration.jpg?raw=true) |
+| `property.declaration`  |  `entity.other.attribute`  | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/property.declaration.jpg?raw=true)  |
+|       `variable`        |    `variable.other.lua`    |       ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/variable.jpg?raw=true)        |
 | `interface.declaration` | `entity.name.function.lua` | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/interface.declaration.jpg?raw=true) |
