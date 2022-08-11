@@ -88,6 +88,7 @@ There are a few arguments that can be provided when running the language server 
 
 ##### entry
 *optional*
+
 Type: string
 
 The main Lua script file from the root of [this repository](https://github.com/sumneko/lua-language-server/blob/master/main.lua). If omitted, the application will attempt to load `bin/../main.lua`.
