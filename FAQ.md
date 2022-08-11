@@ -70,6 +70,6 @@ When not using Visual Studio Code (or even with), you can accomplish the same wi
 
 Question still unanswered? Ask away on the [discussions page](https://github.com/sumneko/lua-language-server/discussions/categories/q-a)!
 
-> Please make sure to check for duplicate discussions first :heart:
+> Please make sure to check for duplicate discussions first ❤️
 >
 > It can help you find an answer quicker and helps keeps things organized.
