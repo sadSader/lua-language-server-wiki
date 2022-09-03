@@ -212,7 +212,7 @@ Cast a variable to a different type or types
 
 **Syntax**
 
-`---@cast [+|-]<type|?>[, [+|-]<type|?>...]`
+`---@cast <value_name> [+|-]<type|?>[, [+|-]<type|?>...]`
 
 **Examples**
 <details>
