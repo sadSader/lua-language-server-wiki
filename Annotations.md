@@ -37,7 +37,7 @@ Below is a list of how you can document more advanced types:
 
 |      Type       |               Document As                |
 | :-------------: | :--------------------------------------: |
-|   Union Type    |             `TYPE_1|TYPE_2`              |
+|   Union Type    |                 `TYPE_1                  | TYPE_2` |
 |      Array      |             `<VALUE_TYPE>[]`             |
 |   Dictionary    |        `{ [string]: VALUE_TYPE }`        |
 | Key-Value Table |      `table<KEY_TYPE, VALUE_TYPE>`       |
@@ -49,12 +49,12 @@ Below is a list of how you can document more advanced types:
 ## Understanding This Page
 To get an understanding of how to use the annotations described on this page, you'll need to know how to read the `Syntax` sections of each annotation.
 
-|          Symbol          |               Meaning                |
-| :----------------------: | :----------------------------------: |
-|      `<value_name>`      |  A required value that you provide   |
-|      `[value_name]`      |    Everything inside is optional     |
-|    `[value_name...]`     |       This value is repeatable       |
-| `value_name|value_name`  | The left **or** right side are valid |
+|      Symbol       |              Meaning              |
+| :---------------: | :-------------------------------: |
+|  `<value_name>`   | A required value that you provide |
+|  `[value_name]`   |   Everything inside is optional   |
+| `[value_name...]` |     This value is repeatable      |
+|    `value_name    |            value_name`            | The left **or** right side are valid |
 
 Any other symbols are syntactically required and should be copied verbatim.
 
@@ -948,20 +948,10 @@ local players
 </details>
 
 <details>
-<summary>Enum Type Definition</summary>
-
-```lua
----@type "red"|"green"|"blue"|nil
-local color
-```
-
-</details>
-
-<details>
 <summary>Union Type Definition</summary>
 
 ```lua
----@type boolean|number
+---@type boolean|number|"yes"|"no"
 local x
 ```
 
