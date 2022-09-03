@@ -37,7 +37,7 @@ Below is a list of how you can document more advanced types:
 
 |      Type       |               Document As                |
 | :-------------: | :--------------------------------------: |
-|   Union Type    |             `TYPE_1\|TYPE_2`              |
+|   Union Type    |             `TYPE_1|TYPE_2`              |
 |      Array      |             `<VALUE_TYPE>[]`             |
 |   Dictionary    |        `{ [string]: VALUE_TYPE }`        |
 | Key-Value Table |      `table<KEY_TYPE, VALUE_TYPE>`       |
@@ -49,12 +49,12 @@ Below is a list of how you can document more advanced types:
 ## Understanding This Page
 To get an understanding of how to use the annotations described on this page, you'll need to know how to read the `Syntax` sections of each annotation.
 
-|         Symbol          |               Meaning                |
-| :---------------------: | :----------------------------------: |
-|     `<value_name>`      |  A required value that you provide   |
-|     `[value_name]`      |    Everything inside is optional     |
-|    `[value_name...]`    |       This value is repeatable       |
-| `value_name\|value_name` | The left **or** right side are valid |
+|          Symbol          |               Meaning                |
+| :----------------------: | :----------------------------------: |
+|      `<value_name>`      |  A required value that you provide   |
+|      `[value_name]`      |    Everything inside is optional     |
+|    `[value_name...]`     |       This value is repeatable       |
+| `value_name|value_name`  | The left **or** right side are valid |
 
 Any other symbols are syntactically required and should be copied verbatim.
 
@@ -90,7 +90,7 @@ or
 </details>
 
 <details>
-<summary>Enum</summary>
+<summary>Custom Type</summary>
 
 ```lua
 ---@alias modes "r" | "w"
@@ -99,7 +99,7 @@ or
 </details>
 
 <details>
-<summary>Enum with Descriptions</summary>
+<summary>Custom Type with Descriptions</summary>
 
 ```lua
 ---@alias side
@@ -112,6 +112,38 @@ or
 
 ---@param side side
 local function checkSide(side) end
+```
+
+</details>
+
+<details>
+<summary>Literal Custom Type</summary>
+
+```lua
+local A = "Hello"
+local B = "World"
+
+---@alias myLiteralAlias `A` | `B`
+
+---@param x myLiteralAlias
+function foo(x) end
+```
+
+</details>
+
+<details>
+<summary>Literal Custom Type with Descriptions</summary>
+
+```lua
+local A = "Hello"
+local B = "World"
+
+---@alias myLiteralAliases
+---|`A` # Will offer completion for A, which has a value of "Hello"
+---|`B` # Will offer completion for B, which has a value of "World"
+
+---@param x myLiteralAliases
+function foo(x) end
 ```
 
 </details>
@@ -325,7 +357,7 @@ Toggle [diagnostics](https://github.com/sumneko/lua-language-server/wiki/Diagnos
 <br>
 
 ### `@enum`
-Mark a Lua table as an enum, giving it similar functionality to [`@alias`](https://github.com/sumneko/lua-language-server/wiki/Annotations#alias).
+Mark a Lua table as an enum, giving it similar functionality to [`@alias`](https://github.com/sumneko/lua-language-server/wiki/Annotations#alias), only the table is still usable at runtime.
 
 [View Original Request](https://github.com/sumneko/lua-language-server/issues/1255)
 
@@ -350,6 +382,8 @@ local COLORS = {
 
 ---@param color colors
 local function setColor(color) end
+
+setColor(COLORS.green)
 ```
 
 ![enum](https://user-images.githubusercontent.com/61925890/181307783-532fdd86-6004-4483-9d81-2c822c01fa51.png)
@@ -701,6 +735,34 @@ local boxObject = setObjectType(1, "Box")
 ```
 
 See [`@generic`](https://github.com/sumneko/lua-language-server/wiki/Annotations#generic) for more info.
+
+</details>
+
+<details>
+<summary>Custom Type Parameter</summary>
+
+```lua
+---@param mode string
+---|"'immediate'"  # comment 1
+---|"'async'" # comment 2
+function bar(mode) end
+```
+
+</details>
+
+<details>
+<summary>Literal Custom Type Parameter</summary>
+
+```lua
+local A = 0
+local B = 1
+
+---@param active integer
+---| `A` # Has a value of 0
+---| `B` # Has a value of 1
+function set(active) end
+```
+Looking to do this with a table? You probably want to use [`@enum`](https://github.com/sumneko/lua-language-server/wiki/Annotations#enum)
 
 </details>
 
