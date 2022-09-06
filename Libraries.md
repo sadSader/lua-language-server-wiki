@@ -53,7 +53,7 @@ Unless you **always** use a certain library, it is strongly recommended you only
 
 This method is the most in-depth and allows you to very closely emulate your target environment for many projects with easy repeatability. This is how the [built-in libraries](#built-in-libraries) are implemented. If your target environment is a game engine where you may not have access to all of Lua, this is a great option.
 
-As well as providing defintions, you can also define when to suggest setting up the environment for this library, what changes to apply to the server's [configuration](https://github.com/sumneko/lua-language-server/wiki/Configuration-File), and what [plugins](https://github.com/sumneko/lua-language-server/wiki/Plugins) to use.
+As well as providing definitions, you can also define when to suggest setting up the environment for this library, what changes to apply to the server's [configuration](https://github.com/sumneko/lua-language-server/wiki/Configuration-File), and what [plugins](https://github.com/sumneko/lua-language-server/wiki/Plugins) to use.
 
 #### Setup
 To get started, you will need a directory where all of your emulations can be stored e.g. `C:\Users\me\Documents\LuaEnvironments`. In this directory you will create a new directory for each environment to emulate.
@@ -143,7 +143,7 @@ end
 
 See [settings](https://github.com/sumneko/lua-language-server/wiki/Settings) for more info on `configs`.
 
-You can also include a [plugin](https://github.com/sumneko/lua-language-server/wiki/Plugins).
+To include a [plugin](https://github.com/sumneko/lua-language-server/wiki/Plugins), place it in the same location as your `config.lua` file.
 
 Have an environment emulation to share? [Post it in discussion #389](https://github.com/sumneko/lua-language-server/discussions/389).
 
