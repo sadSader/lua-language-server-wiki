@@ -607,6 +607,8 @@ Provides type declarations for an [operator metamethod](http://lua-users.org/wik
 
 `---@operator <operation>[(input_type)]:<resulting_type>`
 
+> ℹ️ Note: This syntax differs slightly from the `fun()` syntax used for defining functions. Notice that the parentheses are **optional** here, so `@operator call:integer` is valid.
+
 **Examples**
 <details>
 <summary>Declare <code>__add</code> Metamethod</summary>
@@ -638,6 +640,17 @@ local pA
 
 local pB = -pA
 --> integer
+```
+
+</details>
+
+<details>
+<summary>Declare <code>__call</code> Metamethod</summary>
+
+```lua
+---@class URL
+---@operator call:string
+local URL = {}
 ```
 
 </details>
