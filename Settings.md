@@ -1240,7 +1240,7 @@ Whether [git submodules](https://github.blog/2016-02-01-working-with-submodules/
 **Default:**  `[]`
 
 
-An array of **absolute** paths that will be added to the workspace diagnosis, which means you will get completion and context from these library files. Can be a file or directory. Files included here will have some features disabled such as renaming fields to prevent accidentally renaming your library files. Read more on the [Libraries page](https://github.com/sumneko/lua-language-server/wiki/Libraries).
+An array of abosolute or workspace-relative paths that will be added to the workspace diagnosis - meaning you will get completion and context from these library files. Can be a file or directory. Files included here will have some features disabled such as renaming fields to prevent accidentally renaming your library files. Read more on the [Libraries page](https://github.com/sumneko/lua-language-server/wiki/Libraries).
 
 <br>
 
