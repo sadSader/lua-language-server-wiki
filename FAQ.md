@@ -16,6 +16,7 @@ For debugging and a more detailed log file, you can add [`--loglevel=trace`](htt
 
 You can also specify a custom location for the logs through the [command line](https://github.com/sumneko/lua-language-server/wiki/Getting-Started#logpath). This can be specified using the [`misc.parameters`](https://github.com/sumneko/lua-language-server/wiki/Settings#miscparameters) setting when using Visual Studio Code.
 
+---
 
 ## Why are there two workspaces/progress bars?
 The image and additional context found on the [Developing page](https://github.com/sumneko/lua-language-server/wiki/Developing#multiple-workspace-support) will help illustrate the situation.
@@ -37,6 +38,7 @@ In non-VS Code editors, it may not be *as* convenient for users to [define setti
 ### Solution
 Make sure you are including libraries using a workspace-specific configuration file to prevent including a library in all of your projects. This can be done in many ways, which are detailed on the [Configuration File page](https://github.com/sumneko/lua-language-server/wiki/Configuration-File).
 
+---
 
 ## Why is the Server Scanning the Wrong Folder?
 When a workspace is opened, the client will send the URI of the directory to be scanned. When you open a single file, the client is supposed to send `null` for the URI as there is no workspace, just a single file. However, some clients will mistakenly send the URI of the extension, or worse, the home directory. The server will do as it is told and scan what is sent, which can obviously cause issues should the home directory be sent.
@@ -72,6 +74,7 @@ In Visual Studio Code, this should never happen as the `sumneko.lua` client is p
 
 When not using Visual Studio Code, check the `rootUri` field in your configuration - some clients allow users to customize this value. If the value is correct or cannot be modified, please report the issue to the developer of the client you are using.
 
+---
 
 ## How Can I Improve Startup Speeds?
 
