@@ -132,7 +132,7 @@ To add a link, place the alt text in square brackets with the url immediately fo
 </details>
 
 ### Image
-To add an image, place a `!`, folowed by the alt text in square brackets with the url immediately following in parentheses.
+To add an image, place a `!`, followed by the alt text in square brackets, with the url immediately following in parentheses.
 
 <details>
 <summary>Example</summary>
