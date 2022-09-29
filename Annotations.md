@@ -1,19 +1,19 @@
 # Annotations
 The language server does its best to infer types through contextual analysis, however, sometimes manual documentation is necessary to improve completion and signature information.
 
-Annotations are prefixed with `---`, like a Lua comment with one extra dash. To add a line break, add a line of just `---`.
+Annotations are prefixed with `---`, like a Lua comment with one extra dash. To learn more, check out [Formatting Annotations](https://github.com/sumneko/lua-language-server/wiki/Formatting-Annotations.md).
 
 ![](https://user-images.githubusercontent.com/1073877/111884243-a337c780-89c0-11eb-856e-b6c3b1042810.gif)
 
-When annotating a function, typing `---` will offer a snippet that will add a `@param` and `@return` for each param/return found in the following function.
-
-![](https://user-images.githubusercontent.com/61925890/183302905-32daa693-1da6-4d62-a10c-40f018b1eb5b.png)
-
-> ℹ️ Note: The annotations used by the server are based off of [EmmyLua annotations](https://emmylua.github.io/annotation.html) and are referred to as such in some places.
+> ℹ️ Note: The annotations used by the server are based off of [EmmyLua annotations](https://emmylua.github.io/annotation.html) but a [rename is in progress](https://github.com/sumneko/lua-language-server/discussions/1587).
 
 > ⚠️ Warning: The annotations used by the server are [no longer cross-compatible](https://github.com/sumneko/lua-language-server/issues/980) with [EmmyLua annotations](https://emmylua.github.io/annotation.html) since `v3.0.0`.
 
 The annotations are also described in `script.lua` which can be found in multiple languages in [`locale/`](https://github.com/sumneko/lua-language-server/blob/master/locale). Corrections and translations can be provided in these `script.lua` files and submitted through a [pull request](https://github.com/sumneko/lua-language-server/pulls).
+
+
+## Tips
+- If you type `---` one line above a function, you will receive a suggested snippet that includes `@param` and `@return` annotations for each parameter and return value found in the function. ![](https://user-images.githubusercontent.com/61925890/183302905-32daa693-1da6-4d62-a10c-40f018b1eb5b.png)
 
 
 ## Documenting Types
