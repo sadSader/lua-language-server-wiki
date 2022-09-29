@@ -61,7 +61,7 @@ The below steps guide you through setting up Lua debugging:
    ```lua
    "Lua.misc.parameters": [
     "--develop=true",
-    "--dbgport=11413"
+    "--dbgport=11428"
    ],
    ```
 4. Restart the **Debug Target** (<kbd>F1</kbd> -> `Reload Window`)
