@@ -12,6 +12,8 @@ The `settings.json` file can be found in the following OS-dependent locations:
 |  Linux  | `$HOME/.config/Code/User/settings.json`                      |
 |  MacOS  | `$HOME/Library/Application\ Support/Code/User/settings.json` |
 
+You can also define your settings on a [workspace-specific basis](https://code.visualstudio.com/docs/getstarted/settings#_workspace-settings), which can help [improve speeds](https://github.com/sumneko/lua-language-server/wiki/FAQ#how-can-i-improve-startup-speeds) and is recommended for [project-specific](https://code.visualstudio.com/docs/getstarted/settings#_when-does-it-make-sense-to-use-workspace-settings) settings.
+
 For more details, read the [VS Code documentation](https://code.visualstudio.com/docs/getstarted/settings).
 
 ## JSON Schema
