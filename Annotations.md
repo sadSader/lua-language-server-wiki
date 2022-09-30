@@ -1,7 +1,7 @@
 # Annotations
 The language server does its best to infer types through contextual analysis, however, sometimes manual documentation is necessary to improve completion and signature information.
 
-Annotations are prefixed with `---`, like a Lua comment with one extra dash. To learn more, check out [Formatting Annotations](https://github.com/sumneko/lua-language-server/wiki/Formatting-Annotations.md).
+Annotations are prefixed with `---`, like a Lua comment with one extra dash. To learn more, check out [Formatting Annotations](https://github.com/sumneko/lua-language-server/wiki/Formatting-Annotations).
 
 ![](https://user-images.githubusercontent.com/1073877/111884243-a337c780-89c0-11eb-856e-b6c3b1042810.gif)
 
