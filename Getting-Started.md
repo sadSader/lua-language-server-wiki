@@ -19,19 +19,21 @@ Configuration of the extension can be done from your VS Code settings (<kbd>Ctrl
 ## Command Line
 The Lua language server can be run straight from the command line.
 
-You can find precompiled binaries attached to [each release](https://github.com/sumneko/lua-language-server/releases) and [prerelease from the GitHub actions](https://github.com/sumneko/lua-language-server/actions) for Windows, Linux, and MacOS.
+You may be able to get it from your package manager:
+
+- Windows
+  - Scoop: `scoop install lua-language-server`
+- MacOS
+  - Homebrew: `brew install lua-language-server`
+  - Macports: `sudo port install lua-language-server`
+
+You can also find precompiled binaries attached to [each release](https://github.com/sumneko/lua-language-server/releases) and [prerelease from the GitHub actions](https://github.com/sumneko/lua-language-server/actions) for Windows, Linux, and MacOS.
 
 Note that you can't simply create a symbolic link to the binary in one of the directories on your `$PATH`, since `lua-language-server` expects to find the scripts in a fixed location relative to the directory it is run from. Instead, create a wrapper script with the contents:
 ```bash
 #!/bin/bash
 exec "<path-to-directory>/bin/lua-language-server" "$@"
 ```
-
-You may also be able to get it from your package manager:
-
-- MacOS
-  - Homebrew: `brew install lua-language-server`
-  - Macports: `sudo port install lua-language-server`
 
 You can also build it yourself.
 
