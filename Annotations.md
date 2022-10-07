@@ -873,29 +873,21 @@ function request(url) end
 <br>
 
 ### `@source`
-Document the source for a piece of code
+Document a source that is in another language. Used internally but is not recommended for use by users.
 
 **Syntax**
 
-`---@source <url|uri>`
+`---@source <filename>`
 
 **Examples**
-<details>
-<summary>Link to a Website</summary>
-
-```lua
----@source https://github.com/sumneko/lua-language-server/wiki
-function fromTheInternet() end
-```
-
-</details>
-
 <details>
 <summary>Link to a file</summary>
 
 ```lua
----@source file:///E:/myLuaProject/modules/script.lua
-local function fromLocalFile() end
+---@source lmathlib.c:220:11
+function math.max(...) end
+
+math.max(1, 2)
 ```
 
 </details>
