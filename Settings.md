@@ -863,6 +863,14 @@ Miscellaneous settings that do not belong to any of the other groups.
 
 [Command line parameters](https://github.com/sumneko/lua-language-server/wiki/Getting-Started#run) to be passed along to the server `exe` when starting through Visual Studio Code.
 
+<br>
+
+### `misc.executablePath`
+**Type:** `string`
+
+**Default:** `""`
+
+Manually specify the path for the Lua Language Server executable file.
 
 
 ## runtime
