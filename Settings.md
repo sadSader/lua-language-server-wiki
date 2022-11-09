@@ -631,6 +631,34 @@ Define the delay between diagnoses of the workspace in milliseconds. Every time 
 Define the rate at which the workspace will be diagnosed as a percentage. `100` is 100% speed so the workspace will be diagnosed as fast as possible. The rate can be lowered to reduce CPU usage, but the diagnosis speed will also become slower. The currently opened file will always be diagnosed at `100`% speed, regardless of this setting.
 
 
+## doc
+Settings for configuring documentation comments.
+
+<br>
+
+### `doc.packageName`
+**Type:** `Array<string>`
+
+**Default:** `[]`
+
+The pattern used for matching field names as a package-private field. Fields that match any of the patterns provided will be package-private.
+
+<br>
+
+### `doc.privateName`
+**Type:** `Array<string>`
+
+**Default:** `[]`
+
+The pattern used for matching field names as a private field. Fields that match any of the patterns provided will be private to that class.
+
+### `doc.protectedName`
+**Type:** `Array<string>`
+
+**Default:** `[]`
+
+The pattern used for matching field names as a protected field. Fields that match any of the patterns provided will be private to that class and its child classes.
+
 
 ## format
 Settings for configuring the built-in code formatter.
