@@ -622,6 +622,21 @@ Define the delay between diagnoses of the workspace in milliseconds. Every time 
 
 <br>
 
+### `diagnostics.workspaceEvent`
+**Type:** `string`
+
+**Default:** `"OnSave"`
+
+**Options:**
+
+- `"OnChange"`
+- `"OnSave"`
+- `"None"`
+
+Set when the workspace diagnostics should be analyzed. It can be performed after each change, after a save, or never automatically triggered.
+
+<br>
+
 ### `diagnostics.workspaceRate`
 **Type:**  `integer`
 
