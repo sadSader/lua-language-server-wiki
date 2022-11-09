@@ -851,6 +851,39 @@ myDog:eyesCount();
 </details>
 
 <br>
+
+### `@protected`
+Mark a function as protected within a [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class). Protected functions can be accessed only from within their class or from child classes.
+
+**Syntax**
+
+`---@protected`
+
+**Examples**
+<details>
+<summary>Mark a function as protected</summary>
+
+```lua
+---@class Animal
+---@field private eyes integer
+local Animal = {}
+
+---@protected
+function Animal:eyesCount()
+    return self.eyes
+end
+
+---@class Dog:Animal
+local myDog = {}
+
+---Permitted because function is protected, not private.
+myDog:eyesCount();
+```
+
+</details>
+
+<br>
+
 ### `@return`
 Define a `return` value for a function. This tells the language server what types are expected and can help enforce types and provide completion.
 
