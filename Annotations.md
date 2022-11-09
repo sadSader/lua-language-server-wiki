@@ -719,6 +719,33 @@ local function removeObject(objectID, whenOutOfView) end
 
 <br>
 
+### `@package`
+Mark a function as private to the file it is defined in. A packaged function cannot be accessed from another file.
+
+**Syntax**
+
+`---@package`
+
+**Examples**
+<details>
+<summary>Mark a function as package-private</summary>
+
+```lua
+---@class Animal
+---@field private eyes integer
+local Animal = {}
+
+---@package
+---This cannot be accessed in another file
+function Animal:eyesCount()
+    return self.eyes
+end
+```
+
+</details>
+
+<br>
+
 ### `@param`
 Define a parameter for a function. This tells the language server what types are expected and can help enforce types and provide completion. Putting a question mark (`?`) after the parameter name will mark it as optional, meaning `nil` is an accepted type. The `type` provided can be an [`@alias`](https://github.com/sumneko/lua-language-server/wiki/Annotations#alias), [`@enum`](https://github.com/sumneko/lua-language-server/wiki/Annotations#enum), or [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class) as well.
 
