@@ -393,11 +393,11 @@ setColor(COLORS.green)
 <br>
 
 ### `@field`
-Define a field within a table. Should be immediately following a [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class).
+Define a field within a table. Should be immediately following a [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class). As of `v3.6.0`, you can mark a field as `private`, `protected`, `public`, or `package`.
 
 **Syntax**
 
-`---@field <name> <type> [description]`
+`---@field [scope] <name> <type> [description]`
 
 **Examples**
 <details>
@@ -418,6 +418,45 @@ local function hire(person) end
 </details>
 
 ![field](https://user-images.githubusercontent.com/61925890/181307814-81f14004-db8a-4f17-af40-03dd27673648.gif)
+
+<details>
+<summary>Mark field as private</summary>
+
+```lua
+---@class Animal
+---@field protected legs integer
+---@field eyes integer
+
+---@class Dog:Animal
+local myDog = {}
+
+---Child class Dog CANNOT use protected field legs
+function myDog:legCount()
+	return self.legs
+end
+```
+
+</details>
+
+<details>
+<summary>Mark field as protected</summary>
+
+```lua
+---@class Animal
+---@field protected legs integer
+---@field eyes integer
+
+---@class Dog:Animal
+local myDog = {}
+
+---Child class Dog can use protected field legs
+function myDog:legCount()
+	return self.legs
+end
+
+```
+
+</details>
 
 <br>
 
