@@ -98,6 +98,13 @@ The main Lua script file from the root of [this repository](https://github.com/s
 #### Flags
 There are a few optional flags that can alter how the server operates.
 
+##### --doc
+**Type:** `string`
+
+Where to create documentation JSON and MarkDown files.
+
+Example: `--doc=C:/Users/Me/Documents/LuaDocuments`
+
 ##### --logpath
 **Type:** `string`
 
