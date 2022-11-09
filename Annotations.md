@@ -820,6 +820,37 @@ Looking to do this with a table? You probably want to use [`@enum`](https://gith
 
 <br>
 
+### `@private`
+Mark a function as private to a [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class). Private functions can be accessed only from within their class and are **not** accessable from child classes.
+
+**Syntax**
+
+`---@private`
+
+**Examples**
+<details>
+<summary>Mark a function as private</summary>
+
+```lua
+---@class Animal
+---@field private eyes integer
+local Animal = {}
+
+---@private
+function Animal:eyesCount()
+    return self.eyes
+end
+
+---@class Dog:Animal
+local myDog = {}
+
+---NOT PERMITTED!
+myDog:eyesCount();
+```
+
+</details>
+
+<br>
 ### `@return`
 Define a `return` value for a function. This tells the language server what types are expected and can help enforce types and provide completion.
 
