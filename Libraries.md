@@ -3,9 +3,10 @@ Libraries can be used to provide definitions that allow you to very closely emul
 
 They can be extremely powerful, but they can also come with [some performance issues](https://github.com/sumneko/lua-language-server/wiki/FAQ#how-can-i-improve-startup-speeds) when they are very large or there are many being included.
 
+<br>
 
 ## Built-in Libraries
-There are a number of built-in third party libraries that can be found in [`meta/3rd/`](https://github.com/sumneko/lua-language-server/tree/master/meta/3rd). These include:
+There are a number of built-in third party libraries that can be found in [`meta/3rd/`](https://github.com/sumneko/lua-language-server/tree/master/meta/3rd). These are all implemented as [environment emulations](#environment-emulation). These include:
 
 - `Cocos 4.0`
 - `Jass`
@@ -14,6 +15,66 @@ There are a number of built-in third party libraries that can be found in [`meta
 - `love2d`
 - `lovr`
 - `skynet`
+- `luassert`
+- `busted`
+- `luaecs`
+- `Defold`
+
+<br>
+
+### Automatically Applying
+When opening a workspace, you may be prompted to apply a library should your workspace contain certain keywords. You will be given three options:
+
+1. Apply and modify settings
+   - Apply the library so that you get completions, saving the activated library to your [configuration file](https://github.com/sumneko/lua-language-server/wiki/Configuration-File). Next time you load the workspace up, the library will again be loaded.
+2. Apply but do not modify settings
+    - **Temporarily** apply the library so that you get completions. When the server is restarted, the library will no longer be loaded and you will once again receive this popup.
+3. Don't show again
+   - Stop suggesting to apply libraries. This sets [`workspace.checkThirdParty`](https://github.com/sumneko/lua-language-server/wiki/Settings#workspacecheckthirdparty) to `false` in your [configuration file](https://github.com/sumneko/lua-language-server/wiki/Configuration-File).
+
+<br>
+
+### Manually Applying
+In case the popup doesn't appear or you have purposefully set [`workspace.checkThirdParty`](https://github.com/sumneko/lua-language-server/wiki/Settings#workspacecheckthirdparty) to `false`, you can still manually apply a library using [`workspace.library`](https://github.com/sumneko/lua-language-server/wiki/Settings#workspacelibrary). The path can use `${3rd}` to refer to the built-in libraries folder location. The path for `love2d` looks like `${3rd}/love2d/library`.
+
+Here is an example of how you can apply the `OpenResty` library:
+
+<details>
+<summary>VS Code Settings</summary>
+
+```json
+{
+    "Lua.runtime.version": "LuaJIT",
+    "Lua.diagnostics.globals": [
+        "ngx"
+    ],
+    "Lua.workspace.library": [
+        "${3rd}/OpenResty/library"
+    ]
+}
+```
+
+</details>
+
+<details>
+<summary><a href="https://github.com/sumneko/lua-language-server/wiki/Configuration-File#luarcjson"><code>.luarc.json</code></a></summary>
+
+```json
+{
+    "runtime.version": "LuaJIT",
+    "diagnostics.globals": [
+        "ngx"
+    ],
+    "workspace.library": [
+        "${3rd}/OpenResty/library"
+    ]
+}
+```
+
+</details>
+
+
+The [`workspace.library`](https://github.com/sumneko/lua-language-server/wiki/Settings#workspacelibrary) setting always follows the pattern of `${3rd}/LIBRARY_NAME/library`, but the other settings seen in the examples above are unique to the library being applied. To see the settings that the server would have [applied automatically](#automatically-applying), navigate to the library's [`config.lua`](#configuration-file) in the [`meta/3rd/`](https://github.com/sumneko/lua-language-server/tree/master/meta/3rd) folder.
 
 <br>
 
