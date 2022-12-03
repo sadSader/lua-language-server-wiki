@@ -1066,7 +1066,7 @@ local names
 <summary>Dictionary Type Definition</summary>
 
 ```lua
----@type { [string] = boolean }
+---@type { [string]: boolean }
 local statuses
 ```
 
