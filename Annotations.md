@@ -424,13 +424,13 @@ local function hire(person) end
 
 ```lua
 ---@class Animal
----@field protected legs integer
+---@field private legs integer
 ---@field eyes integer
 
 ---@class Dog:Animal
 local myDog = {}
 
----Child class Dog CANNOT use protected field legs
+---Child class Dog CANNOT use private field legs
 function myDog:legCount()
 	return self.legs
 end
