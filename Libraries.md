@@ -117,7 +117,7 @@ This method is the most in-depth and allows you to very closely emulate your tar
 As well as providing definitions, you can also define when to suggest setting up the environment for this library, what changes to apply to the server's [configuration](https://github.com/sumneko/lua-language-server/wiki/Configuration-File), and what [plugins](https://github.com/sumneko/lua-language-server/wiki/Plugins) to use.
 
 #### Setup
-To get started, you will need a directory where all of your emulations can be stored e.g. `C:\Users\me\Documents\LuaEnvironments`. In this directory you will create a new directory for each environment to emulate.
+To get started, you will need *a* directory, anywhere on your machine, where all of your emulations can be stored e.g. `C:\Users\me\Documents\LuaEnvironments`. In your directory you will create a new directory for each environment to emulate.
 
 ```bash
 📂 LuaEnvironments/
