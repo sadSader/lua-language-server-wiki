@@ -1,5 +1,7 @@
 # Overview
 
+> Telemetry has beed removed since `v3.6.5`, thank you for your positive feedback in the community!
+
 Help improve the `Lua-language-server` by sending usage statistics and exceptions to the team.
 
 If you don't want to send any of this information to the team, please follow the instructions below to disable these features.
