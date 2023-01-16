@@ -75,7 +75,7 @@ The below steps guide you through setting up Lua debugging:
 ## Multiple Workspace Support
 The server has supported multi-workspace environments since `v2.6.0`. This works when the client starts up one instance of the language server and then sends all Lua files to it (even if they are not included in the current workspaces).
 
-> ℹ️ Note: The server does not support dynamically adding or removing workspaces. If the workspaces change, the client should restart the server.
+> ℹ️ ~Note: The server does not support dynamically adding or removing workspaces. If the workspaces change, the client should restart the server.~ The server has supported dynamically adding or removing workspaces since `v3.5.1`.
 
 ![](https://github.com/sumneko/vscode-lua/raw/master/images/wiki-workspace.png)
 
