@@ -25,6 +25,7 @@ The language server has plenty of features to explore, here is a list of some of
 - [Code formatting](https://github.com/sumneko/lua-language-server/wiki/Formatter)
 - [Spell checking](https://github.com/sumneko/lua-language-server/wiki/Formatter)
 - Custom [plugins](https://github.com/sumneko/lua-language-server/wiki/Plugins)
+- [Documentation Generation](https://github.com/sumneko/lua-language-server/wiki/Export-Documentation)
 
 ## Get Started
 Check out [Getting Started](https://github.com/sumneko/lua-language-server/wiki/Getting-Started) to start using the Lua language server and start developing better.
