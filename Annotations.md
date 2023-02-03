@@ -1,15 +1,15 @@
 # Annotations
 The language server does its best to infer types through contextual analysis, however, sometimes manual documentation is necessary to improve completion and signature information.
 
-Annotations are prefixed with `---`, like a Lua comment with one extra dash. To learn more, check out [Formatting Annotations](https://github.com/sumneko/lua-language-server/wiki/Formatting-Annotations).
+Annotations are prefixed with `---`, like a Lua comment with one extra dash. To learn more, check out [Formatting Annotations](https://github.com/LuaLS/lua-language-server/wiki/Formatting-Annotations).
 
 ![](https://user-images.githubusercontent.com/1073877/111884243-a337c780-89c0-11eb-856e-b6c3b1042810.gif)
 
-> ℹ️ Note: The annotations used by the server are based off of [EmmyLua annotations](https://emmylua.github.io/annotation.html) but a [rename is in progress](https://github.com/sumneko/lua-language-server/discussions/1587).
+> ℹ️ Note: The annotations used by the server are based off of [EmmyLua annotations](https://emmylua.github.io/annotation.html) but a [rename is in progress](https://github.com/LuaLS/lua-language-server/discussions/1587).
 
-> ⚠️ Warning: The annotations used by the server are [no longer cross-compatible](https://github.com/sumneko/lua-language-server/issues/980) with [EmmyLua annotations](https://emmylua.github.io/annotation.html) since `v3.0.0`.
+> ⚠️ Warning: The annotations used by the server are [no longer cross-compatible](https://github.com/LuaLS/lua-language-server/issues/980) with [EmmyLua annotations](https://emmylua.github.io/annotation.html) since `v3.0.0`.
 
-The annotations are also described in `script.lua` which can be found in multiple languages in [`locale/`](https://github.com/sumneko/lua-language-server/blob/master/locale). Corrections and translations can be provided in these `script.lua` files and submitted through a [pull request](https://github.com/sumneko/lua-language-server/pulls).
+The annotations are also described in `script.lua` which can be found in multiple languages in [`locale/`](https://github.com/LuaLS/lua-language-server/blob/master/locale). Corrections and translations can be provided in these `script.lua` files and submitted through a [pull request](https://github.com/LuaLS/lua-language-server/pulls).
 
 
 ## Tips
@@ -17,7 +17,7 @@ The annotations are also described in `script.lua` which can be found in multipl
 
 
 ## Documenting Types
-Properly documenting types with the language server is very important and where a lot of the features and advantages are. Below is a list of all recognized Lua types (regardless of [version in use](https://github.com/sumneko/lua-language-server/wiki/Settings#runtimeversion)):
+Properly documenting types with the language server is very important and where a lot of the features and advantages are. Below is a list of all recognized Lua types (regardless of [version in use](https://github.com/LuaLS/lua-language-server/wiki/Settings#runtimeversion)):
 
 - `nil`
 - `any`
@@ -31,7 +31,7 @@ Properly documenting types with the language server is very important and where 
 - `userdata`
 - `lightuserdata`
 
-You can also simulate [classes](https://github.com/sumneko/lua-language-server/wiki/Annotations#class) and [fields](https://github.com/sumneko/lua-language-server/wiki/Annotations#field) and even [create your own types](https://github.com/sumneko/lua-language-server/wiki/Annotations#alias).
+You can also simulate [classes](https://github.com/LuaLS/lua-language-server/wiki/Annotations#class) and [fields](https://github.com/LuaLS/lua-language-server/wiki/Annotations#field) and even [create your own types](https://github.com/LuaLS/lua-language-server/wiki/Annotations#alias).
 
 Below is a list of how you can document more advanced types:
 
@@ -65,7 +65,7 @@ Below is a list of all annotations recognized by the language server:
 
 
 ### `@alias`
-An alias can be useful when re-using a type. It can also be used to provide an enum. If you are looking for an enum and already have the values defined in a Lua table, take a look at [`@enum`](https://github.com/sumneko/lua-language-server/wiki/Annotations#enum).
+An alias can be useful when re-using a type. It can also be used to provide an enum. If you are looking for an enum and already have the values defined in a Lua table, take a look at [`@enum`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#enum).
 
 **Syntax**
 
@@ -185,7 +185,7 @@ doSomething(x --[[@as string]])
 <br>
 
 ### `@async`
-Mark a function as being asynchronous. When [`hint.await`](https://github.com/sumneko/lua-language-server/wiki/Settings#hintawait) is `true`, functions marked with `@async` will have an `await` hint displayed next to them. Used by diagnostics from the [`await` group](https://github.com/sumneko/lua-language-server/wiki/Diagnostics#await).
+Mark a function as being asynchronous. When [`hint.await`](https://github.com/LuaLS/lua-language-server/wiki/Settings#hintawait) is `true`, functions marked with `@async` will have an `await` hint displayed next to them. Used by diagnostics from the [`await` group](https://github.com/LuaLS/lua-language-server/wiki/Diagnostics#await).
 
 **Syntax**
 
@@ -283,7 +283,7 @@ print(x) --> x:string?
 <br>
 
 ### `@class`
-Define a class. Can be used with [`@field`](https://github.com/sumneko/lua-language-server/wiki/Annotations#field) to define a table structure. Once a class is defined, it can be used as a type for [parameters](https://github.com/sumneko/lua-language-server/wiki/Annotations#param), [returns](https://github.com/sumneko/lua-language-server/wiki/Annotations#return), and more.
+Define a class. Can be used with [`@field`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#field) to define a table structure. Once a class is defined, it can be used as a type for [parameters](https://github.com/LuaLS/lua-language-server/wiki/Annotations#param), [returns](https://github.com/LuaLS/lua-language-server/wiki/Annotations#return), and more.
 
 **Syntax**
 
@@ -303,7 +303,7 @@ local Car = {}
 <br>
 
 ### `@deprecated`
-Mark a function as deprecated. This will trigger the [`deprecated` diagnostic](https://github.com/sumneko/lua-language-server/wiki/Diagnostics#deprecated), displaying it as ~~struck through~~.
+Mark a function as deprecated. This will trigger the [`deprecated` diagnostic](https://github.com/LuaLS/lua-language-server/wiki/Diagnostics#deprecated), displaying it as ~~struck through~~.
 
 **Syntax**
 
@@ -323,10 +323,10 @@ function outdated() end
 <br>
 
 ### `@diagnostic`
-Toggle [diagnostics](https://github.com/sumneko/lua-language-server/wiki/Diagnostics) for the next line, current line, or whole file.
+Toggle [diagnostics](https://github.com/LuaLS/lua-language-server/wiki/Diagnostics) for the next line, current line, or whole file.
 
 **Syntax**
-<code>---@diagnostic &lt;state&gt;:&lt;<a href="https://github.com/sumneko/lua-language-server/wiki/Diagnostics">diagnostic</a>&gt;</code>
+<code>---@diagnostic &lt;state&gt;:&lt;<a href="https://github.com/LuaLS/lua-language-server/wiki/Diagnostics">diagnostic</a>&gt;</code>
 
 `state` options:
 - `disable-next-line` (Disable diagnostic on the following line)
@@ -357,9 +357,9 @@ Toggle [diagnostics](https://github.com/sumneko/lua-language-server/wiki/Diagnos
 <br>
 
 ### `@enum`
-Mark a Lua table as an enum, giving it similar functionality to [`@alias`](https://github.com/sumneko/lua-language-server/wiki/Annotations#alias), only the table is still usable at runtime.
+Mark a Lua table as an enum, giving it similar functionality to [`@alias`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#alias), only the table is still usable at runtime.
 
-[View Original Request](https://github.com/sumneko/lua-language-server/issues/1255)
+[View Original Request](https://github.com/LuaLS/lua-language-server/issues/1255)
 
 **Syntax**
 
@@ -393,7 +393,7 @@ setColor(COLORS.green)
 <br>
 
 ### `@field`
-Define a field within a table. Should be immediately following a [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class). As of `v3.6.0`, you can mark a field as `private`, `protected`, `public`, or `package`.
+Define a field within a table. Should be immediately following a [`@class`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#class). As of `v3.6.0`, you can mark a field as `private`, `protected`, `public`, or `package`.
 
 **Syntax**
 
@@ -557,7 +557,7 @@ dict["correct"] = true
 <br>
 
 ### `@meta`
-Marks a file as "meta", meaning it is used for definitions and not for its functional Lua code. Used internally by the language server for defining the built-in Lua libraries. If you are [writing your own library definition files](https://github.com/sumneko/lua-language-server/wiki/Libraries#custom), you will probably want to include this annotation in them. Files with the `@meta` tag in them behave a little different:
+Marks a file as "meta", meaning it is used for definitions and not for its functional Lua code. Used internally by the language server for defining the built-in Lua libraries. If you are [writing your own library definition files](https://github.com/LuaLS/lua-language-server/wiki/Libraries#custom), you will probably want to include this annotation in them. Files with the `@meta` tag in them behave a little different:
 
 - Completion will not display context in a meta file
 - Hovering a `require` of a meta file will show `[meta]` instead of its absolute path
@@ -640,7 +640,7 @@ function getUsername() end
 ### `@operator`
 Provides type declarations for an [operator metamethod](http://lua-users.org/wiki/MetatableEvents).
 
-[View Original Request](https://github.com/sumneko/lua-language-server/issues/599)
+[View Original Request](https://github.com/LuaLS/lua-language-server/issues/599)
 
 **Syntax**
 
@@ -697,7 +697,7 @@ local URL = {}
 <br>
 
 ### `@overload`
-Define an additional signature for a function. This does not allow descriptions to be provided for the new signature being defined - if you want descriptions, you are better off writing out an entire `function` with the same name but different [`@param`](https://github.com/sumneko/lua-language-server/wiki/Annotations#param) and [`@return`](https://github.com/sumneko/lua-language-server/wiki/Annotations#return) annotations.
+Define an additional signature for a function. This does not allow descriptions to be provided for the new signature being defined - if you want descriptions, you are better off writing out an entire `function` with the same name but different [`@param`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#param) and [`@return`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#return) annotations.
 
 **Syntax**
 
@@ -747,7 +747,7 @@ end
 <br>
 
 ### `@param`
-Define a parameter for a function. This tells the language server what types are expected and can help enforce types and provide completion. Putting a question mark (`?`) after the parameter name will mark it as optional, meaning `nil` is an accepted type. The `type` provided can be an [`@alias`](https://github.com/sumneko/lua-language-server/wiki/Annotations#alias), [`@enum`](https://github.com/sumneko/lua-language-server/wiki/Annotations#enum), or [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class) as well.
+Define a parameter for a function. This tells the language server what types are expected and can help enforce types and provide completion. Putting a question mark (`?`) after the parameter name will mark it as optional, meaning `nil` is an accepted type. The `type` provided can be an [`@alias`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#alias), [`@enum`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#enum), or [`@class`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#class) as well.
 
 **Syntax**
 
@@ -813,7 +813,7 @@ local function setObjectType(objectID, type) end
 local boxObject = setObjectType(1, "Box")
 ```
 
-See [`@generic`](https://github.com/sumneko/lua-language-server/wiki/Annotations#generic) for more info.
+See [`@generic`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#generic) for more info.
 
 </details>
 
@@ -841,14 +841,14 @@ local B = 1
 ---| `B` # Has a value of 1
 function set(active) end
 ```
-Looking to do this with a table? You probably want to use [`@enum`](https://github.com/sumneko/lua-language-server/wiki/Annotations#enum)
+Looking to do this with a table? You probably want to use [`@enum`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#enum)
 
 </details>
 
 <br>
 
 ### `@private`
-Mark a function as private to a [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class). Private functions can be accessed only from within their class and are **not** accessable from child classes.
+Mark a function as private to a [`@class`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#class). Private functions can be accessed only from within their class and are **not** accessable from child classes.
 
 **Syntax**
 
@@ -880,7 +880,7 @@ myDog:eyesCount();
 <br>
 
 ### `@protected`
-Mark a function as protected within a [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class). Protected functions can be accessed only from within their class or from child classes.
+Mark a function as protected within a [`@class`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#class). Protected functions can be accessed only from within their class or from child classes.
 
 **Syntax**
 
@@ -983,7 +983,7 @@ local function getNicknames() end
 <br>
 
 ### `@see`
-Currently has no function other than allowing you to add a basic comment. This is not shown when hovering and has no additional functionality [yet](https://github.com/sumneko/lua-language-server/issues/1344).
+Currently has no function other than allowing you to add a basic comment. This is not shown when hovering and has no additional functionality [yet](https://github.com/LuaLS/lua-language-server/issues/1344).
 
 **Syntax**
 
@@ -1025,7 +1025,7 @@ math.max(1, 2)
 <br>
 
 ### `@type`
-Mark a variable as being of a certain type. Union types are separated with a pipe character `|`. The `type` provided can be an [`@alias`](https://github.com/sumneko/lua-language-server/wiki/Annotations#alias), [`@enum`](https://github.com/sumneko/lua-language-server/wiki/Annotations#enum), or [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class) as well.
+Mark a variable as being of a certain type. Union types are separated with a pipe character `|`. The `type` provided can be an [`@alias`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#alias), [`@enum`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#enum), or [`@class`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#class) as well.
 
 **Syntax**
 
@@ -1120,7 +1120,7 @@ local x
 	<br>
 </blockquote>
 
-Mark a `function` as having variable arguments. For variable returns, see [`@return`](https://github.com/sumneko/lua-language-server/wiki/Annotations#return).
+Mark a `function` as having variable arguments. For variable returns, see [`@return`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#return).
 
 **Syntax**
 
@@ -1140,7 +1140,7 @@ function concat(...) end
 <br>
 
 ### `@version`
-Mark the required Lua version for a `function` or [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class).
+Mark the required Lua version for a `function` or [`@class`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#class).
 
 
 **Syntax**
@@ -1173,13 +1173,13 @@ function hello() end
 ---@class Entry
 ```
 
-See [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class) for more info
+See [`@class`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#class) for more info
 
 </details>
 
 
 ## Links
 
-Found an issue? [Report it on the issue tracker](https://github.com/sumneko/lua-language-server/issues?q=label%3AEmmyLua).
+Found an issue? [Report it on the issue tracker](https://github.com/LuaLS/lua-language-server/issues?q=label%3AEmmyLua).
 
-Unit tests for the annotations can be found in [`test/definition/luadoc.lua`](https://github.com/sumneko/lua-language-server/blob/master/test/definition/luadoc.lua).
+Unit tests for the annotations can be found in [`test/definition/luadoc.lua`](https://github.com/LuaLS/lua-language-server/blob/master/test/definition/luadoc.lua).

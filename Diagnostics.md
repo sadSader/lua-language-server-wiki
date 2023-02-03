@@ -1,10 +1,10 @@
 # Diagnostics
 There are many different diagnostics that can be used to report information at different severities such as `Information`, `Warning`, `Error`, etc.
 
-Also see [syntax errors](https://github.com/sumneko/lua-language-server/wiki/Syntax-Errors).
+Also see [syntax errors](https://github.com/LuaLS/lua-language-server/wiki/Syntax-Errors).
 
 ## List of all diagnostics
-Below is a list of all diagnostics. They are organized into groups that are used by [`diagnostics.groupFileStatus`](https://github.com/sumneko/lua-language-server/wiki/Settings#diagnosticsgroupfilestatus) and [`diagnostics.groupSeverity`](https://github.com/sumneko/lua-language-server/wiki/Settings#diagnosticsgroupseverity).
+Below is a list of all diagnostics. They are organized into groups that are used by [`diagnostics.groupFileStatus`](https://github.com/LuaLS/lua-language-server/wiki/Settings#diagnosticsgroupfilestatus) and [`diagnostics.groupSeverity`](https://github.com/LuaLS/lua-language-server/wiki/Settings#diagnosticsgroupseverity).
 
 
 ### ambiguity
@@ -124,7 +124,7 @@ Triggered when the opinionated style checking detects an incorrectly styled line
 
 **Default File Status:** `"None"`
 
-Triggered when a typo is detected in a string. The dictionary can be customized using the [`Lua.spell.dict` setting](https://github.com/sumneko/lua-language-server/wiki/Settings#spelldict).
+Triggered when a typo is detected in a string. The dictionary can be customized using the [`Lua.spell.dict` setting](https://github.com/LuaLS/lua-language-server/wiki/Settings#spelldict).
 
 ---
 
@@ -215,7 +215,7 @@ Triggered when referencing an undefined global (assumed to be global). The typic
 ---
 
 ### luadoc
-The luadoc group contains diagnostics for the [annotations](https://github.com/sumneko/lua-language-server/wiki/Annotations) used to document your code.
+The luadoc group contains diagnostics for the [annotations](https://github.com/LuaLS/lua-language-server/wiki/Annotations) used to document your code.
 
 <br>
 
@@ -249,42 +249,42 @@ Triggered when two classes inherit each other forming a never ending loop of inh
 #### `doc-field-no-class`
 **Default Severity:** `Warning`
 
-Triggered when a [`@field`](https://github.com/sumneko/lua-language-server/wiki/Annotations#field) is specified for a non-existent [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class).
+Triggered when a [`@field`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#field) is specified for a non-existent [`@class`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#class).
 
 <br>
 
 #### `duplicate-doc-alias`
 **Default Severity:** `Warning`
 
-Triggered when there are two [`@alias`](https://github.com/sumneko/lua-language-server/wiki/Annotations#alias) annotations with matching names.
+Triggered when there are two [`@alias`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#alias) annotations with matching names.
 
 <br>
 
 #### `duplicate-doc-field`
 **Default Severity:** `Warning`
 
-Triggered when there are two [`@field`](https://github.com/sumneko/lua-language-server/wiki/Annotations#field) annotations with matching key values.
+Triggered when there are two [`@field`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#field) annotations with matching key values.
 
 <br>
 
 #### `duplicate-doc-param`
 **Default Severity:** `Warning`
 
-Triggered when there are two [`@param`](https://github.com/sumneko/lua-language-server/wiki/Annotations#param) annotations with matching names.
+Triggered when there are two [`@param`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#param) annotations with matching names.
 
 <br>
 
 #### `undefined-doc-class`
 **Default Severity:** `Warning`
 
-Triggered when referencing an undefined class in a [`@class`](https://github.com/sumneko/lua-language-server/wiki/Annotations#class) annotation.
+Triggered when referencing an undefined class in a [`@class`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#class) annotation.
 
 <br>
 
 #### `undefined-doc-name`
 **Default Severity:** `Warning`
 
-Triggered when referencing an undefined type or [`@alias`](https://github.com/sumneko/lua-language-server/wiki/Annotations#alias) in a [`@type`](https://github.com/sumneko/lua-language-server/wiki/Annotations#type) annotation.
+Triggered when referencing an undefined type or [`@alias`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#alias) in a [`@type`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#type) annotation.
 
 <br>
 
@@ -303,7 +303,7 @@ function subtract(a, b) end
 #### `unknown-cast-variable`
 **Default Severity:** `Warning`
 
-Triggered when attempting to cast an undefined variable. Double check that you have spelled things correctly and that the variable exists. Appears when using [`@cast`](https://github.com/sumneko/lua-language-server/wiki/Annotations#cast).
+Triggered when attempting to cast an undefined variable. Double check that you have spelled things correctly and that the variable exists. Appears when using [`@cast`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#cast).
 
 <br>
 
@@ -363,7 +363,7 @@ Triggered when a variable has been marked as deprecated yet is still being used.
 #### `discard-returns`
 **Default Severity:** `Warning`
 
-Triggered when the returns of a function are being ignored when it is not permitted. Functions can specify that their returns cannot be ignored with [`@nodiscard`](https://github.com/sumneko/lua-language-server/wiki/Annotations#nodiscard).
+Triggered when the returns of a function are being ignored when it is not permitted. Functions can specify that their returns cannot be ignored with [`@nodiscard`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#nodiscard).
 
 ---
 
@@ -448,7 +448,7 @@ bicycle.move()
 #### `param-type-mismatch`
 **Default Severity:** `Warning`
 
-Triggered when the type of the provided parameter does not match the type requested by the function definition. Uses information defined with [`@param`](https://github.com/sumneko/lua-language-server/wiki/Annotations#param).
+Triggered when the type of the provided parameter does not match the type requested by the function definition. Uses information defined with [`@param`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#param).
 
 <br>
 
@@ -489,35 +489,35 @@ The unbalanced group contains diagnostics that deal with too few or too many of 
 #### `missing-parameter`
 **Default Severity:** `Warning`
 
-Triggered when a required parameter is not supplied when calling a function. Uses information defined with [`@param`](https://github.com/sumneko/lua-language-server/wiki/Annotation#param).
+Triggered when a required parameter is not supplied when calling a function. Uses information defined with [`@param`](https://github.com/LuaLS/lua-language-server/wiki/Annotation#param).
 
 <br>
 
 #### `missing-return`
 **Default Severity:** `Warning`
 
-Triggered when a required `return` is not supplied from within a function. Uses information defined with [`@return`](https://github.com/sumneko/lua-language-server/wiki/Annotations#return).
+Triggered when a required `return` is not supplied from within a function. Uses information defined with [`@return`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#return).
 
 <br>
 
 #### `missing-return-value`
 **Default Severity:** `Warning`
 
-Triggered when a `return` is specified but the return value is not. Uses information defined with [`@return`](https://github.com/sumneko/lua-language-server/wiki/Annotations#return).
+Triggered when a `return` is specified but the return value is not. Uses information defined with [`@return`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#return).
 
 <br>
 
 #### `redundant-parameter`
 **Default Severity:** `Warning`
 
-Triggered when providing an extra parameter that a function does not ask for. Uses information defined with [`@param`](https://github.com/sumneko/lua-language-server/wiki/Annotations#param).
+Triggered when providing an extra parameter that a function does not ask for. Uses information defined with [`@param`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#param).
 
 <br>
 
 #### `redundant-return-value`
 **Default Severity:** `Warning`
 
-Triggered when a `return` is returning an extra value that the function has not requested. Uses information defined with [`@return`](https://github.com/sumneko/lua-language-server/wiki/Annotations#return).
+Triggered when a `return` is returning an extra value that the function has not requested. Uses information defined with [`@return`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#return).
 
 <br>
 

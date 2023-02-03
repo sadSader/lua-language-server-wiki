@@ -29,9 +29,9 @@ local myString = "Hello World"
 myString = false
 ```
 
-This will trigger a warning [diagnostic](https://github.com/sumneko/lua-language-server/wiki/Diagnostics), in this case the [`cast-local-type`](https://github.com/sumneko/lua-language-server/wiki/Diagnostics#cast-local-type) warning. This is of course all [customizable](https://github.com/sumneko/lua-language-server/wiki/Settings) and you can have it be [reported as an error instead of a warning](https://github.com/sumneko/lua-language-server/wiki/Settings#neededfilestatus), or not at all!
+This will trigger a warning [diagnostic](https://github.com/LuaLS/lua-language-server/wiki/Diagnostics), in this case the [`cast-local-type`](https://github.com/LuaLS/lua-language-server/wiki/Diagnostics#cast-local-type) warning. This is of course all [customizable](https://github.com/LuaLS/lua-language-server/wiki/Settings) and you can have it be [reported as an error instead of a warning](https://github.com/LuaLS/lua-language-server/wiki/Settings#neededfilestatus), or not at all!
 
-To get even better diagnostics, you can use [annotations](https://github.com/sumneko/lua-language-server/wiki/Annotations) to provide more context for the language server to work with.
+To get even better diagnostics, you can use [annotations](https://github.com/LuaLS/lua-language-server/wiki/Annotations) to provide more context for the language server to work with.
 
 ```lua
 local settings = {}

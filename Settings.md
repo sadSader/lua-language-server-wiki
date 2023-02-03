@@ -1,5 +1,5 @@
 # Settings
-A list of all settings that can be used to customize how the language server operates. All of these settings should be prefixed with `Lua.` e.g. `Lua.completion.enable` or `Lua.diagnostics.globals` when editing a [configuration file](https://github.com/sumneko/lua-language-server/wiki/Configuration-File).
+A list of all settings that can be used to customize how the language server operates. All of these settings should be prefixed with `Lua.` e.g. `Lua.completion.enable` or `Lua.diagnostics.globals` when editing a [configuration file](https://github.com/LuaLS/lua-language-server/wiki/Configuration-File).
 
 ## completion
 Settings that adjust how autocompletions are provided while typing.
@@ -140,7 +140,7 @@ Settings to adjust the diagnostics for `Info`, `Warning`, and `Error`
 <br>
 
 ### `diagnostics.disable`
-**Type:**  <code>Array<<a href="https://github.com/sumneko/lua-language-server/wiki/Diagnostics">diagnostic_name</a>></code>
+**Type:**  <code>Array<<a href="https://github.com/LuaLS/lua-language-server/wiki/Diagnostics">diagnostic_name</a>></code>
 
 **Default:**  `[]`
 
@@ -180,14 +180,14 @@ An array of variable names that will be declared as global.
 <br>
 
 ### `diagnostics.groupFileStatus`
-**Type:**  <code>Object<<a href="https://github.com/sumneko/lua-language-server/wiki/Diagnostics">diagnostic_group_name</a>, file_state></code>
+**Type:**  <code>Object<<a href="https://github.com/LuaLS/lua-language-server/wiki/Diagnostics">diagnostic_group_name</a>, file_state></code>
 
 
 **`file_state` Options:**
 - `"Any"` - Any loaded file (workspace, library, etc.) will use this diagnostic group
 - `"Opened"` - Only opened files will use this diagnostic group
 - `"None"` - This diagnostic group will be disabled
-- `"Fallback"` - The diagnostics in this group are controlled individually by [`diagnostics.neededFileStatus`](https://github.com/sumneko/lua-language-server/wiki/Settings#diagnosticsneededfilestatus)
+- `"Fallback"` - The diagnostics in this group are controlled individually by [`diagnostics.neededFileStatus`](https://github.com/LuaLS/lua-language-server/wiki/Settings#diagnosticsneededfilestatus)
 
 <details>
 
@@ -298,7 +298,7 @@ Set the file status required for each diagnostic group. This setting is an `Obje
 <br>
 
 ### `diagnostics.groupSeverity`
-**Type:**  <code>Object<<a href="https://github.com/sumneko/lua-language-server/wiki/Diagnostics">diagnostic_group_name</a>, severity></code>
+**Type:**  <code>Object<<a href="https://github.com/LuaLS/lua-language-server/wiki/Diagnostics">diagnostic_group_name</a>, severity></code>
 
 
 **`severity` Options:**
@@ -306,7 +306,7 @@ Set the file status required for each diagnostic group. This setting is an `Obje
 - `"Warning"` - A warning will be raised
 - `"Information"` - An information or note will be raised
 - `"Hint"` - The affected code will be "hinted" at
-- `"Fallback"` - The diagnostics in this group will be controlled individually by [`diagnostics.severity`](https://github.com/sumneko/lua-language-server/wiki/Settings#diagnosticsseverity)
+- `"Fallback"` - The diagnostics in this group will be controlled individually by [`diagnostics.severity`](https://github.com/LuaLS/lua-language-server/wiki/Settings#diagnosticsseverity)
 
 <details>
 
@@ -438,12 +438,12 @@ Set how files that have been ignored should be diagnosed.
 - `"Opened"` - Only diagnose library files when they are open
 - `"Disable"` - Never diagnose library files
 
-Set how files loaded with [`workspace.library`](https://github.com/sumneko/lua-language-server/wiki/Settings#workspacelibrary) are diagnosed.
+Set how files loaded with [`workspace.library`](https://github.com/LuaLS/lua-language-server/wiki/Settings#workspacelibrary) are diagnosed.
 
 <br>
 
 ### `diagnostics.neededFileStatus`
-**Type:**  <code>Object<<a href="https://github.com/sumneko/lua-language-server/wiki/Diagnostics">diagnostic_name</a>, file_state></code>
+**Type:**  <code>Object<<a href="https://github.com/LuaLS/lua-language-server/wiki/Diagnostics">diagnostic_name</a>, file_state></code>
 
 
 **`file_state` Options:**
@@ -522,7 +522,7 @@ Set how files loaded with [`workspace.library`](https://github.com/sumneko/lua-l
 <br>
 
 ### `diagnostics.severity`
-**Type:**  <code>Object<<a href="https://github.com/sumneko/lua-language-server/wiki/Diagnostics">diagnostic_name</a>, severity></code>
+**Type:**  <code>Object<<a href="https://github.com/LuaLS/lua-language-server/wiki/Diagnostics">diagnostic_name</a>, severity></code>
 
 
 **`severity` Options:**
@@ -608,7 +608,7 @@ Set how files loaded with [`workspace.library`](https://github.com/sumneko/lua-l
 **Default:**  `[]`
 
 
-Define variable names that will not be reported as an unused local by [`unused-local`](https://github.com/sumneko/lua-language-server/wiki/Diagnostics#unused-local).
+Define variable names that will not be reported as an unused local by [`unused-local`](https://github.com/LuaLS/lua-language-server/wiki/Diagnostics#unused-local).
 
 <br>
 
@@ -726,7 +726,7 @@ Settings for configuring inline hints
 **Default:**  `true`
 
 
-If a function has been defined as [`@async`](https://github.com/sumneko/lua-language-server/wiki/Annotations#async), display an `await` hint when it is being called.
+If a function has been defined as [`@async`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#async), display an `await` hint when it is being called.
 
 <br>
 
@@ -761,7 +761,7 @@ Whether parameter names should be hinted when typing out a function call.
 **Default:**  `true`
 
 
-Show a hint for parameter types at a function definition. Requires the parameters to be defined with [`@param`](https://github.com/sumneko/lua-language-server/wiki/Annotations#param)
+Show a hint for parameter types at a function definition. Requires the parameters to be defined with [`@param`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#param)
 
 <br>
 
@@ -821,7 +821,7 @@ When a value has multiple possible types, hovering it will display them. This se
 **Default:**  `true`
 
 
-When hovering a value with an [`@alias`](https://github.com/sumneko/lua-language-server/wiki/Annotations#alias) for its type, should the alias be expanded into its values. When enabled, `---@alias myType boolean|number` appears as `boolean|number`, otherwise it will appear as `myType`.
+When hovering a value with an [`@alias`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#alias) for its type, should the alias be expanded into its values. When enabled, `---@alias myType boolean|number` appears as `boolean|number`, otherwise it will appear as `myType`.
 
 <br>
 
@@ -876,7 +876,7 @@ Miscellaneous settings that do not belong to any of the other groups.
 **Default:**  `[]`
 
 
-[Command line parameters](https://github.com/sumneko/lua-language-server/wiki/Getting-Started#run) to be passed along to the server `exe` when starting through Visual Studio Code.
+[Command line parameters](https://github.com/LuaLS/lua-language-server/wiki/Getting-Started#run) to be passed along to the server `exe` when starting through Visual Studio Code.
 
 <br>
 
@@ -916,7 +916,7 @@ Settings for configuring the runtime environment.
 - `"utf8"`
 
 **`status` Options:**
-- `"default"` - The library will be enabled if it is a part of the current [`runtime.version`](https://github.com/sumneko/lua-language-server/wiki/Settings#runtimeversion).
+- `"default"` - The library will be enabled if it is a part of the current [`runtime.version`](https://github.com/LuaLS/lua-language-server/wiki/Settings#runtimeversion).
 - `"enable"` - Always enable this library
 - `"disable"` - Always disable this library
 
@@ -1014,7 +1014,7 @@ Add support for non-standard symbols. Make sure to double check that your runtim
 **Default:**  `["?.lua", "?/init.lua"]`
 
 
-Defines the paths to use when using `require`. For example, setting to `?/start.lua` will search for `<workspace>/myFile/start.lua` from the loaded files when doing `require"myFile"`. If [`runtime.pathStrict`](https://github.com/sumneko/lua-language-server/wiki/Settings#runtimepathstrict) is `false`, `<workspace>/**/myFile/start.lua` will also be searched. To load files that are not in the current workspace, they will first need to be loaded using [`workspace.library`](https://github.com/sumneko/lua-language-server/wiki/Settings#workspacelibrary).
+Defines the paths to use when using `require`. For example, setting to `?/start.lua` will search for `<workspace>/myFile/start.lua` from the loaded files when doing `require"myFile"`. If [`runtime.pathStrict`](https://github.com/LuaLS/lua-language-server/wiki/Settings#runtimepathstrict) is `false`, `<workspace>/**/myFile/start.lua` will also be searched. To load files that are not in the current workspace, they will first need to be loaded using [`workspace.library`](https://github.com/LuaLS/lua-language-server/wiki/Settings#workspacelibrary).
 
 <br>
 
@@ -1024,7 +1024,7 @@ Defines the paths to use when using `require`. For example, setting to `?/start.
 **Default:**  `false`
 
 
-When enabled, [`runtime.path`](https://github.com/sumneko/lua-language-server/wiki/Settings#runtimepath) will only search the first level of directories. See the description of `runtime.path` for more info.
+When enabled, [`runtime.path`](https://github.com/LuaLS/lua-language-server/wiki/Settings#runtimepath) will only search the first level of directories. See the description of `runtime.path` for more info.
 
 <br>
 
@@ -1034,7 +1034,7 @@ When enabled, [`runtime.path`](https://github.com/sumneko/lua-language-server/wi
 **Default:**  `""`
 
 
-The path to the [plugin](https://github.com/sumneko/lua-language-server/wiki/Plugins) to use. Blank by default for security reasons.
+The path to the [plugin](https://github.com/LuaLS/lua-language-server/wiki/Plugins) to use. Blank by default for security reasons.
 
 <br>
 
@@ -1044,7 +1044,7 @@ The path to the [plugin](https://github.com/sumneko/lua-language-server/wiki/Plu
 **Default:**  `[]`
 
 
-Additional arguments that will be passed to the active [plugin](https://github.com/sumneko/lua-language-server/wiki/Plugins).
+Additional arguments that will be passed to the active [plugin](https://github.com/LuaLS/lua-language-server/wiki/Plugins).
 
 <br>
 
@@ -1171,7 +1171,7 @@ The telemetry group contains settings for the opt-in telemetry.
 **Default:**  `null`
 
 
-The language server comes with opt-in telemetry to help improve the language server. It would be greatly appreciated if you enable this setting. Read the [privacy policy](https://github.com/sumneko/lua-language-server/wiki/Home#privacy) before enabling.
+The language server comes with opt-in telemetry to help improve the language server. It would be greatly appreciated if you enable this setting. Read the [privacy policy](https://github.com/LuaLS/lua-language-server/wiki/Home#privacy) before enabling.
 
 
 
@@ -1261,7 +1261,7 @@ The workspace group contains settings for configuring how the workspace diagnosi
 **Default:**  `true`
 
 
-Whether [third party libraries](https://github.com/sumneko/lua-language-server/wiki/Libraries) can be automatically detected and applied. Third party libraries can set up the environment to be as close as possible to your target runtime environment. See [`meta/3rd`](https://github.com/sumneko/lua-language-server/tree/master/meta/3rd) to view what third party libraries are currently supported.
+Whether [third party libraries](https://github.com/LuaLS/lua-language-server/wiki/Libraries) can be automatically detected and applied. Third party libraries can set up the environment to be as close as possible to your target runtime environment. See [`meta/3rd`](https://github.com/LuaLS/lua-language-server/tree/master/meta/3rd) to view what third party libraries are currently supported.
 
 <br>
 
@@ -1291,7 +1291,7 @@ Whether [git submodules](https://github.blog/2016-02-01-working-with-submodules/
 **Default:**  `[]`
 
 
-An array of abosolute or workspace-relative paths that will be added to the workspace diagnosis - meaning you will get completion and context from these library files. Can be a file or directory. Files included here will have some features disabled such as renaming fields to prevent accidentally renaming your library files. Read more on the [Libraries page](https://github.com/sumneko/lua-language-server/wiki/Libraries).
+An array of abosolute or workspace-relative paths that will be added to the workspace diagnosis - meaning you will get completion and context from these library files. Can be a file or directory. Files included here will have some features disabled such as renaming fields to prevent accidentally renaming your library files. Read more on the [Libraries page](https://github.com/LuaLS/lua-language-server/wiki/Libraries).
 
 <br>
 
@@ -1341,7 +1341,7 @@ Whether files that are in `.gitignore` should be ignored by the language server 
 **Default:**  `[]`
 
 
-An array of paths to [custom third party libraries](https://github.com/sumneko/lua-language-server/wiki/Libraries#custom). This path should point to a directory where **all** of your custom libraries are, not just to one of the libraries. If the below is your file structure, this setting should be `"myLuaLibraries"` - of course this should be an absolute path though.
+An array of paths to [custom third party libraries](https://github.com/LuaLS/lua-language-server/wiki/Libraries#custom). This path should point to a directory where **all** of your custom libraries are, not just to one of the libraries. If the below is your file structure, this setting should be `"myLuaLibraries"` - of course this should be an absolute path though.
 
 ```txt
 📦 myLuaLibraries/

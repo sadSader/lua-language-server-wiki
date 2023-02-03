@@ -127,7 +127,7 @@ To add a link, place the alt text in square brackets with the url immediately fo
 <details>
 <summary>Example</summary>
 
-`[GitHub Repository](https://github.com/sumneko/lua-language-server)`
+`[GitHub Repository](https://github.com/LuaLS/lua-language-server)`
 
 </details>
 

@@ -17,7 +17,7 @@ If the ``Lua.telemetry.enable`` setting is configured to be ``true``, anonymous,
 * C++ compiler name, e.g. `msvc MSVC 1928`
 * Stack traces of `Lua-language-server`, relative paths are used, so it does not contain any user information
 
-Find sending codes at [https://github.com/sumneko/lua-language-server/blob/master/script/service/telemetry.lua](https://github.com/sumneko/lua-language-server/blob/master/script/service/telemetry.lua)
+Find sending codes at [https://github.com/LuaLS/lua-language-server/blob/master/script/service/telemetry.lua](https://github.com/LuaLS/lua-language-server/blob/master/script/service/telemetry.lua)
 
 # Disabling telemetry
 
@@ -33,4 +33,4 @@ If you choose to enable telemetry, I would be very grateful. In addition to impr
 
 The collected data is used to improve the `Lua-language-server`. The collected data is public, you can find it at [http://154.23.191.39/](http://154.23.191.39/)
 
-Find collecting codes at [https://github.com/sumneko/lua-telemetry-server/tree/master/method](https://github.com/sumneko/lua-telemetry-server/tree/master/method)
+Find collecting codes at [https://github.com/LuaLS/lua-telemetry-server/tree/master/method](https://github.com/LuaLS/lua-telemetry-server/tree/master/method)

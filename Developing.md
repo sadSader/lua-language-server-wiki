@@ -1,12 +1,12 @@
 # Developing
 Hello! Thank you for taking an interest in helping improve the language server.
 
-You can explore the [file structure page](https://github.com/sumneko/lua-language-server/wiki/File-Structure) for info on what files are doing what.
+You can explore the [file structure page](https://github.com/LuaLS/lua-language-server/wiki/File-Structure) for info on what files are doing what.
 
 <br>
 
 ## Enable Developer Mode
-In Visual Studio Code, add `--develop=true` to [`Lua.misc.parameters`](https://github.com/sumneko/lua-language-server/wiki/Settings#miscparameters).
+In Visual Studio Code, add `--develop=true` to [`Lua.misc.parameters`](https://github.com/LuaLS/lua-language-server/wiki/Settings#miscparameters).
 
 In other clients, use `--develop=true` as a flag from the command line.
 
@@ -18,7 +18,7 @@ You can quickly `print()` to the `OUTPUT` panel (<kbd>Ctrl + Shift + U</kbd>) in
 
 ![outputPanel](https://user-images.githubusercontent.com/61925890/181308229-52b7e9b7-2893-429b-bca2-8386670df6b0.png)
 
-Below is an example of how a [plugin](https://github.com/sumneko/lua-language-server/wiki/Plugins) can be debugged.
+Below is an example of how a [plugin](https://github.com/LuaLS/lua-language-server/wiki/Plugins) can be debugged.
 
 ```lua
 local util   = require 'utility'
@@ -30,7 +30,7 @@ end
 ```
 
 ### Append to Log File
-You can add an entry to the [log file](https://github.com/sumneko/lua-language-server/wiki/FAQ#where-can-i-find-the-log-file). Below is an example of how a [plugin](https://github.com/sumneko/lua-language-server/wiki/Plugins) can be debugged.
+You can add an entry to the [log file](https://github.com/LuaLS/lua-language-server/wiki/FAQ#where-can-i-find-the-log-file). Below is an example of how a [plugin](https://github.com/LuaLS/lua-language-server/wiki/Plugins) can be debugged.
 
 ```lua
 local util   = require 'utility'
@@ -56,7 +56,7 @@ You will need two Visual Studio Code instances open:
 The below steps guide you through setting up Lua debugging:
 
 1. Install [`actboy168.lua-debug`](https://marketplace.visualstudio.com/items?itemName=actboy168.lua-debug) from the extension marketplace for Lua debugging
-2. Copy [`.vscode/launch.json`](https://github.com/sumneko/lua-language-server/blob/master/.vscode/launch.json) into **Debug Host**
+2. Copy [`.vscode/launch.json`](https://github.com/LuaLS/lua-language-server/blob/master/.vscode/launch.json) into **Debug Host**
 3. Copy the below settings into your [`settings.json`](https://code.visualstudio.com/docs/getstarted/settings#_settingsjson) for the **Debug Target**
    ```lua
    "Lua.misc.parameters": [
@@ -77,13 +77,13 @@ The server has supported multi-workspace environments since `v2.6.0`. This works
 
 > ℹ️ ~Note: The server does not support dynamically adding or removing workspaces. If the workspaces change, the client should restart the server.~ The server has supported dynamically adding or removing workspaces since `v3.5.1`.
 
-![](https://github.com/sumneko/vscode-lua/raw/master/images/wiki-workspace.png)
+![](https://github.com/LuaLS/vscode-lua/raw/master/images/wiki-workspace.png)
 
 The server creates a `<fallback>` scope by default. If you start the server while in "single file mode", this `<fallback>` scope is what is being used.
 
 Should the server be started in "workspace mode", each workspace will be given its own scope.
 
-Linking to other files/directories outside the scope of your workspace(s) is also possible. Built-in Lua libraries are linked using the API definition files from `meta/` that correspond to the [`runtime.version`](https://github.com/sumneko/lua-language-server/wiki/Settings#runtimeversion) you have selected. You can also specify additional files to include using [`workspace.library`](https://github.com/sumneko/lua-language-server/wiki/Settings#workspacelibrary).
+Linking to other files/directories outside the scope of your workspace(s) is also possible. Built-in Lua libraries are linked using the API definition files from `meta/` that correspond to the [`runtime.version`](https://github.com/LuaLS/lua-language-server/wiki/Settings#runtimeversion) you have selected. You can also specify additional files to include using [`workspace.library`](https://github.com/LuaLS/lua-language-server/wiki/Settings#workspacelibrary).
 
 When a Lua file opened/created, the server will check all workspace scopes:
 
@@ -101,50 +101,50 @@ These tokens are being previewed in `Dark+` of Visual Studio Code as it has grea
 
 |                     token                      |                                                            preview                                                             |
 | :--------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
-|              `keyword.local.lua`               |              ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/keyword.local.lua.jpg?raw=true)               |
-|             `keyword.control.lua`              |             ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/keyword.control.lua.jpg?raw=true)              |
-|            `entity.name.class.lua`             |            ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/entity.name.class.lua.jpg?raw=true)             |
-|           `entity.name.function.lua`           |           ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/entity.name.function.lua.jpg?raw=true)           |
-| `punctuation.definition.parameters.begin.lua`  | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/punctuation.definition.parameters.begin.lua.jpg?raw=true)  |
-| `punctuation.definition.parameters.finish.lua` | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/punctuation.definition.parameters.finish.lua.jpg?raw=true) |
-|       `variable.parameter.function.lua`        |       ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/variable.parameter.function.lua.jpg?raw=true)        |
-|     `punctuation.separator.arguments.lua`      |     ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/punctuation.separator.arguments.lua.jpg?raw=true)      |
-|         `constant.numeric.integer.lua`         |         ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/constant.numeric.integer.lua.jpg?raw=true)         |
-|          `constant.numeric.float.lua`          |          ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/constant.numeric.float.lua.jpg?raw=true)          |
-|   `constant.numeric.integer.hexadecimal.lua`   |   ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/constant.numeric.integer.hexadecimal.lua.jpg?raw=true)   |
-|    `constant.numeric.float.hexadecimal.lua`    |    ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/constant.numeric.float.hexadecimal.lua.jpg?raw=true)    |
-|   `punctuation.definition.string.begin.lua`    |   ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/punctuation.definition.string.begin.lua.jpg?raw=true)    |
-|    `punctuation.definition.string.end.lua`     |    ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/punctuation.definition.string.end.lua.jpg?raw=true)     |
-|           `string.quoted.single.lua`           |           ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/string.quoted.single.lua.jpg?raw=true)           |
-|           `string.quoted.double.lua`           |           ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/string.quoted.double.lua.jpg?raw=true)           |
-|      `string.quoted.other.multiline.lua`       |      ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/string.quoted.other.multiline.lua.jpg?raw=true)       |
-|        `constant.character.escape.lua`         |        ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/constant.character.escape.lua.jpg?raw=true)         |
-|      `constant.character.escape.byte.lua`      |      ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/constant.character.escape.byte.lua.jpg?raw=true)      |
-|    `constant.character.escape.unicode.lua`     |    ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/constant.character.escape.unicode.lua.jpg?raw=true)     |
-|     `invalid.illegal.character.escape.lua`     |     ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/invalid.illegal.character.escape.lua.jpg?raw=true)     |
-|      `punctuation.definition.comment.lua`      |      ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/punctuation.definition.comment.lua.jpg?raw=true)      |
-|         `comment.line.double-dash.lua`         |         ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/comment.line.double-dash.lua.jpg?raw=true)         |
-|   `punctuation.definition.comment.begin.lua`   |   ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/punctuation.definition.comment.begin.lua.jpg?raw=true)   |
-|    `punctuation.definition.comment.end.lua`    |    ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/punctuation.definition.comment.end.lua.jpg?raw=true)    |
-|              `comment.block.lua`               |              ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/comment.block.lua.jpg?raw=true)               |
-|           `keyword.control.goto.lua`           |           ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/keyword.control.goto.lua.jpg?raw=true)           |
-|                `string.tag.lua`                |                ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/string.tag.lua.jpg?raw=true)                |
-|    `punctuation.section.embedded.begin.lua`    |    ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/punctuation.section.embedded.begin.lua.jpg?raw=true)    |
-|     `punctuation.section.embedded.end.lua`     |     ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/punctuation.section.embedded.end.lua.jpg?raw=true)     |
-|          `variable.language.self.lua`          |          ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/variable.language.self.lua.jpg?raw=true)          |
-|             `support.function.lua`             |             ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/support.function.lua.jpg?raw=true)             |
-|         `support.function.library.lua`         |         ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/support.function.library.lua.jpg?raw=true)         |
-|             `keyword.operator.lua`             |             ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/keyword.operator.lua.jpg?raw=true)             |
-|              `variable.other.lua`              |              ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/variable.other.lua.jpg?raw=true)              |
+|              `keyword.local.lua`               |              ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/keyword.local.lua.jpg?raw=true)               |
+|             `keyword.control.lua`              |             ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/keyword.control.lua.jpg?raw=true)              |
+|            `entity.name.class.lua`             |            ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/entity.name.class.lua.jpg?raw=true)             |
+|           `entity.name.function.lua`           |           ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/entity.name.function.lua.jpg?raw=true)           |
+| `punctuation.definition.parameters.begin.lua`  | ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/punctuation.definition.parameters.begin.lua.jpg?raw=true)  |
+| `punctuation.definition.parameters.finish.lua` | ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/punctuation.definition.parameters.finish.lua.jpg?raw=true) |
+|       `variable.parameter.function.lua`        |       ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/variable.parameter.function.lua.jpg?raw=true)        |
+|     `punctuation.separator.arguments.lua`      |     ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/punctuation.separator.arguments.lua.jpg?raw=true)      |
+|         `constant.numeric.integer.lua`         |         ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/constant.numeric.integer.lua.jpg?raw=true)         |
+|          `constant.numeric.float.lua`          |          ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/constant.numeric.float.lua.jpg?raw=true)          |
+|   `constant.numeric.integer.hexadecimal.lua`   |   ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/constant.numeric.integer.hexadecimal.lua.jpg?raw=true)   |
+|    `constant.numeric.float.hexadecimal.lua`    |    ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/constant.numeric.float.hexadecimal.lua.jpg?raw=true)    |
+|   `punctuation.definition.string.begin.lua`    |   ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/punctuation.definition.string.begin.lua.jpg?raw=true)    |
+|    `punctuation.definition.string.end.lua`     |    ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/punctuation.definition.string.end.lua.jpg?raw=true)     |
+|           `string.quoted.single.lua`           |           ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/string.quoted.single.lua.jpg?raw=true)           |
+|           `string.quoted.double.lua`           |           ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/string.quoted.double.lua.jpg?raw=true)           |
+|      `string.quoted.other.multiline.lua`       |      ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/string.quoted.other.multiline.lua.jpg?raw=true)       |
+|        `constant.character.escape.lua`         |        ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/constant.character.escape.lua.jpg?raw=true)         |
+|      `constant.character.escape.byte.lua`      |      ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/constant.character.escape.byte.lua.jpg?raw=true)      |
+|    `constant.character.escape.unicode.lua`     |    ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/constant.character.escape.unicode.lua.jpg?raw=true)     |
+|     `invalid.illegal.character.escape.lua`     |     ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/invalid.illegal.character.escape.lua.jpg?raw=true)     |
+|      `punctuation.definition.comment.lua`      |      ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/punctuation.definition.comment.lua.jpg?raw=true)      |
+|         `comment.line.double-dash.lua`         |         ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/comment.line.double-dash.lua.jpg?raw=true)         |
+|   `punctuation.definition.comment.begin.lua`   |   ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/punctuation.definition.comment.begin.lua.jpg?raw=true)   |
+|    `punctuation.definition.comment.end.lua`    |    ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/punctuation.definition.comment.end.lua.jpg?raw=true)    |
+|              `comment.block.lua`               |              ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/comment.block.lua.jpg?raw=true)               |
+|           `keyword.control.goto.lua`           |           ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/keyword.control.goto.lua.jpg?raw=true)           |
+|                `string.tag.lua`                |                ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/string.tag.lua.jpg?raw=true)                |
+|    `punctuation.section.embedded.begin.lua`    |    ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/punctuation.section.embedded.begin.lua.jpg?raw=true)    |
+|     `punctuation.section.embedded.end.lua`     |     ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/punctuation.section.embedded.end.lua.jpg?raw=true)     |
+|          `variable.language.self.lua`          |          ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/variable.language.self.lua.jpg?raw=true)          |
+|             `support.function.lua`             |             ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/support.function.lua.jpg?raw=true)             |
+|         `support.function.library.lua`         |         ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/support.function.library.lua.jpg?raw=true)         |
+|             `keyword.operator.lua`             |             ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/keyword.operator.lua.jpg?raw=true)             |
+|              `variable.other.lua`              |              ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/variable.other.lua.jpg?raw=true)              |
 
 ### Semantic Tokens
 
 |     semantic token      |    fallen syntax token     |                                                 preview                                                 |
 | :---------------------: | :------------------------: | :-----------------------------------------------------------------------------------------------------: |
-|   `namespace.static`    |   `support.function.lua`   |   ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/namespace.static.jpg?raw=true)    |
-|  `namespace.readonly`   |  `constant.language.lua`   |  ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/namespace.readonly.jpg?raw=true)   |
-| `namespace.deprecated`  |    `entity.name.label`     | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/namespace.deprecated.jpg?raw=true)  |
-| `parameter.declaration` |    `variable.parameter`    | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/parameter.declaration.jpg?raw=true) |
-| `property.declaration`  |  `entity.other.attribute`  | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/property.declaration.jpg?raw=true)  |
-|       `variable`        |    `variable.other.lua`    |       ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/variable.jpg?raw=true)        |
-| `interface.declaration` | `entity.name.function.lua` | ![](https://github.com/sumneko/vscode-lua/blob/master/images/tokens/interface.declaration.jpg?raw=true) |
+|   `namespace.static`    |   `support.function.lua`   |   ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/namespace.static.jpg?raw=true)    |
+|  `namespace.readonly`   |  `constant.language.lua`   |  ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/namespace.readonly.jpg?raw=true)   |
+| `namespace.deprecated`  |    `entity.name.label`     | ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/namespace.deprecated.jpg?raw=true)  |
+| `parameter.declaration` |    `variable.parameter`    | ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/parameter.declaration.jpg?raw=true) |
+| `property.declaration`  |  `entity.other.attribute`  | ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/property.declaration.jpg?raw=true)  |
+|       `variable`        |    `variable.other.lua`    |       ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/variable.jpg?raw=true)        |
+| `interface.declaration` | `entity.name.function.lua` | ![](https://github.com/LuaLS/vscode-lua/blob/master/images/tokens/interface.declaration.jpg?raw=true) |

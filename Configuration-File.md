@@ -1,8 +1,8 @@
 # The Configuration File
-There are multiple ways to provide a configuration file to customize how the language server operates. A full list of the available configuration settings can be found on the [settings page](https://github.com/sumneko/lua-language-server/wiki/Settings).
+There are multiple ways to provide a configuration file to customize how the language server operates. A full list of the available configuration settings can be found on the [settings page](https://github.com/LuaLS/lua-language-server/wiki/Settings).
 
 ## Visual Studio Code
-In Visual Studio Code, you can use [the settings UI](https://github.com/sumneko/lua-language-server/wiki/Getting-Started#configuration) or write directly to the `settings.json` file. You can also use a [`.luarc.json` file](#luarcjson).
+In Visual Studio Code, you can use [the settings UI](https://github.com/LuaLS/lua-language-server/wiki/Getting-Started#configuration) or write directly to the `settings.json` file. You can also use a [`.luarc.json` file](#luarcjson).
 
 The `settings.json` file can be found in the following OS-dependent locations:
 
@@ -12,12 +12,12 @@ The `settings.json` file can be found in the following OS-dependent locations:
 |  Linux  | `$HOME/.config/Code/User/settings.json`                      |
 |  MacOS  | `$HOME/Library/Application\ Support/Code/User/settings.json` |
 
-You can also define your settings on a [workspace-specific basis](https://code.visualstudio.com/docs/getstarted/settings#_workspace-settings), which can help [improve speeds](https://github.com/sumneko/lua-language-server/wiki/FAQ#how-can-i-improve-startup-speeds) and is recommended for [project-specific](https://code.visualstudio.com/docs/getstarted/settings#_when-does-it-make-sense-to-use-workspace-settings) settings.
+You can also define your settings on a [workspace-specific basis](https://code.visualstudio.com/docs/getstarted/settings#_workspace-settings), which can help [improve speeds](https://github.com/LuaLS/lua-language-server/wiki/FAQ#how-can-i-improve-startup-speeds) and is recommended for [project-specific](https://code.visualstudio.com/docs/getstarted/settings#_when-does-it-make-sense-to-use-workspace-settings) settings.
 
 For more details, read the [VS Code documentation](https://code.visualstudio.com/docs/getstarted/settings).
 
 ## JSON Schema
-[A JSON schema](https://github.com/sumneko/vscode-lua/tree/master/setting) is available in multiple languages to help make the creation of a JSON configuration file easier.
+[A JSON schema](https://github.com/LuaLS/vscode-lua/tree/master/setting) is available in multiple languages to help make the creation of a JSON configuration file easier.
 
 In VS Code, this schema is already injected into `.vscode/settings.json` and `.luarc.json` but for other editors where this is not the case, it can be added manually by adding the following to the start of your JSON file:
 
@@ -33,7 +33,7 @@ A `.luarc.json` file can be added to your workspace to apply a certain configura
 ## Custom Config File
 If you want to use your own custom configuration file, with whatever name you please, that is also an option - although it must be written in Lua or JSON.
 
-This file can then be loaded by using the [`--configpath` flag](https://github.com/sumneko/lua-language-server/wiki/Getting-Started#-configpath).
+This file can then be loaded by using the [`--configpath` flag](https://github.com/LuaLS/lua-language-server/wiki/Getting-Started#-configpath).
 
 If writing the file in Lua, the configuration file can consist of nested tables;
 
@@ -125,7 +125,7 @@ settings = {
 
 
 ### Neovim with [coc.nvim](https://github.com/neoclide/coc.nvim)
-*Thanks to [gustavo-hms](https://github.com/sumneko/lua-language-server/issues/154#issuecomment-621203055)*
+*Thanks to [gustavo-hms](https://github.com/LuaLS/lua-language-server/issues/154#issuecomment-621203055)*
 
 1. Execute `:CocConfig;`
 2. A JSON file will open

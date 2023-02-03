@@ -1,7 +1,7 @@
 # Syntax Errors
 A syntax error will appear when the Lua syntax has been violated, which will result in a error at runtime.
 
-These work *similar* to the [diagnostics](https://github.com/sumneko/lua-language-server/wiki/).
+These work *similar* to the [diagnostics](https://github.com/LuaLS/lua-language-server/wiki/).
 
 ## List of all syntax errors
 Below is a list of all of the possible syntax errors that can be reported by the language server:
@@ -223,7 +223,7 @@ local function x:t() end
 <br>
 
 ### `unicode-name`
-Triggered when a variable name contains unicode characters. Unicode characters can be allowed by disabling this diagnostic or by enabling [`Lua.runtime.unicodeName`](https://github.com/sumneko/lua-language-server/wiki/Settings#runtimeunicodename).
+Triggered when a variable name contains unicode characters. Unicode characters can be allowed by disabling this diagnostic or by enabling [`Lua.runtime.unicodeName`](https://github.com/LuaLS/lua-language-server/wiki/Settings#runtimeunicodename).
 
 <br>
 

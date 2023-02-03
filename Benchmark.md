@@ -27,4 +27,4 @@ According to the test, the most time-consuming part is "Compile the contents of 
 
 Step 2 is affected by the total number of files in your workspace (including non Lua files).
 
-The best way to improve startup times is to [exclude unnecessary files and directories](https://github.com/sumneko/lua-language-server/wiki/Settings#workspaceignoredir) and to not load unnecessary [libraries](https://github.com/sumneko/lua-language-server/wiki/Libraries).
+The best way to improve startup times is to [exclude unnecessary files and directories](https://github.com/LuaLS/lua-language-server/wiki/Settings#workspaceignoredir) and to not load unnecessary [libraries](https://github.com/LuaLS/lua-language-server/wiki/Libraries).

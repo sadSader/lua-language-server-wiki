@@ -1,7 +1,7 @@
 # Wiki Contributors
 This page serves to recognize and thank those that have spent time to improve the wiki and help out the community. When wiki pages get deleted and renamed, you can no longer see who contributed to that file in GitHub and have to clone the wiki in order to see the complete history. It is really unfortunate that people's contributions can go missing in this way and so that is why this page exists!
 
-Looking to contribute? You are absolutely welcome to [open up an issue](https://github.com/sumneko/lua-language-server/issues/new) to provide fixes and suggest improvements!
+Looking to contribute? You are absolutely welcome to [open up an issue](https://github.com/LuaLS/lua-language-server/issues/new) to provide fixes and suggest improvements!
 
 ## List of Contributors
 Thank you all contributors! ❤️

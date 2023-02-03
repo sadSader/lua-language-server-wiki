@@ -116,4 +116,4 @@ Turn the computer on
 
 2. From the `bin` directory, run `./lua-language-server.exe --doc"<PROJECT_PATH>"`.
 
-3. Find `doc.json` and `doc.md` in [log location](https://github.com/sumneko/lua-language-server/wiki/FAQ#where-can-i-find-the-log-file) (`sumneko.lua-XXXX/server/log`).
+3. Find `doc.json` and `doc.md` in [log location](https://github.com/LuaLS/lua-language-server/wiki/FAQ#where-can-i-find-the-log-file) (`sumneko.lua-XXXX/server/log`).

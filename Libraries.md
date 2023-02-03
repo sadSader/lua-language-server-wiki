@@ -1,12 +1,12 @@
 # Libraries
 Libraries can be used to provide definitions that allow you to very closely emulate your target environment without actually `require`-ing them.
 
-They can be extremely powerful, but they can also come with [some performance issues](https://github.com/sumneko/lua-language-server/wiki/FAQ#how-can-i-improve-startup-speeds) when they are very large or there are many being included.
+They can be extremely powerful, but they can also come with [some performance issues](https://github.com/LuaLS/lua-language-server/wiki/FAQ#how-can-i-improve-startup-speeds) when they are very large or there are many being included.
 
 <br>
 
 ## Built-in Libraries
-There are a number of built-in third party libraries that can be found in [`meta/3rd/`](https://github.com/sumneko/lua-language-server/tree/master/meta/3rd). These are all implemented as [environment emulations](#environment-emulation). These include:
+There are a number of built-in third party libraries that can be found in [`meta/3rd/`](https://github.com/LuaLS/lua-language-server/tree/master/meta/3rd). These are all implemented as [environment emulations](#environment-emulation). These include:
 
 - `Cocos 4.0`
 - `Jass`
@@ -26,16 +26,16 @@ There are a number of built-in third party libraries that can be found in [`meta
 When opening a workspace, you may be prompted to apply a library should your workspace contain certain keywords. You will be given three options:
 
 1. Apply and modify settings
-   - Apply the library so that you get completions, saving the activated library to your [configuration file](https://github.com/sumneko/lua-language-server/wiki/Configuration-File). Next time you load the workspace up, the library will again be loaded.
+   - Apply the library so that you get completions, saving the activated library to your [configuration file](https://github.com/LuaLS/lua-language-server/wiki/Configuration-File). Next time you load the workspace up, the library will again be loaded.
 2. Apply but do not modify settings
     - **Temporarily** apply the library so that you get completions. When the server is restarted, the library will no longer be loaded and you will once again receive this popup.
 3. Don't show again
-   - Stop suggesting to apply libraries. This sets [`workspace.checkThirdParty`](https://github.com/sumneko/lua-language-server/wiki/Settings#workspacecheckthirdparty) to `false` in your [configuration file](https://github.com/sumneko/lua-language-server/wiki/Configuration-File).
+   - Stop suggesting to apply libraries. This sets [`workspace.checkThirdParty`](https://github.com/LuaLS/lua-language-server/wiki/Settings#workspacecheckthirdparty) to `false` in your [configuration file](https://github.com/LuaLS/lua-language-server/wiki/Configuration-File).
 
 <br>
 
 ### Manually Applying
-In case the popup doesn't appear or you have purposefully set [`workspace.checkThirdParty`](https://github.com/sumneko/lua-language-server/wiki/Settings#workspacecheckthirdparty) to `false`, you can still manually apply a library using [`workspace.library`](https://github.com/sumneko/lua-language-server/wiki/Settings#workspacelibrary). The path can use `${3rd}` to refer to the built-in libraries folder location. The path for `love2d` looks like `${3rd}/love2d/library`.
+In case the popup doesn't appear or you have purposefully set [`workspace.checkThirdParty`](https://github.com/LuaLS/lua-language-server/wiki/Settings#workspacecheckthirdparty) to `false`, you can still manually apply a library using [`workspace.library`](https://github.com/LuaLS/lua-language-server/wiki/Settings#workspacelibrary). The path can use `${3rd}` to refer to the built-in libraries folder location. The path for `love2d` looks like `${3rd}/love2d/library`.
 
 Here is an example of how you can apply the `OpenResty` library:
 
@@ -57,7 +57,7 @@ Here is an example of how you can apply the `OpenResty` library:
 </details>
 
 <details>
-<summary><a href="https://github.com/sumneko/lua-language-server/wiki/Configuration-File#luarcjson"><code>.luarc.json</code></a></summary>
+<summary><a href="https://github.com/LuaLS/lua-language-server/wiki/Configuration-File#luarcjson"><code>.luarc.json</code></a></summary>
 
 ```json
 {
@@ -74,14 +74,14 @@ Here is an example of how you can apply the `OpenResty` library:
 </details>
 
 
-The [`workspace.library`](https://github.com/sumneko/lua-language-server/wiki/Settings#workspacelibrary) setting always follows the pattern of `${3rd}/LIBRARY_NAME/library`, but the other settings seen in the examples above are unique to the library being applied. To see the settings that the server would have [applied automatically](#automatically-applying), navigate to the library's [`config.lua`](#configuration-file) in the [`meta/3rd/`](https://github.com/sumneko/lua-language-server/tree/master/meta/3rd) folder.
+The [`workspace.library`](https://github.com/LuaLS/lua-language-server/wiki/Settings#workspacelibrary) setting always follows the pattern of `${3rd}/LIBRARY_NAME/library`, but the other settings seen in the examples above are unique to the library being applied. To see the settings that the server would have [applied automatically](#automatically-applying), navigate to the library's [`config.lua`](#configuration-file) in the [`meta/3rd/`](https://github.com/LuaLS/lua-language-server/tree/master/meta/3rd) folder.
 
 <br>
 
 ## Custom
 You can create your own libraries through various methods.
 
-The definition files can be created using the same [annotations](https://github.com/sumneko/lua-language-server/wiki/Annotations) you use in your Lua scripts. Make sure to include a [`@meta`](https://github.com/sumneko/lua-language-server/wiki/Annotations#meta) tag in your definition files.
+The definition files can be created using the same [annotations](https://github.com/LuaLS/lua-language-server/wiki/Annotations) you use in your Lua scripts. Make sure to include a [`@meta`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#meta) tag in your definition files.
 
 <br>
 
@@ -101,7 +101,7 @@ This may be usable for a very small project, however, for larger ones, especiall
 
 **Use Case:** Any Workspace
 
-This method uses the [`workspace.library`](https://github.com/sumneko/lua-language-server/wiki/Settings#workspacelibrary) setting to link the requested library to your workspace scope. This is great for allowing you to store your libraries elsewhere and then include them when needed through your [configuration file](https://github.com/sumneko/lua-language-server/wiki/Configuration-File).
+This method uses the [`workspace.library`](https://github.com/LuaLS/lua-language-server/wiki/Settings#workspacelibrary) setting to link the requested library to your workspace scope. This is great for allowing you to store your libraries elsewhere and then include them when needed through your [configuration file](https://github.com/LuaLS/lua-language-server/wiki/Configuration-File).
 
 Unless you **always** use a certain library, it is strongly recommended you only define `workspace.library` in each project/workspace using `.vscode/settings.json` or `.luarc.json` in order to prevent slowdowns from loading unnecessary libraries.
 
@@ -114,7 +114,7 @@ Unless you **always** use a certain library, it is strongly recommended you only
 
 This method is the most in-depth and allows you to very closely emulate your target environment for many projects with easy repeatability. This is how the [built-in libraries](#built-in-libraries) are implemented. If your target environment is a game engine where you may not have access to all of Lua, this is a great option.
 
-As well as providing definitions, you can also define when to suggest setting up the environment for this library, what changes to apply to the server's [configuration](https://github.com/sumneko/lua-language-server/wiki/Configuration-File), and what [plugins](https://github.com/sumneko/lua-language-server/wiki/Plugins) to use.
+As well as providing definitions, you can also define when to suggest setting up the environment for this library, what changes to apply to the server's [configuration](https://github.com/LuaLS/lua-language-server/wiki/Configuration-File), and what [plugins](https://github.com/LuaLS/lua-language-server/wiki/Plugins) to use.
 
 #### Setup
 To get started, you will need *a* directory, anywhere on your machine, where all of your emulations can be stored e.g. `C:\Users\me\Documents\LuaEnvironments`. In your directory you will create a new directory for each environment to emulate.
@@ -131,7 +131,7 @@ To get started, you will need *a* directory, anywhere on your machine, where all
 ```
 
 ##### Definition Files
-Your defintion files should have a [`@meta`](https://github.com/sumneko/lua-language-server/wiki/Annotations#meta) annotation to mark them as such. They can then be placed in the `library/` directory within the environment they help emulate.
+Your defintion files should have a [`@meta`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#meta) annotation to mark them as such. They can then be placed in the `library/` directory within the environment they help emulate.
 
 ##### Configuration File
 The `config.lua` file is what lets you configure when the emulation should be recommended and what settings to apply.
@@ -202,14 +202,14 @@ for _, name in ipairs(GLOBALS) do
 end
 ```
 
-See [settings](https://github.com/sumneko/lua-language-server/wiki/Settings) for more info on `configs`.
+See [settings](https://github.com/LuaLS/lua-language-server/wiki/Settings) for more info on `configs`.
 
-To include a [plugin](https://github.com/sumneko/lua-language-server/wiki/Plugins), place it in the same location as your `config.lua` file.
+To include a [plugin](https://github.com/LuaLS/lua-language-server/wiki/Plugins), place it in the same location as your `config.lua` file.
 
-Have an environment emulation to share? [Post it in discussion #389](https://github.com/sumneko/lua-language-server/discussions/389).
+Have an environment emulation to share? [Post it in discussion #389](https://github.com/LuaLS/lua-language-server/discussions/389).
 
 ## Bundling in a plugin extension
-* _Disclaimer: This article was written by a [user](https://github.com/sumneko/lua-language-server/issues/417)._
+* _Disclaimer: This article was written by a [user](https://github.com/LuaLS/lua-language-server/issues/417)._
 
 An [extension](https://code.visualstudio.com/api/get-started/your-first-extension) that ships its own EmmyLua folder(s) can choose to automatically add this path.
 

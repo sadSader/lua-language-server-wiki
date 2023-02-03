@@ -22,7 +22,7 @@ They are disabled by default but we'll walk through how to enable and configure 
 ### Enable
 
 1. If you are using VS Code, configure `editor.inlayHints.enabled` to your liking.
-2. Set [`Lua.hint.enable`](https://github.com/sumneko/lua-language-server/wiki/Settings#hintenable) to true
+2. Set [`Lua.hint.enable`](https://github.com/LuaLS/lua-language-server/wiki/Settings#hintenable) to true
 
 ### Configure
-There are many different settings that let you change when hints appear. These settings can be seen on the [settings page](https://github.com/sumneko/lua-language-server/wiki/Settings#hint).
+There are many different settings that let you change when hints appear. These settings can be seen on the [settings page](https://github.com/LuaLS/lua-language-server/wiki/Settings#hint).

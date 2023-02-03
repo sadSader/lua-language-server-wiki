@@ -15,7 +15,7 @@ A template `.editorconfig` can be found at [`CppCXY/EmmyLuaCodeStyle/lua.templat
 For more info, refer to [`CppCXY/EmmyLuaCodeStyle`](https://github.com/CppCXY/EmmyLuaCodeStyle).
 
 ### Default Configuration
-To set a default global configuration across projects, navigate to your [configuration file](https://github.com/sumneko/lua-language-server/wiki/Configuration-File) and perform the below:
+To set a default global configuration across projects, navigate to your [configuration file](https://github.com/LuaLS/lua-language-server/wiki/Configuration-File) and perform the below:
 
 ### JSON
 This format is used by Visual Studio Code's `settings.json` and `.luarc.json` files.
@@ -46,7 +46,7 @@ Lua = {
 
 
 # Code Style Checking
-To enable code style checking, you need to add the following entry to [`diagnostics.neededFileStatus`](https://github.com/sumneko/lua-language-server/wiki/Settings#diagnosticsneededfilestatus):
+To enable code style checking, you need to add the following entry to [`diagnostics.neededFileStatus`](https://github.com/LuaLS/lua-language-server/wiki/Settings#diagnosticsneededfilestatus):
 
 ## JSON
 ```json

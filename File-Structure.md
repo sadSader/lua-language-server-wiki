@@ -24,7 +24,7 @@ Files marked with `⛔` are ignored by git.
     │    ├── 📁 <span title="Configuration file handling">config/</span>
     │    ├── 📁 <span title="Provides core language features. Files are named the same as the feature they implement">core/</span>
     │    ├── 📁 <span title="Convert encodings between asni, utf8, utf16">encoder/</span>
-    │    ├── 📁 <a href="https://github.com/sumneko/lua-glob" title="Used to resolve glob patterns">glob/</a>
+    │    ├── 📁 <a href="https://github.com/LuaLS/lua-glob" title="Used to resolve glob patterns">glob/</a>
     │    ├── 📂 <a href="#scriptparser" title="Parses Lua code into an abstract syntax tree (AST). Most of the children files are obsolete, only the ones still in use are documented.">parser/</a>
     │    │    ├── 📜 <span title="Provide utility functions, for example getVisibleLocals(source, position), getParentFunction(source) and positionToOffset(state, position)">guide.lua</span>
     │    │    ├── 📜 <span title="Parses annotations from state.comments">luadoc.lua</span>
@@ -65,7 +65,7 @@ Files marked with `⛔` are ignored by git.
     │    ├── 📜 <span title="Provide support for multiple languages">language.lua</span>
     │    ├── 📜 <span title="Fake client for cli and tests">lclient.lua</span>
     │    ├── 📜 <span title="Meta related features">library.lua</span>
-    │    ├── 📜 <a href="https://github.com/sumneko/lua-language-server/wiki/Plugins" title="Adds support for plugins">plugin.lua</a>
+    │    ├── 📜 <a href="https://github.com/LuaLS/lua-language-server/wiki/Plugins" title="Adds support for plugins">plugin.lua</a>
     ├── 📜 <span title="Is used when attaching debugger with --develop parameter">debugger.lua</span>
     ├── 📜 <span title="Entry file for testing">test.lua</span>
     └── 📜 main.lua
@@ -83,7 +83,7 @@ Visual Studio Code specific files for development.
 [Return to tree](#project-file-structure)
 
 ## `3rd/`
-Contains Lua defintion files for various included [libraries](https://github.com/sumneko/lua-language-server/wiki/Libraries) like `love2d` and `OpenResty`.
+Contains Lua defintion files for various included [libraries](https://github.com/LuaLS/lua-language-server/wiki/Libraries) like `love2d` and `OpenResty`.
 
 [Return to tree](#project-file-structure)
 
