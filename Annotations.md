@@ -283,11 +283,11 @@ print(x) --> x:string?
 <br>
 
 ### `@class`
-Define a class. Can be used with [`@field`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#field) to define a table structure. Once a class is defined, it can be used as a type for [parameters](https://github.com/LuaLS/lua-language-server/wiki/Annotations#param), [returns](https://github.com/LuaLS/lua-language-server/wiki/Annotations#return), and more.
+Define a class. Can be used with [`@field`](https://github.com/LuaLS/lua-language-server/wiki/Annotations#field) to define a table structure. Once a class is defined, it can be used as a type for [parameters](https://github.com/LuaLS/lua-language-server/wiki/Annotations#param), [returns](https://github.com/LuaLS/lua-language-server/wiki/Annotations#return), and more. A class can also inherit from a parent class.
 
 **Syntax**
 
-`---@class <name>`
+`---@class <name>[: <parent>]`
 
 **Examples**
 <details>
@@ -296,6 +296,19 @@ Define a class. Can be used with [`@field`](https://github.com/LuaLS/lua-languag
 ```lua
 ---@class Car
 local Car = {}
+```
+
+</details>
+
+<details>
+<summary>Class Inheritance</summary>
+
+```lua
+---@class Vehicle
+local Vehicle = {}
+
+---@class Plane: Vehicle
+local Plane = {}
 ```
 
 </details>
