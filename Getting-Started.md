@@ -42,12 +42,11 @@ If you don't have a precompiled binary, you can build the server yourself.
 
 1. Install [Ninja](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages)
 2. Ensure you have C++17
-3. Clone the project and its submodules
+3. Clone the project
 
 ```bash
-git clone  --depth=1 https://github.com/LuaLS/lua-language-server
+git clone https://github.com/LuaLS/lua-language-server
 cd lua-language-server
-git submodule update --depth 1 --init --recursive
 ```
 
 *Continue below with your OS of choice.*
@@ -57,19 +56,13 @@ git submodule update --depth 1 --init --recursive
 #### Windows
 
 ```bash
-cd 3rd\luamake
-compile\install.bat
-cd ..\..
-3rd\luamake\luamake.exe rebuild
+.\make.bat
 ```
 
 #### Linux/MacOS
 
 ```bash
-cd 3rd/luamake
-./compile/install.sh
-cd ../..
-./3rd/luamake/luamake rebuild
+.\make.sh
 ```
 
 
