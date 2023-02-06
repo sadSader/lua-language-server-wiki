@@ -62,7 +62,7 @@ cd lua-language-server
 #### Linux/MacOS
 
 ```bash
-.\make.sh
+./make.sh
 ```
 
 
