@@ -1,6 +1,18 @@
 # Settings
 A list of all settings that can be used to customize how the language server operates. All of these settings should be prefixed with `Lua.` e.g. `Lua.completion.enable` or `Lua.diagnostics.globals` when editing a [configuration file](https://github.com/LuaLS/lua-language-server/wiki/Configuration-File).
 
+## addonManager
+Settings that affect the VS Code addon manager
+
+<br>
+
+### `addonManager.enable`
+**Type:** `boolean`
+
+**Default:** `true`
+
+Set the on/off state of the addon manager. Disabling the addon manager prevents it from registering its command.
+
 ## completion
 Settings that adjust how autocompletions are provided while typing.
 
