@@ -49,17 +49,13 @@ git clone https://github.com/LuaLS/lua-language-server
 cd lua-language-server
 ```
 
-*Continue below with your OS of choice.*
-- [Windows](#windows)
-- [Linux/MacOS](#linuxmacos)
-
-#### Windows
+**Windows**
 
 ```bash
 .\make.bat
 ```
 
-#### Linux/MacOS
+**Linux/MacOS**
 
 ```bash
 ./make.sh
@@ -68,12 +64,12 @@ cd lua-language-server
 
 ### Run
 
-#### Windows
+**Windows**
 ```bash
 .\bin\lua-language-server.exe
 ```
 
-#### Linux/MacOS
+**Linux/MacOS**
 ```bash
 ./bin/lua-language-server
 ```
