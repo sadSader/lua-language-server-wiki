@@ -411,6 +411,7 @@ Define a field within a table. Should be immediately following a [`@class`](http
 **Syntax**
 
 `---@field [scope] <name> <type> [description]`
+`---@field [scope] \[<type>\] <type> [description]` 
 
 **Examples**
 <details>
@@ -469,6 +470,16 @@ end
 
 ```
 
+</details>
+
+<details>
+<summary>Typed field
+```lua
+---@class Numbers
+---@field name string Note: named fields must be declared before typed field
+---@field [string] integer
+local Numbers = {}
+```
 </details>
 
 <br>
