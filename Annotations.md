@@ -410,7 +410,13 @@ Define a field within a table. Should be immediately following a [`@class`](http
 
 **Syntax**
 
+> ℹ️ Note: `\[` and `\]` below mean literal `[` and `]`
+
+<br>
+
 `---@field [scope] <name> <type> [description]`
+<br>
+`---@field [scope] \[<type>\] <type> [description]` 
 
 **Examples**
 <details>
@@ -466,7 +472,20 @@ local myDog = {}
 function myDog:legCount()
 	return self.legs
 end
+```
 
+</details>
+
+<details>
+<summary>Typed field</summary>
+	
+> ℹ️ Note: named fields must be declared before typed field if type is string 
+	
+```lua
+---@class Numbers
+---@field named string 
+---@field [string] integer
+local Numbers = {}
 ```
 
 </details>
